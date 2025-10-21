@@ -3,10 +3,14 @@ import { Link, useLocation } from 'react-router-dom';
 import { 
   FaSearch, FaTelegramPlane,FaWhatsapp, FaFacebook, 
   FaTwitter, FaEnvelopeOpenText, FaCheckCircle, FaTimesCircle, FaTimes,FaBlog, FaLaptopCode, FaRss, FaInfoCircle, 
-  FaTrophy,
+  FaTrophy, 
   FaDiceThree,
-  FaHome
+  FaHome,
+
+
+  FaInstagram, FaYoutube, FaEye
 } from 'react-icons/fa';
+
 import styles from './Header.module.css';
 import axiosInstance from '../axiosConfig';
 
@@ -41,7 +45,6 @@ const fetchResults = async (page = 1) => {
   }
 };
 
-// при изменении searchQuery сбрасываем страницу на 1
 useEffect(() => {
   const delayDebounce = setTimeout(() => {
     fetchResults(1);
@@ -50,7 +53,6 @@ useEffect(() => {
   return () => clearTimeout(delayDebounce);
 }, [searchQuery]);
 
-// функции для кнопок пагинации
 const handlePrevPage = () => {
   if (meta.current_page > 1) {
     fetchResults(meta.current_page - 1);
@@ -134,29 +136,56 @@ const handleNextPage = () => {
 
   return (
     <>
-      <div className={styles.upheader}>
-        <p>👨‍💻 IT-портал: статьи, разборы, советы для разработчиков</p>
+    <div className={styles.upheader}>
+      <Link className={styles.logoLink} to={'/'}>
+        <div className={styles.logoWrapper}>
+          <h1 className={styles.logo}>
+            <span className={styles.abbr}>
+              ШКОЛА ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ И ИНОСТРАННЫХ ЯЗЫКОВ
+            </span>
+          </h1>
+        </div>
+      </Link>
+      <div className={styles.iconsBlock}>
+                        {/* Поиск */}
+                {/* <button 
+                  className={styles.searchBtn} 
+                  onClick={() => setShowSearch(true)}
+                >
+                  <FaSearch className={styles.icon} />
+                </button> */}
+        <a
+          href="https://www.instagram.com/your_instagram"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.iconLink}
+          aria-label="Instagram"
+        >
+          <FaInstagram />
+        </a>
+
+        <a
+          href="https://www.youtube.com/your_youtube"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.iconLink}
+          aria-label="YouTube"
+        >
+          <FaYoutube />
+        </a>
+
+          <div className={styles.addressBlock}>
+        <p>
+          Казахстан, город Жанаозен,<br></br> Улица НУРГИСА ТИЛЕНДИЕВ, 21г
+        </p>
       </div>
+      </div>
+
+    </div>
 
       <header className={styles.header}>
         <div className={styles.container}>
-          <Link className={styles.logoLink} to={'/'}>
-            <div className={styles.logoWrapper}>
-              <h1 className={styles.logo}>
-                <span className={styles.abbr}>ΛUMINΛ </span>
 
-              </h1>
-
-              {/* На десктопе — слоган */}
-              {!isMobile && (
-                <p className={styles.slogan}>
-                  Lumina: Youth Innovation & Knowledge Exchange Platform
-                </p>
-              )}
-
-
-            </div>
-          </Link>
 
           {/* Десктоп/мобильное меню */}
           <nav className={styles.nav}>
@@ -181,7 +210,7 @@ const handleNextPage = () => {
                   className={styles.dropdownWrapper}
                   onMouseEnter={() => setActiveMenu("articles")}
                 >
-                  <Link to="/articles" className={styles.link}>Блоги ▾</Link>
+                  <Link to="/articles" className={styles.link}>О нас ▾</Link>
                   {activeMenu === "articles" && (
                     <div
                       className={styles.dropdownMenu}
@@ -200,35 +229,14 @@ const handleNextPage = () => {
                   )}
                 </div>
 
-                <Link to="/order" className={styles.link}>Заказать сайт</Link>
+                <Link to="/order" className={styles.link}>Обучение</Link>
+                <Link to="/order" className={styles.link}>Приемная комиссия</Link>
 
-                {/* Сервисы */}
-                <div
-                  className={styles.dropdownWrapper}
-                  onMouseEnter={() => setActiveMenu("services")}
-                >
-                  <span className={styles.link}>Сервисы ▾</span>
-                  {activeMenu === "services" && (
-                    <div
-                      className={styles.dropdownMenu}
-                      onMouseLeave={() => setActiveMenu(null)}
-                    >
-                      <Link to="/quiz" className={styles.dropdownItem}>Тестирование</Link>
-                      {/* <Link to="/hub" className={styles.dropdownItem}>Инструменты</Link> */}
-                      <a href="https://lumina.kz/rss" className={styles.dropdownItem}>RSS</a>
-                    </div>
-                  )}
-                </div>
 
-                <Link to="/about" className={styles.link}>О проекте</Link>
+                <Link to="/about" className={styles.link}>Новости</Link>
+                <Link to="/about" className={styles.link}>Контакты</Link>
 
-                {/* Поиск */}
-                <button 
-                  className={styles.searchBtn} 
-                  onClick={() => setShowSearch(true)}
-                >
-                  <FaSearch className={styles.icon} />
-                </button>
+
               </>
             )}
 

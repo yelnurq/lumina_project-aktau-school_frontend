@@ -19,6 +19,11 @@
   vertical-align: middle;
 }
 
+.mainBlocks {
+  height: 600px;
+  background: rgb(7, 18, 78);
+}
+
 
 /* Главная новость */
 .mainNews {

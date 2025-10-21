@@ -122,6 +122,9 @@ if (loading) {
         />
 
     <Header>
+      <div className={styles.mainBlocks}>
+        
+      </div>
       <main className={styles.container}>
         {/* Главная новость */}
         <div className={styles.mainBlock}>
