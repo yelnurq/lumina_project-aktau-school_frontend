@@ -1,0 +1,182 @@
+.container {
+      max-width: 1200px;
+    margin: auto;
+    padding-top: 30px;
+
+}
+
+
+
+.faqSection {
+  padding:  0 20px 20px;
+  background: #f9f9f9;
+  border-radius: 16px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.title {
+  font-size: 23px;
+  font-weight: 500;
+  color: #222;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+
+    .breadcrumbs {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 30px;
+    margin-top: 0;
+    }
+
+    .breadcrumbs ol {
+    display: flex;
+    margin-top: 0;
+    list-style: none;
+    gap: 6px;
+    padding: 0;
+    flex-wrap: wrap;
+    }
+
+    .breadcrumbs a {
+    color: #3490dc;
+    text-decoration: none;
+    }
+
+    .breadcrumbs .current {
+    color: #333;
+    }
+
+
+
+
+.faqList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.faqItem {
+  border-bottom: 1px solid #ddd;
+}
+
+.faqQuestion {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 14px;
+  font-size: 1rem;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.faqQuestion:hover {
+  color: #0073ff;
+}
+
+.icon {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.faqAnswer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+  padding: 0 14px;
+}
+
+.faqAnswer.show {
+  max-height: 200px; /* Достаточно для текста */
+  opacity: 1;
+  padding: 10px 14px;
+}
+
+.faqAnswer p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+
+    .icon {
+    font-size: 1.2rem;
+    margin-left: 10px;
+    }
+
+
+
+    .list {
+        padding: 0px;
+        list-style: none;
+
+    }
+
+    .contactBox {
+  margin-top: 40px;
+  padding: 24px;
+  text-align: center;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contactBox:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contactBox p {
+  font-size: 1.1rem;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.contactLink {
+  display: inline-block;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contactLink:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+  transform: scale(1.05);
+}
+
+
+    /* 📱 Для мобильных */
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.3rem;
+  }
+  .faqQuestion {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+  .faqAnswer p {
+    font-size: 0.9rem;
+  }}
+
+  @media (max-width:1260px){
+  .breadcrumbs {
+        margin-left: 20px;
+    margin-right: 20px;
+  }
+}

@@ -1,0 +1,79 @@
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+
+background: linear-gradient(134deg, #ffffff, #e6e6e6);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.textBlock {
+  max-width: 600px;
+}
+
+.title {
+  font-size: 1.4rem;
+  margin: 0;
+  font-weight: 600;
+  color: #111;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #333;
+  margin-top: 1rem;
+}
+
+.button {
+  margin-top: 1.5rem;
+  display: inline-block;
+  background-color: #0f1a64ff;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0d1555;
+}
+
+.image {
+  margin-top: -20px;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* 📱 Мобильная адаптация */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.2rem;
+  }
+  .description {
+    font-size: 1rem;
+  }
+  .banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .textBlock {
+    max-width: 100%;
+  }
+
+  .image {
+    max-width: 100%;
+    margin-top: 1.5rem;
+  }
+}

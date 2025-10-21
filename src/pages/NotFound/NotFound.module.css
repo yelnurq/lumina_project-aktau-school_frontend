@@ -1,0 +1,45 @@
+.container {
+  min-height: 100vh; /* вместо height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.content p {
+  margin: 10px 0 0; /* вместо 10px 0 20px */
+}
+
+
+
+.content h1 {
+  font-size: 5rem;
+  color: #000;
+  margin: 0;
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.content p {
+  margin: 10px 0 20px;
+  font-size: 1rem;
+}
+
+.homeLink {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.homeLink:hover {
+  background-color: #333;
+}

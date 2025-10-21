@@ -1,0 +1,510 @@
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #111827;
+}
+
+/* --- Грид с masonry-style layout --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(420px, 0fr));
+  gap: 1.5rem;
+}
+
+.skeletongrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(420px, 0fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+.iconMobile {
+  margin-right: 8px;
+  margin-top: -3px  ;
+  vertical-align: middle;
+}
+
+
+.skeletonGridTag {
+  display: flex;
+  flex-wrap: wrap;  
+  gap: 1rem;
+  align-items: start;
+}
+
+/* Анимация появления */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  animation: fadeInUp 0.4s ease both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+  position: relative;
+}
+
+/* Небольшое "хаотичное" смещение */
+.card:nth-child(3n) {
+  transform: rotate(-1deg);
+}
+.card:nth-child(4n) {
+  transform: rotate(1deg);
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  border-color: #3b82f6;
+  outline: none;
+}
+
+.image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #111827;
+  transition: color 0.3s ease;
+}
+
+.card:hover .title {
+  color: #3b82f6;
+}
+
+.date {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 0.02em;
+}
+
+/* Расширенные карточки */
+.card--span-2 {
+  grid-column: span 2;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f3f4f6, #e5e7eb, #f3f4f6);
+  animation: pulse 1.5s infinite;
+  height: 250px;
+  border-radius: 0.75rem;
+}
+
+
+
+@keyframes pulse {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+.skeletonTag {
+  background: linear-gradient(90deg, #f3f4f6, #e5e7eb, #f3f4f6);
+  animation: pulse 1.5s infinite;
+  width: 100%;
+  height: 30px;
+  border-radius: 0.75rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background-color: #f9fafb;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+}
+
+.filterGroup label {
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  color: #374151;
+}
+
+.filterGroup select,
+.filterGroup input {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.filterButton {
+  padding: 0.6rem 1.2rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  margin-top: auto;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.filterButton:hover {
+  background-color: #1d4ed8;
+}
+
+
+
+/* Адаптивность */
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: auto;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .filterButton {
+    width: 100%;
+  }
+}
+
+@media (max-width:1024px) and (min-width:640px) {
+    .skeletongrid {
+      grid-template-columns: repeat(1, minmax(300px, 1fr));
+    }
+  .skeleton {
+    display: flex;
+  }
+  .grid {
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
+  }
+}
+.breadcrumbs {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  list-style: none;
+  gap: 6px;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.breadcrumbs a {
+  color: #3490dc;
+  text-decoration: none;
+}
+
+.breadcrumbs .current {
+  color: #333;
+}
+
+
+.mainContent {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px; /* расстояние между колонками */
+}
+
+.grid {
+  flex: 1; /* занимает всё доступное */
+}
+
+.sidebar {
+  width: 400px; /* можно 200px, 220px, в зависимости от дизайна */
+}
+
+
+.promoCard {
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  border-radius: 1rem;
+  margin-top: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  position: sticky;
+  top: 6rem;
+}
+.promoImage {
+  max-width: 150px;
+  margin-bottom: 1.5rem;
+}
+
+.promoTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.promoText {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.promoButton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #4f46e5;
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.promoButton:hover {
+  background-color: #4338ca;
+}/* Адаптив */
+@media (max-width: 1100px) {
+  .sidebar {
+    width: 100%;
+  }
+  .skeletonGridTag {
+    flex-shrink: 1;
+    min-width: none;
+
+  }
+  .mainContent {
+    flex-direction: column;
+  }
+
+  .rightColumn {
+    width: 100%;
+    margin-top: 2rem;
+  }
+}
+
+.subscriptionBlock {
+  margin-top: 4rem;
+  padding: 2rem;
+  border-radius: 12px;
+  background: linear-gradient(to right, #f7f7f7, #ffffff);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.subscriptionBlock h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.subscriptionBlock p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.notfound {
+  font-size: 1.2rem;
+  color: #999;
+  padding: 40px 0;
+}
+
+
+.subscriptionForm {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.subscriptionForm input {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 250px;
+  max-width: 100%;
+}
+
+.subscriptionForm button {
+  padding: 0.5rem 1.2rem;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.subscriptionForm button:hover {
+  background-color: #005bb5;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.links a {
+  color: #0070f3;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  color: #005bb5;
+}
+
+.categoryList {
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.categoryTitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.categoryItem {
+  display: inline-block;
+  margin: 4px;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.categoryItem:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+
+  .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pagination button {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.pagination button:disabled {
+  background-color: #333;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination button:not(:disabled):hover {
+  background-color: #222;
+  transform: translateY(-1px);
+}
+
+.pagination span {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .notfound {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  .promoTitle {
+    font-size: 1.1rem;
+  }
+  .promoText {
+    font-size: 1rem;
+  }
+  .promoButton {
+    font-size: 14px;
+  }
+  .heading {
+    font-size: 1.75rem;
+  }
+  .title {
+    font-size: 17px;
+  }
+  .card {
+    padding: 1rem;
+  }
+
+  .image {
+    height: 150px;
+  }
+
+  .card--span-2 {
+    grid-column: span 1 !important;
+  }
+}

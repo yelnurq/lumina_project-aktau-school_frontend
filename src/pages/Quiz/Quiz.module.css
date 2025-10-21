@@ -1,0 +1,474 @@
+
+
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+
+.olympMain {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.olympMain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../../../public/images/background/3.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* затемнение */
+  background-blend-mode: darken;
+}
+
+
+.olympMain .container {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.quizWrapper {
+  padding:2rem 10rem;
+
+    border-radius: 8px;
+  background: #1e1e1e;
+  color: #f0f0f0;
+  box-shadow: 0 0 0 1px #333, 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 24px;
+  text-align: center;
+  color: rgb(228, 228, 228);
+}
+
+.headingResult {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #222;
+  margin-top: 0;
+}
+
+.filters {
+  margin-top:40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.resultButtons {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  gap: 10px;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+  flex: 1 1 220px;
+}
+
+
+.filterGroup input,
+.filterGroup textarea, .filterGroup select {
+  padding: 12px;
+  font-size: 16px;
+  flex: 1;
+  color: white;
+  border: 1px solid #3a3a3a;
+  background: #2a2a2a;
+  border-radius: 4px;
+  transition: border 0.3s, background-color 0.3s;
+}
+
+.filterGroup input:focus,
+.textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+  background-color: #1e1e1e;
+}
+
+.filterButton, .prevButton {
+  padding: 0.75rem 1.5rem;
+    background: #2a2a2a;
+    text-decoration: none;
+    border: 1px solid #444;
+    color: #f0f0f0;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease
+}
+
+.filterButton:disabled , .prevButton:disabled{
+  cursor:not-allowed;
+}
+
+.filterButton:hover , .prevButton:hover{
+ background: #2563eb;
+  color: #fff;}
+
+
+.backButton {
+  color: #6e6e6e;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  margin: 0;
+  font-size: 25px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.buttonBackBlock {
+  display: flex;
+  justify-content: left;
+}
+.backButton:hover {
+  color: #8e8e8e;
+  
+}
+
+.backButton:active {
+  transform: scale(0.97);
+}
+
+
+/* Вопросы */
+.quizBlock {
+  padding: 2rem;
+
+    border-radius: 8px;
+  background: #1e1e1e;
+  color: #f0f0f0;
+  box-shadow: 0 0 0 1px #333, 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.card {
+  margin-bottom: 30px;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.answer {
+  font-size: 16px;
+  color: #c9c9c9;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.answer input {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: #2563eb;
+}
+
+.answer:hover {
+  background-color: #343434;
+  border-color: #2563eb;
+}
+
+button.filterButton, button.prevButton {
+  width: 100%;
+}
+
+/* Результаты */
+.resultBlock {
+  padding: 2rem;
+    border-radius: 8px;
+  background: #1e1e1e;
+  color: #f0f0f0;
+  box-shadow: 0 0 0 1px #333, 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+
+
+.resultBlock .text {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: #dfdfdf;  
+}
+
+.description {
+  margin-top: 0;
+  text-align: center;
+  font-size: 1rem;
+  color: #4f4f4f;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.diplomaImage {
+  max-width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.downloadButton {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.downloadButton:hover {
+  background-color: #1d4ed8;
+}
+
+.filterBtns {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.progressBar {
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: #2563eb;
+  transition: width 0.3s ease;
+}
+
+
+.breadcrumbs {
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  list-style: none;
+  gap: 6px;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.breadcrumbs a {
+  color: #3490dc;
+  text-decoration: none;
+}
+
+.breadcrumbs .current {
+  color: #333;
+}
+
+.resultBlocks {
+  display: flex;
+  padding: 0 30px;
+  align-items: start;
+  gap: 60px;
+  justify-content: space-around;
+}
+
+.leftResultBlock {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.quizStartedBlocks {
+  border-top: 1px solid rgba(255, 255, 255, 0.445);
+  padding-top: 30px;
+  text-align: center;
+}
+
+.quizTitle {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.rulesGrid {
+  display:flex;
+  gap: 20px;
+  justify-items: center;
+}
+
+.ruleCard {
+padding: 0.75rem 1.5rem;
+    background: #2a2a2a;
+    text-decoration: none;
+    border: 1px solid #444;
+    color: #f0f0f0;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.ruleCard:hover {
+    background: #434343;
+
+}
+
+.icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.label {
+  font-size: 14px;
+  color: #b5b5b5;
+}
+
+
+.cert {
+  margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.445);
+  padding-top: 30px;
+
+}
+
+.cert .label {
+  text-transform: uppercase;
+    font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.cert img{
+  width: 100%;
+  object-fit: contain;
+}
+
+
+@media (max-width: 400px) {
+  .prevButton, .filterButton {
+    font-size: 12px;
+    word-break: break-word;
+  }
+  .filterBtns {
+    gap: 10px;
+    flex-direction: column;
+  }
+}
+
+
+@media (max-width: 950px) {
+  .rulesGrid {
+    flex-wrap: wrap;
+  }
+  .ruleCard {
+    width: 100%;
+  }
+  .altRuleCard {
+    width: auto;
+  }
+    .quizWrapper {
+    padding: 20px;
+  }
+  .resultBlock .text {
+    font-size: 1rem;
+  }
+
+
+}
+
+
+@media (max-width: 1330px) {
+  .diplomaImage {
+    height: auto;
+  }
+      .resultBlocks {
+    flex-direction: column;
+  }
+  .leftResultBlock {
+    margin-top: 0;
+  }
+    .backButton svg{
+    font-size: 25px;
+  }
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .resultBlocks {
+    padding: 0 10px;
+  }
+  .backButton svg{
+    font-size: 20px;
+  }
+  .filterButton {
+    font-size: 14px;
+  }
+  .title {
+    font-size: 18px;
+  }
+  .heading {
+    font-size: 17px;
+  }
+  .filterGroup {
+    font-size: 15px;
+  }
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filterGroup {
+    min-width: auto;
+    flex: auto;
+    width: 100%;
+  }
+  .rulesGrid {
+    flex-wrap: wrap;
+  }
+  .ruleCard {
+    width: 100%;
+  }
+  .altRuleCard {
+    width: auto;
+  }
+
+  .filterButton {
+    min-width: auto;
+  }
+
+}

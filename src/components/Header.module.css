@@ -1,0 +1,758 @@
+
+/* Общая структура */
+.header {
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  z-index: 100001;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #fff;
+  border-top: 6px solid #00c2ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+.iconMobile {
+  margin-right: 8px;
+  margin-top: -3px  ;
+  vertical-align: middle;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  gap: 8px;
+}
+
+.pagination button {
+  padding: 4px 12px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+.checkmark,
+.errorIcon {
+  font-size: 64px;
+  animation: popIn 0.3s ease forwards;
+}
+
+.checkmark {
+  color: #4caf50;
+}
+
+.errorIcon {
+  color: #f44336;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Верхний баннер */
+.upheader {
+  background: linear-gradient(to right, #242424, #072056);
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 0;
+  letter-spacing: 0.3px;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Логотип */
+.logoWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.7rem;
+  font-weight: 600;
+  font-family: 'Segoe UI', 'Inter', sans-serif;
+  color: #222222;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.highlight {
+  background: linear-gradient(90deg, #0ea5e9, #20074a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Навигация */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: #181818;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: #0ea5e9;
+}
+
+/* Анимационная линия под ссылками */
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #0ea5e9;
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.iconSubs {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #6b92be;
+  transition: color 0.3s ease;
+}
+
+
+/* Иконки */
+.icon {
+  font-size: 18px;
+  color: #676767;
+  transition: color 0.3s ease;
+}
+
+.link:hover .icon {
+  color: #0ea5e9;
+}
+
+
+.dropdownWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  border-radius: 6px;
+  padding: 8px 0;
+  min-width: 160px;
+  z-index: 10000;
+}
+
+.dropdownItem {
+  display: block;
+  padding: 10px 16px;
+  color: #181818;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.dropdownItem:hover {
+  background-color: #f4f4f4;
+  color: #0ea5e9;
+}
+
+.slogan {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 4px;
+  letter-spacing: 0.3px;
+  font-style: italic;
+}
+.abbr {
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+
+
+.footer {
+  background-color: #111;
+  color: #eee;
+  padding: 40px 20px 20px;
+  font-size: 14px;
+}
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerTop {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.column {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px 0;
+}
+
+.column h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.column ul li {
+  margin-bottom: 8px;
+}
+
+.column ul li a {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.column ul li a:hover {
+  color: #fff;
+}
+.subscribeForm {
+  display: flex;
+  gap: 2px;
+}
+
+.subscribeForm input {
+  flex: 1;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+
+.subscribeForm button {
+  background-color: #444;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.subscribeForm button:hover {
+  background-color: #666;
+}
+
+
+.socials {
+  margin-top: 10px;
+}
+
+.socials a {
+  margin-right: 10px;
+  color: #aaa;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: #fff;
+}
+
+.footerBottom {
+  border-top: 1px solid #333;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+}
+
+
+.subscribeBanner {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+  top: 40px; /* Это даст эффект "нависящего" блока */
+  text-align: center;
+}
+
+.subscribeInner h3 {
+  font-weight: 600;
+  color: #333;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.subscribeInner p {
+  margin-top: 0;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.8rem;
+}
+
+.subscribeForm {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.subscribeForm input {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  width: 250px;
+  max-width: 100%;
+}
+
+.logoLink {
+  text-decoration: none;
+}
+
+.subscribeForm button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscribeForm button:hover {
+  background-color: #2563eb;
+}
+/* Только для мобильного */
+@media (max-width: 768px) {
+
+  /* Скрываем обычное меню */
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  .nav > .link {
+    display: none;
+  }
+
+  /* Бургер */
+  .burgerBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1102; /* выше оверлея */
+    position: relative;
+  }
+
+  .burgerLine {
+    width: 28px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Оверлей */
+  .mobileOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 1100;
+  }
+
+  .mobileOverlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Мобильное меню */
+  .mobileNav {
+    position: fixed;
+    top: 0;
+    left: -220px; /* за экраном */
+    width: 180px;
+    height: 100vh;
+    background: linear-gradient(to right, #0f172a, #111827);   
+    box-shadow: -2px 0 12px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 1rem;
+    z-index: 1101; /* выше оверлея, ниже кнопки */
+    transition: left 0.3s ease-in-out;
+  }
+
+  .mobileNav.open {
+    left: 0;
+  }
+
+  .mobileLink {
+    font-weight: 400;
+    text-decoration: none;
+    color: #d7d7d7;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  .mobileDropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mobileSubLink {
+    font-weight: normal;
+    margin-left: 1rem;
+    font-size: 0.95rem;
+    text-decoration: none;
+    color: #c1c1c1;
+    padding: 0.3rem 0;
+  }
+
+  /* Убираем стрелки ▾ у десктопных ссылок */
+  .link::after {
+    content: '';
+  }
+}
+@media (max-width: 768px) {
+  .logoWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .slogan {
+    display: none; /* скрываем слоган на мобилке */
+  }
+
+ 
+  .burgerLine {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+}
+
+/* Медиа-запрос для маленьких экранов */
+@media (max-width: 768px) {
+  .dropdownMenu {
+    display: none; /* скрываем стандартный dropdown */
+  }
+
+  .mobileMenu {
+    display: flex; /* показываем мобильное меню */
+  }
+}
+
+@media (max-width: 1024px) {
+  .searchBtn {
+    display: none;
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .subscribeInner h3 {
+    font-size: 17px;
+  }
+  .upheader {
+    font-size: 12px;
+  }
+  .subscribeInner p {
+    font-size: 15px;
+  }
+  .footerGrid li {
+        word-break: break-word;
+        font-size: 14px;
+  }
+  .footerGrid h4 {
+    font-size: 15px;
+  }
+  .header {
+    position: static;
+  }
+  .subscribeBanner {
+    width: auto;
+  }
+  .container {
+    align-items: center;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .link {
+    font-size: 16px;
+  }
+}
+
+
+.footer {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  padding: 40px 20px 20px;
+  font-size: 0.95rem;
+}
+
+.footerWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footerGrid h4 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #9abce2;
+}
+
+.footerGrid ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footerGrid li {
+  margin-bottom: 8px;
+}
+
+.footerGrid a {
+  color: #c9d1d9;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footerGrid a:hover {
+  color: #58a6ff;
+}
+
+.socials {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.socials a {
+  color: #c9d1d9;
+  font-size: 1.3rem;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: #58a6ff;
+}
+
+.footerBottom {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #8b949e;
+  border-top: 1px solid #30363d;
+  padding-top: 15px;
+}
+
+
+
+
+
+.contactList li a {
+  color: #9abce2;
+  text-decoration: none;
+}
+
+.searchBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* 🔍 Поиск — панель под хэдером */
+.searchBar {
+  position: sticky; /* всегда приклеен после header */
+  top: 93px; /* подогнать под высоту твоего header */
+  left: 0;
+  background: #e9e9e9;
+  border-bottom: 1px solid #ddd;
+  z-index: 49; /* чуть ниже чем header */
+  padding: 16px 24px 27px;
+
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 1200px;
+  border-bottom: 1px solid rgb(166 166 166);
+  margin: 0 auto;
+}
+
+.logoLumina {
+  width: 40px;
+}
+
+.searchForm input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+
+
+  border: none;
+  background: transparent;
+  border-radius: 0;
+}
+
+.searchForm input:focus {
+  outline: none;   /* убирает синюю рамку */
+  border: none;    /* убирает рамку */
+  box-shadow: none; /* убирает подсветку */
+}
+
+.searchForm button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.resultsList {
+  max-width: 1200px;
+  margin: 12px auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.resultsList li {
+  padding: 10px 14px;
+  border-bottom: 1px solid #d1d0d0;
+}
+
+
+.resultsList p {
+  margin: 0;
+  color: #363636;
+  padding: 10px 14px;
+}
+
+.resultsList li a {
+  text-decoration: none;
+  color: #222;
+}
+
+.resultsList li a:hover {
+  color: #0077cc;
+}
+
+/* 🔲 Overlay */
+.searchOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* чуть затемняем */
+  z-index: 2;
+}

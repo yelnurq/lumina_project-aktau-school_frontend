@@ -1,0 +1,9 @@
+/* tiptap.css */
+.ProseMirror {
+  outline: none;
+  min-height: 150px;
+}
+.ProseMirror:focus {
+  border: none;
+  outline: none;
+}

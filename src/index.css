@@ -1,13 +1,89 @@
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 8px;
+  border: 2px solid #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #666;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #444 #1a1a1a;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+input[type=number] {
+    -moz-appearance:textfield; 
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Manrope', sans-serif;
+  background-color: #f9f9f9;
+}
+
+button, a, textarea, input, select, label {
+  font-family: 'Manrope', sans-serif;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.catbackend { background: #28630f; color: #fff; }
+
+.catfrontend { background: #0343cc; color: #fff; }
+.catdevops { background: #180929; color: #fff; }
+.catlaravel { background: #f55247; color: #fff; }
+.catreact { background: #61dafb; color: #000; }
+.catnodejs { background: #3c873a; color: #fff; }
+.catdocker { background: #0db7ed; color: #fff; }
+.catgithub { background: #333; color: #fff; }
+.catapi { background: #5c6bc0; color: #fff; }
+.catfirebase { background: #ffcb2b; color: #000; }
+.catpostgresql { background: #336791; color: #fff; }
+.catai { background: #9c27b0; color: #fff; }
+.catmachine-learning { background: #4caf50; color: #fff; }
+.catneural-networks { background: #e91e63; color: #fff; }
+.catcybersecurity { background: #212121; color: #fff; }
+.catfigma { background: #a259ff; color: #fff; }
+.catnextjs { background: #000000; color: #fff; }
+.cattailwindcss { background: #38bdf8; color: #fff; }
+
+.catjavascript { background: #f7df1e; color: #111; }
+.cattypescript { background: #3178c6; color: #fff; }
+.catphp { background: #8892be; color: #fff; }
+.catpython { background: #3776ab; color: #fff; }
+.catcpp { background: #00599c; color: #fff; }
+.catcsharp { background: #9b4f96; color: #fff; }
+.catjava { background: #007396; color: #fff; }
+.catgo { background: #00add8; color: #fff; }
+.catruby { background: #cc342d; color: #fff; }
+.catswift { background: #fa7343; color: #fff; }
+.catkotlin { background: #7f52ff; color: #fff; }
+.catrust { background: #dea584; color: #000; }
+.catsql { background: #336791; color: #fff; }
+
+.cathtml { background: #e34c26; color: #fff; }
+.catcss { background: #2965f1; color: #fff; }
