@@ -6,6 +6,7 @@ import Header from '../../components/Header';
 import facts from './../../json/facts.json'
 import SeoHelmet from '../../components/SeoHelmet';
 import { FaBrain, FaSchool } from 'react-icons/fa';
+import Gallery from '../../components/Gallery/Gallery';
 
 export default function Home() {
   const [main, setMain] = useState(null);
@@ -140,10 +141,10 @@ if (loading) {
             <div className={styles.iconHistoryBlock}>
               <FaSchool className={styles.iconHistory}/>
             </div>
-            <p>
-            Наша миссия
-            
-            </p>
+              <p>
+              Наша миссия
+              
+              </p>
           </div>
           <div className={styles.left}>
             <p>
@@ -157,8 +158,13 @@ if (loading) {
 
       </div>
         {/* Главная новость */}
+            <p className={styles.titleBlock}>
+            Блог из школы
+            </p>
         <div className={styles.mainBlock}>
+
 {main && (
+  
   <section className={styles.mainNews}>
       <Link className={styles.newsLink} to={`/articles/${main.slug}`}>
 
@@ -173,7 +179,6 @@ if (loading) {
         Читать далее →
       </span>
       <p className={styles.meta}>
-        <span>⏱ {main.reading_time} мин чтения</span>
         <span>{new Date(main.created_at).toLocaleDateString()}</span>
       </p>
     </div>
@@ -194,7 +199,6 @@ if (loading) {
                   Читать далее →
                 </span>     
                     <p className={styles.meta}>
-                     <span>⏱ {news.reading_time} мин чтения</span>
                     <span>{new Date(news.created_at).toLocaleDateString()} </span>
                     </p>
                 </Link>
@@ -207,42 +211,22 @@ if (loading) {
 
     <section className={styles.factSection}>
       <div className={styles.inner}>
-        <h2 className={styles.factTitle}><FaBrain className={styles.iconMobile}/> Факт дня</h2>
         <p className={styles.fact}>
-          {todayFact}
+          «Учись, дитя, получай знания — ведь именно от этого зависит твоё будущее»
         </p>
+        <h2 className={styles.factTitle}> Ыбырай Алтынсарин</h2>
       </div>
     </section>
-        {Object.entries(byCategory).map(([categoryName, articles]) => (
-            <section key={categoryName} className={styles.categorySection}>
-            <div className={styles.categoryHeader}>
-            <h3>{categoryName}</h3>
-            <Link to={`/articles?category=${slugify(categoryName)}`} className={styles.viewAll}>
-                Смотреть все →
-            </Link>
-            </div>
-              <div className={styles.categoryGrid}>
-                {articles.slice(0, 3).map(article => (
-                  <div key={article.id} className={styles.card}>
-                    <Link className={styles.newsLink} to={`/articles/${article.slug}`}>
-                    <img loading="lazy" className={styles.latestObjectImage}  src={`https://lumina.kz/storage/${article.image}`} alt={article.title} />
-                    <p className={styles.latestTitle}>{article.title}</p>
-                  
-                  <span className={styles.newsLink}>
-                  Читать далее →
-                </span>   
-                    <p className={styles.meta}>
-                     <span>⏱ {article.reading_time} мин чтения</span>
-                    <span>{new Date(article.created_at).toLocaleDateString()} </span>
-                    </p>
+<section className={styles.categorySection}>
+  <div className={styles.categoryHeader}>
+            <p className={styles.titleBlock}>
+            Жизнь нашей школы
+            </p>
+  </div>
 
-                  </Link>
-                  </div>
-                ))}
-              </div>
-            </section>
-          ))}
-          {/* <AdBanner/> */}
+  <Gallery/>
+</section>
+
       </main>
     </Header>
     </>
