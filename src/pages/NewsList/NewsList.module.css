@@ -16,13 +16,13 @@
 /* --- Грид с masonry-style layout --- */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(420px, 0fr));
+  grid-template-columns: repeat(3, minmax(384px, 0fr));
   gap: 1.5rem;
 }
 
 .skeletongrid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(420px, 0fr));
+  grid-template-columns: repeat(2, minmax(384px, 0fr));
   gap: 1.5rem;
   align-items: start;
 }

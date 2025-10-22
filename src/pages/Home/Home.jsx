@@ -164,8 +164,32 @@ if (loading) {
 
   </div>
       </div>
-    <section className={styles.categorySection}>
-            <p className={styles.titleBlock}>
+          <section className={styles.about}>
+      <div className={styles.container}>
+         <div className={styles.right}>
+    <h2>Мы учим по-новому: сочетание классических знаний и цифровых технологий</h2>
+  </div>
+  <div className={styles.left}>
+          <p>
+      Мы внедряем современные технологии в учебный процесс: интерактивные доски,
+      онлайн-курсы, виртуальные лаборатории.
+    </p>
+      <p>
+      Ученики осваивают не только школьную программу, но и цифровые навыки,
+      которые помогут им стать конкурентоспособными в будущем.
+    </p>
+    <img
+      src="/images/comp.jpg"
+      alt="Инновации в обучении"
+      className={styles.innovationImage}
+    />
+  </div>
+
+ 
+      </div>
+    </section>
+    <section className={styles.categorySection} style={{marginTop:150}}>
+            <p className={styles.titleBlock} style={{textAlign:'left'}}>
             Блог из школы
             </p>
 
@@ -198,32 +222,21 @@ if (loading) {
         <h2 className={styles.factTitle}> Ыбырай Алтынсарин</h2>
       </div>
     </section> */}
-    <section className={styles.about}>
+
+    <section className={styles.factBlock} style={{margin:0}}>
       <div className={styles.container}>
-         <div className={styles.right}>
-    <h2>Мы учим по-новому: сочетание классических знаний и цифровых технологий</h2>
-  </div>
-  <div className={styles.left}>
-          <p>
-      Мы внедряем современные технологии в учебный процесс: интерактивные доски,
-      онлайн-курсы, виртуальные лаборатории.
-    </p>
-      <p>
-      Ученики осваивают не только школьную программу, но и цифровые навыки,
-      которые помогут им стать конкурентоспособными в будущем.
-    </p>
-    <img
-      src="/images/comp.jpg"
-      alt="Инновации в обучении"
-      className={styles.innovationImage}
-    />
-  </div>
-
- 
+      <p className={styles.quoteTop}>“</p>
+      <p className={styles.fact}>
+        Учись, дитя, получай знания — ведь именно от этого зависит твоё будущее
+      </p>
+        <div className={styles.author}>
+            <p>Ыбырай Алтынсарин</p>
+        </div>
       </div>
-</section>
+    </section>
 
-    <section className={styles.categorySection} style={{marginTop:150, paddingBottom:50}}>
+
+    <section className={styles.categorySection} style={{ paddingBottom:50}}>
       <div className={styles.categoryHeader}>
           <p className={styles.titleBlock}>
             Жизнь нашей школы
@@ -232,7 +245,7 @@ if (loading) {
 
       <Gallery/>
     </section>
-
+   
 
 
       </main>
