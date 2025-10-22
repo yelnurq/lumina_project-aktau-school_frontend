@@ -137,26 +137,34 @@ if (loading) {
 
       <main className={styles.container}>
       <div className={styles.historyBlocks}>
-                  <div className={styles.right}>
-            <div className={styles.iconHistoryBlock}>
-              <FaSchool className={styles.iconHistory}/>
-            </div>
-              <p>
-              Наша миссия
-              
-              </p>
-          </div>
-          <div className={styles.left}>
-            <p>
-            Главная цель школы — воспитать образованного, активного и патриотичного гражданина.
-            Наши учителя — опытные и преданные своему делу профессионалы, которые с любовью делятся знаниями и вдохновляют учеников на новые достижения.
-</p>
-            Ученики школы активно участвуют в олимпиадах, конкурсах и проектах различного уровня, занимая призовые места.
-            <p>
-            <span>Наш девиз — «Образование — путь в будущее!»</span></p>
-          </div>
+  <div className={styles.right}>
+    <div className={styles.historyText}>
+      <p style={{fontWeight:900}}>Школа будущего — сегодня</p>
+    </div>
+    <img src="./images/istockphoto-1425336585-612x612.jpg" alt="Современная школа" />
+  </div>
 
-      </div>
+  <div className={styles.left}>
+    <p style={{ margin: 0 }}>
+      <span>Главная цель школы</span> — воспитать образованного, активного и патриотичного гражданина.
+      Наши учителя — опытные и преданные своему делу профессионалы, которые с любовью делятся знаниями и вдохновляют учеников на новые достижения.
+    </p>
+    <p>
+      Ученики школы активно участвуют в олимпиадах, конкурсах и проектах различного уровня, занимая призовые места.
+    </p>
+    <p>
+      <span>Наш девиз — «Образование — путь в будущее!»</span>
+    </p>
+  <div className={styles.advantages}>
+    <div className={styles.advantage}><p>STEM-обучение</p></div>
+    <div className={styles.advantage}><p>IT и робототехника</p></div>
+    <div className={styles.advantage}><p>Проектное мышление</p></div>
+    <div className={styles.advantage}><p>Креативное образование</p></div>
+  </div>
+
+  </div>
+</div>
+
         {/* Главная новость */}
             <p className={styles.titleBlock}>
             Блог из школы
@@ -175,9 +183,7 @@ if (loading) {
         {isNew(main.created_at) && <span className={styles.badge}>Новое</span>}
       </h2>
       <p>{main.excerpt}</p>
-      <span className={styles.newsLink}>
-        Читать далее →
-      </span>
+
       <p className={styles.meta}>
         <span>{new Date(main.created_at).toLocaleDateString()}</span>
       </p>
@@ -187,7 +193,6 @@ if (loading) {
 )}
 
 
-        {/* Последние 3 статьи */}
         <section className={styles.latestBlock}>
           <div className={styles.latestGrid}>
             {latest.map(news => (
@@ -195,9 +200,6 @@ if (loading) {
                 <Link className={styles.newsLink} to={`/articles/${news.slug}`}>
                 <img loading="lazy" className={styles.latestImage} src={`https://lumina.kz/storage/${news.image}`} alt={news.title} />
                 <p className={styles.latestTitle}>{news.title}</p>
-                <span className={styles.newsLink}>
-                  Читать далее →
-                </span>     
                     <p className={styles.meta}>
                     <span>{new Date(news.created_at).toLocaleDateString()} </span>
                     </p>
@@ -209,23 +211,25 @@ if (loading) {
 
         </div>
 
-    <section className={styles.factSection}>
+    {/* <section className={styles.factSection}>
       <div className={styles.inner}>
         <p className={styles.fact}>
           «Учись, дитя, получай знания — ведь именно от этого зависит твоё будущее»
         </p>
         <h2 className={styles.factTitle}> Ыбырай Алтынсарин</h2>
       </div>
-    </section>
-<section className={styles.categorySection}>
-  <div className={styles.categoryHeader}>
-            <p className={styles.titleBlock}>
-            Жизнь нашей школы
-            </p>
-  </div>
+    </section> */}
+    <section className={styles.categorySection}>
+      <div className={styles.categoryHeader}>
+                <p className={styles.titleBlock}>
+                Жизнь нашей школы
+                </p>
+      </div>
 
-  <Gallery/>
-</section>
+      <Gallery/>
+    </section>
+
+
 
       </main>
     </Header>

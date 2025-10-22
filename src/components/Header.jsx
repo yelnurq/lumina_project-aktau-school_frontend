@@ -31,6 +31,20 @@ const [results, setResults] = useState([]);
 const [meta, setMeta] = useState({ current_page: 1, last_page: 1, total: 0 });
 const [loading, setLoading] = useState(false);
 
+
+
+  // Получаем текущий путь
+  const currentPath = location.pathname;
+
+  // Определяем класс в зависимости от URL
+  let headerClass = styles.header;
+
+  if (currentPath === "/") {
+    headerClass = `${styles.header} ${styles.homeHeader}`;
+  } else {
+    headerClass = `${styles.header} ${styles.altHeader}`;
+  } 
+
 const fetchResults = async (page = 1) => {
   if (!searchQuery.trim()) return;
   setLoading(true);
@@ -138,7 +152,7 @@ const handleNextPage = () => {
     <>
 
 
-      <header className={styles.header}>
+      <header className={headerClass}>
         <div className={styles.container}>
       <Link className={styles.logoLink} to={'/'}>
         <div className={styles.logoWrapper}>

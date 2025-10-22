@@ -212,13 +212,22 @@
   gap: 6px;
   font-weight: 500;
   color: #f3f3f3;
-  font-size: 20px;
+  font-size: 17px;
   font-family: "Nunito Sans";
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
   cursor: pointer;
 }
+
+
+
+
+.altHeader {
+  background-color: rgb(55 8 8 / 92%);
+  position: relative;
+}
+
 
 .link:hover {
   color: #ff3636;

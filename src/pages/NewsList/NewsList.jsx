@@ -209,44 +209,7 @@ export default function NewsList() {
 
             </div>
 
-          <aside className={styles.sidebar}>
-            <div className={styles.categoryList}>
-              <h4 className={styles.categoryTitle}><FaTags className={styles.iconMobile}/> Тэги</h4>
-                {loading ? (
-                <div className={styles.skeletonGridTag}>
-                  <div className={styles.skeletonTag}></div>
-                  <div className={styles.skeletonTag}></div>
-                  <div className={styles.skeletonTag}></div>
-                  <div className={styles.skeletonTag}></div>
-                  <div className={styles.skeletonTag}></div>
-                  <div className={styles.skeletonTag}></div>
-                  <div className={styles.skeletonTag}></div>
-                  <div className={styles.skeletonTag}></div>
-                  <div className={styles.skeletonTag}></div>
-                </div>
-                  ) : (
-                    
-                    tags.map(tag => (
-                <Link
-                  key={tag.id}
-                  to={`/articles?tag=${tag.slug}`}
-                  className={`${styles.categoryItem} cat${tag.slug}`}
-                >
-                  {tag.name}
-                </Link>
-              ))
-                  )}
-   
-            </div>
-
-            <div className={styles.promoCard}>
-              <h3 className={styles.promoTitle}><FaTrophy className={styles.iconMobile}/> Участвуй в олимпиаде!</h3>
-              <p className={styles.promoText}>
-                Пройди олимпиаду онлайн, получи сертификат и попади в рейтинг.
-              </p>
-              <Link to="/quiz" className={styles.promoButton}>Принять участие</Link>
-            </div>
-          </aside>
+  
         </div>
       </div>
     </Header>
