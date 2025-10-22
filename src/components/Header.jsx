@@ -136,56 +136,17 @@ const handleNextPage = () => {
 
   return (
     <>
-    <div className={styles.upheader}>
-      <Link className={styles.logoLink} to={'/'}>
-        <div className={styles.logoWrapper}>
-          <h1 className={styles.logo}>
-            <span className={styles.abbr}>
-              ШКОЛА ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ И ИНОСТРАННЫХ ЯЗЫКОВ
-            </span>
-          </h1>
-        </div>
-      </Link>
-      <div className={styles.iconsBlock}>
-                        {/* Поиск */}
-                {/* <button 
-                  className={styles.searchBtn} 
-                  onClick={() => setShowSearch(true)}
-                >
-                  <FaSearch className={styles.icon} />
-                </button> */}
-        <a
-          href="https://www.instagram.com/your_instagram"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.iconLink}
-          aria-label="Instagram"
-        >
-          <FaInstagram />
-        </a>
 
-        <a
-          href="https://www.youtube.com/your_youtube"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.iconLink}
-          aria-label="YouTube"
-        >
-          <FaYoutube />
-        </a>
-
-          <div className={styles.addressBlock}>
-        <p>
-          Казахстан, город Жанаозен,<br></br> Улица НУРГИСА ТИЛЕНДИЕВ, 21г
-        </p>
-      </div>
-      </div>
-
-    </div>
 
       <header className={styles.header}>
         <div className={styles.container}>
-
+      <Link className={styles.logoLink} to={'/'}>
+        <div className={styles.logoWrapper}>
+          <h1 className={styles.logo}>
+              ШКОЛА ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ И ИНОСТРАННЫХ ЯЗЫКОВ
+          </h1>
+        </div>
+      </Link>
 
           {/* Десктоп/мобильное меню */}
           <nav className={styles.nav}>

@@ -1,13 +1,13 @@
 
-/* Общая структура */
 .header {
-  background-color: #ffffff;
-  position: sticky;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  width: 100%;
   top: 0;
   z-index: 50;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: background-color 0.3s ease;
 }
+
 
 .overlay {
   position: fixed;
@@ -89,8 +89,8 @@
 
 
 .container {
-  margin: 0 200px;
-  padding: 12px 20px;
+  margin: 0 50px;
+  padding: 25px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -120,7 +120,7 @@
 .logo {
   font-size: 18px;
   font-weight: 700;
-  color: #222;
+  color: #ecebeb;
 }
 
 .iconsBlock {
@@ -180,12 +180,12 @@
 }
 
 .logo {
-  font-size: 1.7rem;
+  font-size: 1.3rem;
   width: 500px;
-  font-weight: 600;
-  font-family: 'Segoe UI', 'Inter', sans-serif;
-  color: #222222;
-  line-height: 0.8;
+  font-weight: 700;
+  font-family: 'Manrope', sans-serif;
+  color: #efefef;
+  line-height: 0.9;
 }
 
 .highlight {
@@ -211,8 +211,9 @@
   align-items: center;
   gap: 6px;
   font-weight: 500;
-  color: #181818;
-  font-size: 16px;
+  color: #f3f3f3;
+  font-size: 20px;
+  font-family: "Nunito Sans";
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
