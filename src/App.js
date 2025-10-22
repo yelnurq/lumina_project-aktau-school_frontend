@@ -15,6 +15,7 @@ import Order from './pages/Order/Order';
 import Faq from './pages/Faq/Faq';
 import NotFound from './pages/NotFound/NotFound';
 import AdminMessages from './pages/AdminMessages/AdminMessages';
+import Committee from './pages/SchoolPages/Сommittee/Committee';
 
 
 const ProtectedRoute = ({ children, tokenKey }) => {
@@ -43,6 +44,7 @@ useEffect(() => {
         <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/committee" element={<Committee />} />
           <Route path="/order" element={<Order />} />
           {/* <Route path="/hub" element={<Hub />} /> */}
           {/* <Route path="/hub/tools" element={<Tools />} /> */}

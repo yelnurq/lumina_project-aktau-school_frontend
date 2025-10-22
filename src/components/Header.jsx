@@ -205,7 +205,7 @@ const handleNextPage = () => {
                 </div>
 
                 <Link to="/order" className={styles.link}>Обучение</Link>
-                <Link to="/order" className={styles.link}>Приемная комиссия</Link>
+                <Link to="/committee" className={styles.link}>Приемная комиссия</Link>
 
 
                 <Link to="/articles" className={styles.link}>Новости</Link>
