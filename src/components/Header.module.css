@@ -221,7 +221,7 @@
 }
 
 .link:hover {
-  color: #0ea5e9;
+  color: #ff3636;
 }
 
 /* Анимационная линия под ссылками */
@@ -232,7 +232,7 @@
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: #0ea5e9;
+  background-color: #ce4c4c;
   transition: width 0.3s ease;
 }
 

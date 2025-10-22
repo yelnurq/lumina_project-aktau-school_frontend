@@ -5,7 +5,7 @@ import styles from './Home.module.css';
 import Header from '../../components/Header';
 import facts from './../../json/facts.json'
 import SeoHelmet from '../../components/SeoHelmet';
-import { FaBrain } from 'react-icons/fa';
+import { FaBrain, FaSchool } from 'react-icons/fa';
 
 export default function Home() {
   const [main, setMain] = useState(null);
@@ -133,7 +133,29 @@ if (loading) {
             <button>Подробнее</button>
           </div>
       </div>
+
       <main className={styles.container}>
+      <div className={styles.historyBlocks}>
+                  <div className={styles.right}>
+            <div className={styles.iconHistoryBlock}>
+              <FaSchool className={styles.iconHistory}/>
+            </div>
+            <p>
+            Наша миссия
+            
+            </p>
+          </div>
+          <div className={styles.left}>
+            <p>
+            Главная цель школы — воспитать образованного, активного и патриотичного гражданина.
+            Наши учителя — опытные и преданные своему делу профессионалы, которые с любовью делятся знаниями и вдохновляют учеников на новые достижения.
+</p>
+            Ученики школы активно участвуют в олимпиадах, конкурсах и проектах различного уровня, занимая призовые места.
+            <p>
+            <span>Наш девиз — «Образование — путь в будущее!»</span></p>
+          </div>
+
+      </div>
         {/* Главная новость */}
         <div className={styles.mainBlock}>
 {main && (

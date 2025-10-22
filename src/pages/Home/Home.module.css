@@ -1,7 +1,7 @@
 /* Контейнер главной страницы */
 .container {
   gap: 2rem;
-  padding: 2rem 5%;
+  padding: 2rem 2%;
   max-width: 1400px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -64,6 +64,38 @@
 .mainBlocks .left button:hover {
     background: rgb(65, 5, 5);
   
+}
+
+.historyBlocks {
+    display: flex;
+    margin: 50px 0;
+    justify-content: space-between;
+
+}
+
+.historyBlocks .left {
+  font-size: 20px;
+  color: #1c1c1c;
+}
+
+.iconHistory {
+  font-size: 200px;
+  position: absolute; 
+  left: -70px;
+  color: #11182753;
+}
+
+.historyBlocks .right p {
+  width: 400px;
+  color: rgb(98, 14, 14);
+  font-weight: 700;
+  text-align: left;
+  font-size: 20px;
+}
+
+
+.historyBlocks .left span {
+  color: rgb(98, 14, 14);
 }
 
 .mainNews {
