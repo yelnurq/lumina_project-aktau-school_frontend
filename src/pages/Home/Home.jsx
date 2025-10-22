@@ -163,34 +163,13 @@ if (loading) {
   </div>
 
   </div>
-</div>
-
-        {/* Главная новость */}
+      </div>
+    <section className={styles.categorySection}>
             <p className={styles.titleBlock}>
             Блог из школы
             </p>
-        <div className={styles.mainBlock}>
 
-{main && (
-  
-  <section className={styles.mainNews}>
-      <Link className={styles.newsLink} to={`/articles/${main.slug}`}>
 
-    <img loading="lazy" className={styles.image} src={`https://lumina.kz/storage/${main.image}`} alt={main.title} />
-    <div>
-      <h2>
-        {main.title}
-        {isNew(main.created_at) && <span className={styles.badge}>Новое</span>}
-      </h2>
-      <p>{main.excerpt}</p>
-
-      <p className={styles.meta}>
-        <span>{new Date(main.created_at).toLocaleDateString()}</span>
-      </p>
-    </div>
-      </Link>
-  </section>
-)}
 
 
         <section className={styles.latestBlock}>
@@ -200,6 +179,7 @@ if (loading) {
                 <Link className={styles.newsLink} to={`/articles/${news.slug}`}>
                 <img loading="lazy" className={styles.latestImage} src={`https://lumina.kz/storage/${news.image}`} alt={news.title} />
                 <p className={styles.latestTitle}>{news.title}</p>
+                <p className={styles.latestTitle}>{news.excerpt}</p>
                     <p className={styles.meta}>
                     <span>{new Date(news.created_at).toLocaleDateString()} </span>
                     </p>
@@ -209,8 +189,7 @@ if (loading) {
           </div>
         </section>
 
-        </div>
-
+    </section>
     {/* <section className={styles.factSection}>
       <div className={styles.inner}>
         <p className={styles.fact}>
@@ -219,11 +198,36 @@ if (loading) {
         <h2 className={styles.factTitle}> Ыбырай Алтынсарин</h2>
       </div>
     </section> */}
-    <section className={styles.categorySection}>
+    <section className={styles.about}>
+      <div className={styles.container}>
+         <div className={styles.right}>
+    <h2>Мы учим по-новому: сочетание классических знаний и цифровых технологий</h2>
+  </div>
+  <div className={styles.left}>
+          <p>
+      Мы внедряем современные технологии в учебный процесс: интерактивные доски,
+      онлайн-курсы, виртуальные лаборатории.
+    </p>
+      <p>
+      Ученики осваивают не только школьную программу, но и цифровые навыки,
+      которые помогут им стать конкурентоспособными в будущем.
+    </p>
+    <img
+      src="/images/comp.jpg"
+      alt="Инновации в обучении"
+      className={styles.innovationImage}
+    />
+  </div>
+
+ 
+      </div>
+</section>
+
+    <section className={styles.categorySection} style={{marginTop:150}}>
       <div className={styles.categoryHeader}>
-                <p className={styles.titleBlock}>
-                Жизнь нашей школы
-                </p>
+          <p className={styles.titleBlock}>
+            Жизнь нашей школы
+          </p>
       </div>
 
       <Gallery/>
