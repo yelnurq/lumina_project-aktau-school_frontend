@@ -15,8 +15,7 @@ import Order from './pages/Order/Order';
 import Faq from './pages/Faq/Faq';
 import NotFound from './pages/NotFound/NotFound';
 import AdminMessages from './pages/AdminMessages/AdminMessages';
-import Committee from './pages/SchoolPages/Сommittee/Committee';
-
+import Committee from './pages/SchoolPages/Committee/Committe';
 
 const ProtectedRoute = ({ children, tokenKey }) => {
   const token = localStorage.getItem(tokenKey);
@@ -26,30 +25,25 @@ const ProtectedRoute = ({ children, tokenKey }) => {
   return children;
 };
 
-
 function App() {
-useEffect(() => {
-  const onStorageChange = () => {
-    if (!localStorage.getItem('token')) {
-      window.location.href = '/admin';
-    }
-  };
-  window.addEventListener('storage', onStorageChange);
-  return () => window.removeEventListener('storage', onStorageChange);
-}, []);
+  useEffect(() => {
+    const onStorageChange = () => {
+      if (!localStorage.getItem('token')) {
+        window.location.href = '/admin';
+      }
+    };
+    window.addEventListener('storage', onStorageChange);
+    return () => window.removeEventListener('storage', onStorageChange);
+  }, []);
 
   return (
     <div className="App">
       <BrowserRouter>
-        <ScrollToTop/>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/committee" element={<Committee />} />
+          <Route path="/committee" element={<Committee />} /> {/* ✅ работает */}
           <Route path="/order" element={<Order />} />
-          {/* <Route path="/hub" element={<Hub />} /> */}
-          {/* <Route path="/hub/tools" element={<Tools />} /> */}
-          {/* <Route path="/tools/dev" element={<DevTools />} /> */}
-          {/* <Route path="/tools/html" element={<Editor />} /> */}
           <Route path="/quiz/start" element={<Quiz />} />
           <Route path="/quiz" element={<Olympiad />} />
           <Route path="/quiz/document/verify" element={<VerifyDiploma />} />
@@ -68,29 +62,31 @@ useEffect(() => {
               )
             }
           />
-          <Route path="/admin/articles/create" 
-              element={(
+          <Route
+            path="/admin/articles/create"
+            element={
               <ProtectedRoute tokenKey="token">
                 <NewsCreate />
               </ProtectedRoute>
-            )}
+            }
           />
-            <Route path="/admin/dashboard" 
-              element={(
+          <Route
+            path="/admin/dashboard"
+            element={
               <ProtectedRoute tokenKey="token">
                 <Admin />
               </ProtectedRoute>
-            )}
+            }
           />
-            <Route path="/admin/messages" 
-              element={(
+          <Route
+            path="/admin/messages"
+            element={
               <ProtectedRoute tokenKey="token">
                 <AdminMessages />
               </ProtectedRoute>
-            )}
+            }
           />
           <Route path="*" element={<NotFound />} />
-
         </Routes>
       </BrowserRouter>
     </div>
