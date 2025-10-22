@@ -223,7 +223,7 @@ if (loading) {
       </div>
 </section>
 
-    <section className={styles.categorySection} style={{marginTop:150}}>
+    <section className={styles.categorySection} style={{marginTop:150, paddingBottom:50}}>
       <div className={styles.categoryHeader}>
           <p className={styles.titleBlock}>
             Жизнь нашей школы
