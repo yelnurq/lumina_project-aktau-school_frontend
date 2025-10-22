@@ -8,44 +8,9 @@ import html2pdf from 'html2pdf.js';
 import AdBanner from '../../components/AdBanner/AdBanner';
 import { Helmet } from 'react-helmet';
 
-function handleDownloadPDF() {
-  const article = document.getElementById('article-content');
 
-  const images = article.querySelectorAll('img');
-  const promises = Array.from(images).map((img) => {
-    return new Promise((resolve) => {
-      if (img.complete) {
-        resolve();
-      } else {
-        img.onload = resolve;
-        img.onerror = resolve;
-      }
-    });
-  });
 
-  Promise.all(promises).then(() => {
-    const opt = {
-      margin: 0.5,
-      filename: 'статья.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: {
-        scale: 2,
-        useCORS: true,
-        ignoreElements: (el) => el.classList.contains('no-pdf'),
-      },
-      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
-    };
 
-    html2pdf().set(opt).from(article).save();
-  });
-}
-
-function calculateReadingTime(htmlContent) {
-  const text = htmlContent.replace(/<[^>]+>/g, '');
-  const words = text.trim().split(/\s+/).length;
-  const minutes = Math.ceil(words / 200);
-  return `${minutes} мин чтения`;
-}
 
 export default function NewsDetails() {
   const { slug } = useParams();
@@ -180,7 +145,6 @@ const jsonLd = {
             <div className={styles.meta}>
               <div className={styles.metaDiv}>
                 <p>{news.category}</p>
-                <p className={styles.readTime}>⏱ {calculateReadingTime(news.content)}</p>
               </div>
               <span>{new Date(news.created_at).toLocaleDateString('ru-RU')}</span>
             </div>
@@ -227,13 +191,10 @@ const jsonLd = {
                   <FaWhatsapp /> WhatsApp
                 </a>
               </div>
-              <button onClick={handleDownloadPDF} className={styles.pdfButton}>
-                📄 Скачать как PDF
-              </button>
+
             </div>
           </article>
 
-          <AdBanner />
 
           {/* Смотрите также */}
           <section className={styles.related}>

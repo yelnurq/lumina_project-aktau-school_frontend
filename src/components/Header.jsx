@@ -208,7 +208,7 @@ const handleNextPage = () => {
                 <Link to="/order" className={styles.link}>Приемная комиссия</Link>
 
 
-                <Link to="/about" className={styles.link}>Новости</Link>
+                <Link to="/articles" className={styles.link}>Новости</Link>
                 <Link to="/about" className={styles.link}>Контакты</Link>
 
 
