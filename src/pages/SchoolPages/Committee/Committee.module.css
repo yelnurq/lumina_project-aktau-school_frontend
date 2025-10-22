@@ -1,76 +1,81 @@
+/* === Основной контейнер === */
 .committeeContainer {
-  padding: 120px 20px 60px;
-  background: linear-gradient(to bottom, #fafafa, #f0f0f0);
+  padding: 100px 60px 80px;
+  background: #fafafa;
   min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: left;
 }
 
-/* Заголовок */
+/* === Заголовок === */
 .committeeHeader {
-  text-align: center;
+  text-align: left;
   margin-bottom: 60px;
-  animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
 .committeeHeader h1 {
   color: #611b1b;
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .committeeHeader p {
-  color: #444;
-  max-width: 650px;
-  margin: 0 auto;
+  color: #333;
+  max-width: 800px;
   font-size: 1.1rem;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 .downloadBtn {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 25px;
   background: #611b1b;
   color: #fff;
-  padding: 10px 22px;
-  border-radius: 10px;
+  padding: 12px 28px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .downloadBtn:hover {
   background: #8a2525;
-  transform: scale(1.03);
+  transform: translateY(-2px);
 }
 
-/* Информационные карточки */
+/* === Этапы и документы === */
 .committeeGrid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-bottom: 70px;
+  justify-content: flex-start;
+  gap: 40px;
+  margin-bottom: 80px;
 }
 
 .committeeCard {
   background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
-  padding: 25px;
-  width: 340px;
-  transition: 0.3s ease;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  width: 360px;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 .committeeCard:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
 
 .committeeCard h2 {
   color: #611b1b;
   border-bottom: 2px solid #611b1b;
   padding-bottom: 6px;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
   font-size: 1.3rem;
 }
 
@@ -81,38 +86,39 @@
   font-size: 1rem;
 }
 
-/* Преимущества */
+/* === Преимущества === */
 .advantagesSection {
-  text-align: center;
   margin: 80px auto 50px;
-  max-width: 950px;
+  max-width: 1150px;
+  text-align: left;
 }
 
 .advantagesSection h2 {
   color: #611b1b;
   font-size: 2rem;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .advantagesGrid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
+  justify-content: flex-start;
+  gap: 35px;
 }
 
 .advantageCard {
   background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  width: 280px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  width: 300px;
   padding: 25px;
   text-align: left;
-  transition: 0.3s;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 .advantageCard:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .advantageCard h3 {
@@ -124,36 +130,38 @@
 .advantageCard p {
   color: #444;
   line-height: 1.6;
+  font-size: 0.98rem;
 }
 
-/* Форма */
+/* === Форма === */
 .formSection {
   background: #fff;
-  padding: 40px 30px;
-  max-width: 720px;
-  margin: 0 auto 60px;
-  border-radius: 18px;
-  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1);
+  padding: 40px 50px;
+  max-width: 900px;
+  margin: 80px auto 60px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
   animation: fadeInUp 1s ease-in-out;
+  text-align: left;
 }
 
 .formSection h2 {
-  text-align: center;
   color: #611b1b;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
 }
 
 .form input,
 .form textarea {
   padding: 14px 16px;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 1rem;
   outline: none;
   transition: border-color 0.3s;
@@ -173,7 +181,7 @@
   background: #611b1b;
   color: #fff;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 14px;
   font-size: 1rem;
   cursor: pointer;
@@ -185,38 +193,66 @@
   transform: translateY(-2px);
 }
 
-/* Сообщение об успехе */
-.successMessage {
-  text-align: center;
-  font-size: 1.2rem;
+/* === Сообщение об успехе === */
+.successBox {
+  text-align: left;
+  padding: 40px;
+}
+
+.successBox h3 {
   color: #228b22;
-  font-weight: 600;
-  animation: fadeInUp 0.8s ease-in-out;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
-/* FAQ */
-.faqSection {
-  margin: 70px auto 40px;
-  max-width: 800px;
+.successBox p {
+  color: #444;
+  margin-bottom: 20px;
 }
 
-.faqSection h2 {
-  text-align: center;
-  color: #611b1b;
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-.faqItem {
-  border-bottom: 1px solid #ccc;
-  padding: 12px 0;
+.successBox button {
+  background: #611b1b;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
 }
 
+.successBox button:hover {
+  background: #8a2525;
+}
+
+/* === FAQ === */
+.faqSection {
+  margin: 100px auto 40px;
+  max-width: 950px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  padding: 40px 60px;
+  text-align: left;
+}
+
+.faqSection h2 {
+  color: #611b1b;
+  font-size: 2rem;
+  margin-bottom: 35px;
+}
+
+.faqItem {
+  border-bottom: 1px solid #ddd;
+  padding: 14px 0;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
 .faqQuestion {
   font-weight: 600;
-  color: #333;
+  color: #222;
+  position: relative;
 }
 
 .faqQuestion:hover {
@@ -224,13 +260,21 @@
 }
 
 .faqAnswer {
-  margin-top: 8px;
+  max-height: 0;
+  overflow: hidden;
   color: #555;
-  line-height: 1.5;
-  animation: fadeIn 0.4s ease;
+  line-height: 1.6;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
 }
 
-/* Анимации */
+.faqAnswer.open {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 8px;
+}
+
+/* === Анимации === */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -253,19 +297,37 @@
   }
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
-  .committeeCard,
-  .advantageCard {
-    width: 100%;
+/* === Адаптивность === */
+@media (max-width: 1024px) {
+  .committeeContainer {
+    padding: 80px 30px;
   }
 
+  .committeeGrid,
+  .advantagesGrid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .formSection,
+  .faqSection {
+    width: 95%;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
   .committeeHeader h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .advantagesSection h2,
   .faqSection h2 {
     font-size: 1.6rem;
+  }
+
+  .committeeCard,
+  .advantageCard {
+    width: 100%;
   }
 }
