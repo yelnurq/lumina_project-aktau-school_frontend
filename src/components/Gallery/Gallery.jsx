@@ -4,12 +4,12 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import styles from "./Gallery.module.css"; // ваш CSS module
 
 const images = [
+  { src: "/images/gallery1.png", alt: "Первый звонок" },
+  { src: "/images/gallery2.jpg", alt: "Первый звонок" },
+  { src: "/images/gallery3.jpg", alt: "Первый звонок" },
+  { src: "/images/students.jpg", alt: "Первый звонок" },
   { src: "/images/main.jpg", alt: "Первый звонок" },
-  { src: "/images/main.jpg", alt: "Первый звонок" },
-  { src: "/images/main.jpg", alt: "Первый звонок" },
-  { src: "/images/main.jpg", alt: "Первый звонок" },
-  { src: "/images/main.jpg", alt: "Первый звонок" },
-  { src: "/images/main.jpg", alt: "Первый звонок" },
+  { src: "/images/gallery1.png", alt: "Первый звонок" },
 ];
 
 export default function Gallery() {

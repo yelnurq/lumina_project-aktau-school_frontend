@@ -223,14 +223,17 @@ if (loading) {
       </div>
     </section> */}
 
-    <section className={styles.factBlock} style={{margin:0}}>
+    <section className={styles.factBlock}>
       <div className={styles.container}>
-      <p className={styles.quoteTop}>“</p>
-      <p className={styles.fact}>
-        Учись, дитя, получай знания — ведь именно от этого зависит твоё будущее
-      </p>
-        <div className={styles.author}>
-            <p>Ыбырай Алтынсарин</p>
+
+        <div className={styles.right}>
+          <p className={styles.quoteTop}>“</p>
+        <p className={styles.fact}>
+          Учись, дитя, получай знания — ведь именно от этого зависит твоё будущее
+        </p>
+          <div className={styles.author}>
+              <p>Ыбырай Алтынсарин</p>
+          </div>
         </div>
       </div>
     </section>
