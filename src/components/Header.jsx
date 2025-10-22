@@ -302,38 +302,7 @@ const handleNextPage = () => {
 
       {children}
 
-      {/* Блок подписки */}
-      {location.pathname !== '/about' && location.pathname !== '/hub' && location.pathname !== '/order' && location.pathname !== '/quiz/document/verify' && location.pathname !== '/quiz' && location.pathname !== '/quiz/start' && (
-        <section className={styles.subscribeBanner}>
-          <div className={styles.subscribeInner}>
-            <h3><FaEnvelopeOpenText className={styles.iconSubs} />Не пропустите важное</h3>
-            <p>Оставьте email — мы свяжемся, когда появится что-то новое или интересное лично вам.</p>
 
-            <form className={styles.subscribeForm} onSubmit={handleSubmit}>
-              <input
-                type="email"
-                placeholder="Ваш Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <button type="submit" className={styles.submitBtn}>Подписаться</button>
-            </form>
-          </div>
-
-          {isSubmitting && (
-            <div className={styles.overlay}>
-              {!submissionResult ? (
-                <div className={styles.loader}></div>
-              ) : submissionResult === 'success' ? (
-                <FaCheckCircle className={styles.checkmark} />
-              ) : (
-                <FaTimesCircle className={styles.errorIcon} />
-              )}
-            </div>
-          )}
-        </section>
-      )}
 
       {/* Футер */}
       <footer className={styles.footer}>
