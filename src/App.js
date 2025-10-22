@@ -15,7 +15,7 @@ import Order from './pages/Order/Order';
 import Faq from './pages/Faq/Faq';
 import NotFound from './pages/NotFound/NotFound';
 import AdminMessages from './pages/AdminMessages/AdminMessages';
-import Committee from './pages/SchoolPages/Committee/Committe';
+import Committee from './pages/SchoolPages/Committee/Committee';
 
 const ProtectedRoute = ({ children, tokenKey }) => {
   const token = localStorage.getItem(tokenKey);
@@ -42,7 +42,7 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/committee" element={<Committee />} /> {/* ✅ работает */}
+          <Route path="/committee" element={<Committee />} />
           <Route path="/order" element={<Order />} />
           <Route path="/quiz/start" element={<Quiz />} />
           <Route path="/quiz" element={<Olympiad />} />

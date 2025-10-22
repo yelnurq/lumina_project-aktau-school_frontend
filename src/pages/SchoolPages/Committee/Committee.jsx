@@ -5,7 +5,7 @@ import styles from "./Committee.module.css";
 export default function Committee() {
   return (
     <>
-      <Header />
+      <Header>
       <section className={styles.committeeContainer}>
         <div className={styles.committeeHeader}>
           <h1>Приёмная комиссия</h1>
@@ -46,6 +46,7 @@ export default function Committee() {
           </div>
         </div>
       </section>
+      </Header>
     </>
   );
 }

@@ -179,7 +179,7 @@ if (loading) {
                 <Link className={styles.newsLink} to={`/articles/${news.slug}`}>
                 <img loading="lazy" className={styles.latestImage} src={`https://lumina.kz/storage/${news.image}`} alt={news.title} />
                 <p className={styles.latestTitle}>{news.title}</p>
-                <p className={styles.latestTitle}>{news.excerpt}</p>
+                <p className={styles.latestDesc}>{news.excerpt}</p>
                     <p className={styles.meta}>
                     <span>{new Date(news.created_at).toLocaleDateString()} </span>
                     </p>
