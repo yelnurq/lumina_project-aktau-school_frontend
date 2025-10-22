@@ -124,9 +124,10 @@
 }
 
 .innovationImage {
-  width: 700px;
+  width: 900px;
   height: 300px;
   top: 180px;
+  right: 0;
   position: absolute;
   object-fit: cover;
   box-shadow: 0 2px 30px rgba(0,0,0,0.08);
@@ -258,7 +259,7 @@
 }
 
 .latestTitle {
-  font-size: 1.1rem;
+  font-size: 19px;
   font-weight: 500;
   line-height: 1.3;
   margin-bottom: 0;
@@ -273,8 +274,9 @@
 }
 
 .latestDesc {
-  color: #383838;
-  font-size: 14px;
+  color: #808080;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .card {
@@ -551,7 +553,7 @@
   justify-content: space-between;
   font-size: 16px;
   align-items: center;
-  color: #777;
+  color: #424242;
   margin-bottom: 0;
 }
 
