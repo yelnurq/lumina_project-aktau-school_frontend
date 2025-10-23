@@ -12,7 +12,6 @@ const AdminMessages = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // модалка
   const [modalText, setModalText] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -48,7 +47,7 @@ const AdminMessages = () => {
       <AdminHeader />
       <div className={styles.container}>
         <div className={styles.adminNews}>
-          {/* Итоговые блоки */} <div className={styles.summary}> <div className={styles.summaryBlock}> <p className={styles.summaryTitle}> <FaTicketAlt className={styles.icon} /> {tickets?.length ?? 0} </p> <p className={styles.summaryDesc}>Тикетов</p> </div>
+          <div className={styles.summary}> <div className={styles.summaryBlock}> <p className={styles.summaryTitle}> <FaTicketAlt className={styles.icon} /> {tickets?.length ?? 0} </p> <p className={styles.summaryDesc}>Тикетов</p> </div>
           
             </div>
           {loading ? (
@@ -69,6 +68,7 @@ const AdminMessages = () => {
                   <tr>
                     <th>Имя</th>
                     <th>Email</th>
+                    <th>Тема</th>
                     <th>Сообщение</th>
                     <th>Дата</th>
                   </tr>
@@ -78,6 +78,7 @@ const AdminMessages = () => {
                     <tr key={item.id}>
                       <td>{item.name}</td>
                       <td>{item.email}</td>
+                      <td>{item.title}</td>
                       <td>
                         <button
                           className={styles.showBtn}

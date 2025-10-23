@@ -79,8 +79,7 @@ export default function NewsList() {
     updateURL(updated);
   };
 
-  // Формируем канонический URL с учётом фильтров
-  const url = `http://127.0.0.1:8000/articles${searchParams.toString() ? `?${searchParams.toString()}` : ''}`;
+  const url = `https://aktau-it-school.lumina.kz/articles${searchParams.toString() ? `?${searchParams.toString()}` : ''}`;
 
   return (
     <>
@@ -153,7 +152,7 @@ export default function NewsList() {
                   className={styles.card}
                 >
                   <img
-                    src={`http://127.0.0.1:8000/storage/${item.image}`}
+                    src={`https://aktau-it-school.lumina.kz/storage/${item.image}`}
                     alt={item.title}
                     className={styles.image}
                   />

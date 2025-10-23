@@ -5,14 +5,9 @@ import NewsCreate from './pages/News/NewsCreate';
 import ScrollToTop from './ScrollToTop';
 import About from './pages/About/About';
 import Home from './pages/Home/Home';
-import Quiz from './pages/Quiz/Quiz';
-import VerifyDiploma from './pages/VerifyDiploma/VerifyDiploma';
-import Olympiad from './pages/Olympiad/Olympiad';
 import AdminLogin from './pages/AdminLogin/AdminLogin';
 import { useEffect } from 'react';
 import Admin from './pages/Admin/Admin';
-import Order from './pages/Order/Order';
-import Faq from './pages/Faq/Faq';
 import NotFound from './pages/NotFound/NotFound';
 import AdminMessages from './pages/AdminMessages/AdminMessages';
 import Committee from './pages/SchoolPages/Committee/Committee';
@@ -47,13 +42,8 @@ function App() {
           <Route path="/committee" element={<Committee />} />
           <Route path="/school/safety" element={<Safety />} />
           <Route path="/school/director" element={<Director />} />
-          <Route path="/order" element={<Order />} />
-          <Route path="/quiz/start" element={<Quiz />} />
-          <Route path="/quiz" element={<Olympiad />} />
-          <Route path="/quiz/document/verify" element={<VerifyDiploma />} />
           <Route path="/about" element={<About />} />
           <Route path="/articles" element={<NewsList />} />
-          <Route path="/faq" element={<Faq />} />
           <Route path="/articles/:slug" element={<NewsDetails />} />
           
           <Route

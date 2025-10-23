@@ -76,7 +76,7 @@
 }
 
 .sectionTitle {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   text-align: left;
   margin-bottom: 10px;
@@ -109,6 +109,7 @@
 .formGroup textarea {
   border: 1px solid #ddd;
   padding: 12px 14px;
+  resize: vertical;
   font-size: 15px;
   transition: border-color 0.3s ease;
 }
@@ -149,7 +150,6 @@
   height: 360px;
   object-fit: cover;
   margin-bottom: 20px;
-  border: 3px solid #0077ff33;
 }
 
 .directorName {
@@ -186,5 +186,49 @@
   .directorCard {
     width: 100%;
     max-width: 400px;
+  }
+}.overlayLoader {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+.icon {
+  font-size: 80px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.success {
+  color: #4caf50;
+}
+
+.error {
+  color: #f44336;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+  color: #1676b6;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
