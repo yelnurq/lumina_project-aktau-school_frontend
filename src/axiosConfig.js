@@ -5,19 +5,17 @@ const axiosInstance = axios.create({
   baseURL: 'https://aktau-it-school.lumina.kz/',
 });
 
-// Добавляем access token (если есть)
 axiosInstance.interceptors.request.use(config => {
   const token = localStorage.getItem('token');
 
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
-    config.__tokenKey = 'token'; // для обработки 401
+    config.__tokenKey = 'token'; 
   }
 
   return config;
 });
 
-// Обработка 401 ошибок
 axiosInstance.interceptors.response.use(
   response => response,
   error => {

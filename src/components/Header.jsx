@@ -27,16 +27,14 @@ export default function Header({ children }) {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-const [results, setResults] = useState([]);
-const [meta, setMeta] = useState({ current_page: 1, last_page: 1, total: 0 });
-const [loading, setLoading] = useState(false);
+  const [results, setResults] = useState([]);
+  const [meta, setMeta] = useState({ current_page: 1, last_page: 1, total: 0 });
+  const [loading, setLoading] = useState(false);
 
 
 
-  // Получаем текущий путь
   const currentPath = location.pathname;
 
-  // Определяем класс в зависимости от URL
   let headerClass = styles.header;
 
   if (currentPath === "/") {
@@ -150,8 +148,6 @@ const handleNextPage = () => {
 
   return (
     <>
-
-
       <header className={headerClass}>
         <div className={styles.container}>
       <Link className={styles.logoLink} to={'/'}>
@@ -162,9 +158,7 @@ const handleNextPage = () => {
         </div>
       </Link>
 
-          {/* Десктоп/мобильное меню */}
           <nav className={styles.nav}>
-            {/* Бургер кнопка */}
 
               {isMobile && (
                 <button
@@ -176,7 +170,6 @@ const handleNextPage = () => {
                   <span className={styles.burgerLine}></span>
                 </button>
               )}
-            {/* Десктопное меню */}
             {!isMobile && (
               <>
 
@@ -197,6 +190,7 @@ const handleNextPage = () => {
                     </div>
                   )}
                 </div>
+                <Link to="/education" className={styles.link}>Обучение</Link>
                 <Link to="/committee" className={styles.link}>Приемная комиссия</Link>
 
                 <div

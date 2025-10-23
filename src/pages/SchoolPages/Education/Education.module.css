@@ -1,0 +1,237 @@
+.pageHeader {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 40% 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 300px;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.663);
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px 20px;
+  width: 100%;
+  text-align: left;
+}
+
+.breadcrumbs {
+  font-size: 15px;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  list-style: none;
+  gap: 6px;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.breadcrumbs a {
+    color: #3490dc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+
+.pageTitle {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.eduSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.sectionContent {
+  flex: 1;
+  min-width: 300px;
+}
+
+.sectionContent h2 {
+  font-size: 28px;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.sectionContent p {
+  color: #555;
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.sectionContent ul {
+  padding-left: 20px;
+  color: #555;
+  line-height: 1.7;
+  list-style: none;
+}
+
+.sectionContent li::before {
+  content: "• ";
+  color: #2196f3;
+  font-weight: bold;
+}
+
+.sectionImage {
+  flex: 1;
+  width: 100%;
+  max-width: 500px;
+  object-fit: cover;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 900px) {
+  .eduSection {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .reverse {
+    flex-direction: column;
+  }
+
+  .sectionImage {
+    max-width: 100%;
+  }
+
+  .sectionContent h2 {
+    font-size: 24px;
+  }
+}
+.cardsSection {
+  text-align: center;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  background: #f9fafc;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.card {
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 15px 0 8px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 15px;
+  padding: 0 15px 20px;
+  color: #555;
+}
+
+/* Цитата */
+.quote {
+  margin-top: 25px;
+  font-style: italic;
+  background: #eef5ff;
+  border-left: 4px solid #3b82f6;
+  padding: 15px 20px;
+}
+
+.quote span {
+  display: block;
+  text-align: right;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+/* Цифровая школа */
+.digitalSection {
+  background: #002b5c;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-top: 40px;
+}
+
+.stats h3 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.stats p {
+  margin-top: 5px;
+  color: #cbd5e1;
+}
+
+/* Миссия */
+.missionSection {
+  padding: 80px 20px;
+  text-align: center;
+  background: #f4f6f8;
+}
+
+.missionSection h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.missionSection p {
+  max-width: 800px;
+  margin: 0 auto 15px;
+  color: #444;
+  line-height: 1.7;
+}

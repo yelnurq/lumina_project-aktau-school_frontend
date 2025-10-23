@@ -1,333 +1,226 @@
-/* === Основной контейнер === */
-.committeeContainer {
-  padding: 100px 60px 80px;
-  background: #fafafa;
-  min-height: 100vh;
-  max-width: 1400px;
-  margin: 0 auto;
-  box-sizing: border-box;
+.pageHeader {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 40% 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 300px;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.663);
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px 20px;
+  width: 100%;
   text-align: left;
 }
 
-/* === Заголовок === */
-.committeeHeader {
-  text-align: left;
-  margin-bottom: 60px;
-  animation: fadeIn 0.8s ease-in-out;
+.breadcrumbs {
+  font-size: 15px;
+  color: #ddd;
+  margin-bottom: 20px;
 }
 
-.committeeHeader h1 {
-  color: #611b1b;
-  font-size: 2.6rem;
+.breadcrumbs ol {
+  display: flex;
+  list-style: none;
+  gap: 6px;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.breadcrumbs a {
+    color: #3490dc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+
+.pageTitle {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.committeeSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+.pageHeader {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 40% 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 300px;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px 20px;
+  width: 100%;
+  text-align: left;
+}
+
+.breadcrumbs {
+  font-size: 15px;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  list-style: none;
+  gap: 6px;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumbs a {
+  color: #4fa3f7;
+  text-decoration: none;
+}
+
+.pageTitle {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.committeeSection {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* --- Почему выбирают нас --- */
+.whyUs {
+  text-align: center;
+}
+
+.whyUs h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.whyUs p {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 18px;
+  color: #444;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #f9f9f9;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #1a73e8;
+}
+
+/* --- Приёмная комиссия --- */
+.admission {
+  background: #f1f7ff;
+  padding: 40px 30px;
+  border-radius: 20px;
+}
+
+.admission h2 {
+  font-size: 30px;
   font-weight: 700;
   margin-bottom: 15px;
 }
 
-.committeeHeader p {
+.admission p {
+  font-size: 17px;
   color: #333;
-  max-width: 800px;
-  font-size: 1.1rem;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.steps h3 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.steps ol {
+  padding-left: 20px;
+  color: #444;
   line-height: 1.8;
 }
 
 .downloadBtn {
   display: inline-block;
   margin-top: 25px;
-  background: #611b1b;
-  color: #fff;
-  padding: 12px 28px;
+  background: #1a73e8;
+  color: white;
+  padding: 12px 22px;
   border-radius: 8px;
   text-decoration: none;
-  font-weight: 500;
-  transition: background 0.3s ease, transform 0.2s ease;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
 .downloadBtn:hover {
-  background: #8a2525;
-  transform: translateY(-2px);
-}
-
-/* === Этапы и документы === */
-.committeeGrid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 40px;
-  margin-bottom: 80px;
-}
-
-.committeeCard {
-  background: #fff;
-  border-radius: 12px;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  padding: 30px;
-  width: 360px;
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
-}
-
-.committeeCard:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-}
-
-.committeeCard h2 {
-  color: #611b1b;
-  border-bottom: 2px solid #611b1b;
-  padding-bottom: 6px;
-  margin-bottom: 18px;
-  font-size: 1.3rem;
-}
-
-.committeeCard li,
-.committeeCard p {
-  color: #333;
-  line-height: 1.6;
-  font-size: 1rem;
-}
-
-/* === Преимущества === */
-.advantagesSection {
-  margin: 80px auto 50px;
-  max-width: 1150px;
-  text-align: left;
-}
-
-.advantagesSection h2 {
-  color: #611b1b;
-  font-size: 2rem;
-  margin-bottom: 35px;
-}
-
-.advantagesGrid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 35px;
-}
-
-.advantageCard {
-  background: #fff;
-  border-radius: 12px;
-  border: 1px solid #e0e0e0;
-  width: 300px;
-  padding: 25px;
-  text-align: left;
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
-}
-
-.advantageCard:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-}
-
-.advantageCard h3 {
-  color: #611b1b;
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-}
-
-.advantageCard p {
-  color: #444;
-  line-height: 1.6;
-  font-size: 0.98rem;
-}
-
-/* === Форма === */
-.formSection {
-  background: #fff;
-  padding: 40px 50px;
-  max-width: 900px;
-  margin: 80px auto 60px;
-  border-radius: 14px;
-  border: 1px solid #ddd;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
-  animation: fadeInUp 1s ease-in-out;
-  text-align: left;
-}
-
-.formSection h2 {
-  color: #611b1b;
-  margin-bottom: 30px;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.form input,
-.form textarea {
-  padding: 14px 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.3s;
-}
-
-.form input:focus,
-.form textarea:focus {
-  border-color: #611b1b;
-}
-
-.form textarea {
-  min-height: 110px;
-  resize: none;
-}
-
-.form button {
-  background: #611b1b;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 14px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.form button:hover {
-  background: #8a2525;
-  transform: translateY(-2px);
-}
-
-/* === Сообщение об успехе === */
-.successBox {
-  text-align: left;
-  padding: 40px;
-}
-
-.successBox h3 {
-  color: #228b22;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.successBox p {
-  color: #444;
-  margin-bottom: 20px;
-}
-
-.successBox button {
-  background: #611b1b;
-  color: #fff;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.successBox button:hover {
-  background: #8a2525;
-}
-
-/* === FAQ === */
-.faqSection {
-  margin: 100px auto 40px;
-  max-width: 950px;
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-  padding: 40px 60px;
-  text-align: left;
-}
-
-.faqSection h2 {
-  color: #611b1b;
-  font-size: 2rem;
-  margin-bottom: 35px;
-}
-
-.faqItem {
-  border-bottom: 1px solid #ddd;
-  padding: 14px 0;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.faqQuestion {
-  font-weight: 600;
-  color: #222;
-  position: relative;
-}
-
-.faqQuestion:hover {
-  color: #611b1b;
-}
-
-.faqAnswer {
-  max-height: 0;
-  overflow: hidden;
-  color: #555;
-  line-height: 1.6;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
-  opacity: 0;
-}
-
-.faqAnswer.open {
-  max-height: 200px;
-  opacity: 1;
-  margin-top: 8px;
-}
-
-/* === Анимации === */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* === Адаптивность === */
-@media (max-width: 1024px) {
-  .committeeContainer {
-    padding: 80px 30px;
-  }
-
-  .committeeGrid,
-  .advantagesGrid {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .formSection,
-  .faqSection {
-    width: 95%;
-    padding: 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .committeeHeader h1 {
-    font-size: 2.2rem;
-  }
-
-  .advantagesSection h2,
-  .faqSection h2 {
-    font-size: 1.6rem;
-  }
-
-  .committeeCard,
-  .advantageCard {
-    width: 100%;
-  }
+  background: #125dc4;
 }

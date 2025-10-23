@@ -13,6 +13,7 @@ import AdminMessages from './pages/AdminMessages/AdminMessages';
 import Committee from './pages/SchoolPages/Committee/Committee';
 import Safety from './pages/SchoolPages/Safety/Safety';
 import Director from './pages/Director/Director';
+import Education from './pages/SchoolPages/Education/Education';
 
 const ProtectedRoute = ({ children, tokenKey }) => {
   const token = localStorage.getItem(tokenKey);
@@ -40,6 +41,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/committee" element={<Committee />} />
+          <Route path="/education" element={<Education />} />
           <Route path="/school/safety" element={<Safety />} />
           <Route path="/school/director" element={<Director />} />
           <Route path="/about" element={<About />} />
