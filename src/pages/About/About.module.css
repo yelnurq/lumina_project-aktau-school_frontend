@@ -1,386 +1,139 @@
-.main {
-  text-align: center;
-  margin: 0;
-  height: 500px;
-  background-color: rgb(3, 21, 36); /* тёмно-синий фон */
-  color: #a5f3fc; /* ледяной голубой текст */
+.pageHeader {
   position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 40% 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 300px;
 }
 
+.overlay {
+  background: rgba(0, 0, 0, 0.663);
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px 20px;
+  width: 100%;
+  text-align: left;
+}
 
 .breadcrumbs {
-     max-width: 1200px;
-    margin: auto;
-    padding-top: 30px;  font-size: 14px;
-  color: #ffffff;
+  font-size: 15px;
+  color: #ddd;
+  margin-bottom: 20px;
 }
 
 .breadcrumbs ol {
   display: flex;
   list-style: none;
   gap: 6px;
-  margin: 0;
   padding: 0;
+  margin: 0;
   flex-wrap: wrap;
 }
 
 .breadcrumbs a {
-  color: #3490dc;
+    color: #3490dc;
   text-decoration: none;
-}
-
-.breadcrumbs .current {
-  color: #333;
+  transition: 0.3s;
 }
 
 
-.title {
-  margin: 0;
-  font-size: 150px;
-  font-weight: 900;
-  color: rgb(247, 247, 247); /* светлый голубой */
+.aboutSection {
+  background: none;
+  display: flex;
+    max-width: 1200px;
+  margin: 30px auto;
+  flex-direction: column;
+  padding: 0 20px 20px;
+  justify-content: center;
+}
+
+
+.infoWrapper {
+  max-width: 1200px;
+  padding: 40px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #222;
 }
 
 .desc {
-  margin: 0;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.contactTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.contactTable th,
+.contactTable td {
+  padding: 14px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.contactTable th {
+  text-align: left;
+  color: #444;
   font-weight: 600;
-  color: #93c5fd;;
-  margin-top: -30px;
-  font-size: 26px;
+  width: 220px;
 }
 
-.text {
+.contactTable td {
+  color: #333;
+  text-align: left;
+}
+
+.contactTable tr:hover {
+  background: #fafafa;
+}
+
+.map {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.mapContainer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.mapLink {
+  color: #eee;
+  font-size: 12px;
   position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  text-decoration: none;
 }
 
-/* Инфо блок */
-.info {
-  background-color: #303e55; /* насыщенный индиго */
-  margin: 0;
-  color: #f3f3f3;
+.mapLink:hover {
+  text-decoration: underline;
 }
-
-.descInfo {
-  margin: 0;
-  padding: 80px;
-  text-align: center;
-  font-size: 25px;
-}
-
-/* Миссия */
-.mission {
-  display: flex;
-  justify-content: space-between;
-}
-
-.leftBlock {
-  background-color: #0f172a; /* тёмный графитово-синий */
-  width: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #93c5fd;
-}
-
-.descMission {
-  font-size: 30px;
-}
-
-.rightBlock {
-  background-color: #1e293b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60%;
-  color: #e0f2fe;
-}
-
-/* Статистика */
-.stats {
-  display: flex;
-  justify-content: center;
-  gap: 70px;
-  padding: 60px 0;
-  background: #303e55;
-  color: #ffffff;
-}
-
-.statCard {
-  text-align: center;
-}
-
-.statNumber {
-  font-size: 70px;
-  font-weight: 900;
-  color: #f3f3f3;
-}
-
-.statLabel {
-  font-size: 20px;
-  opacity: 0.8;
-}
-
-/* Слоган */
-.slogan {
-  padding: 40px;
-  background: linear-gradient(90deg, #0f172a, #1e3a8a, #38bdf8);
-  color: white;
-  text-align: center;
-}
-
-.sloganText {
-  font-size: 24px;
-  font-weight: 500;
-  font-style: italic;
-}
-
-/* Карта */
-.map img {
-  width: 100%;
-}
-
-/* Контактная форма */
-.contactForm {
-  background: #0d1527;
-  padding: 60px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.formBlock {
-  width: 100%;
-  max-width: 500px;
-  background-color: #1e293b;
-  padding: 32px;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.formTitle {
-  font-size: 24px;
-  font-weight: 500;
-  margin-bottom: 12px;
-  text-align: center;
-  color: #e0f2fe;
-}
-
-.input,
-.textarea {
-  padding: 12px 16px;
-  border: 1px solid #334155;
-  font-size: 16px;
-  background-color: #0f172a;
-  color: #e0f2fe;
-  transition: border 0.3s ease;
-}
-
-.input:focus,
-.textarea:focus {
-  outline: none;
-  border-color: #38bdf8;
-}
-
-.textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.submitBtn {
-  padding: 12px 16px;
-  background-color: #a5b6c1;
-  color: #0f172a;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.submitBtn:hover {
-  background-color: #9ecce1;
-}
-
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.3s ease;
-}
-
-.loader {
-  width: 60px;
-  height: 60px;
-  border: 6px solid #fff;
-  border-top: 6px solid #00c2ff;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-.checkmark,
-.errorIcon {
-  font-size: 64px;
-  animation: popIn 0.3s ease forwards;
-}
-
-.checkmark {
-  color: #4caf50;
-}
-
-.errorIcon {
-  color: #f44336;
-}
-
-.missionAlt {
-  flex-direction: row-reverse;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes popIn {
-  0% {
-    transform: scale(0.6);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@media (max-width:1260px){
-  .breadcrumbs {
-        margin-left: 20px;
-    margin-right: 20px;
-  }
-}
-
-/* 📱 Мобильные устройства */
-@media (max-width: 768px) {
-  .title {
-    font-size: 60px;
-  }
-
-  .desc {
-    font-size: 18px;
-    margin-top: -5px;
-  }
-
- 
-
-  .mission {
-    flex-direction: column;
-  }
-
-  .leftBlock,
-  .rightBlock {
-    width: auto;
-    padding: 30px 20px;
-    text-align: center;
-  }
-
-  .descMission {
-    font-size: 22px;
-  }
-
-  .stats {
-    flex-direction: column;
-    gap: 30px;
-    padding: 40px 0;
-  }
-
-  .statNumber {
-    font-size: 50px;
-  }
-
-  .statLabel {
-    font-size: 16px;
-  }
-
-  .sloganText {
-    font-size: 18px;
-  }
-
-  .descInfo {
-    padding: 40px 20px;
-    font-size: 18px;
-  }
-
-  .formBlock {
-    padding: 20px;
-  }
-
-  .formTitle {
-    font-size: 20px;
-  }
-
-  .input,
-  .textarea,
-  .submitBtn {
-    font-size: 14px;
-    padding: 10px 14px;
-  }
-}
-
-/* 📲 Планшеты (768px – 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .title {
-    font-size: 100px;
-  }
-
-  .desc {
-    margin-top: -5px;
-    font-size: 22px;
-  }
-
-
-
-  .mission {
-    flex-direction: column;
-  }
-
-  .leftBlock,
-  .rightBlock {
-    width: auto;
-    padding: 50px;
-  }
-
-  .descMission {
-    font-size: 26px;
-  }
-
-  .stats {
-    flex-wrap: wrap;
-    gap: 40px;
-  }
-
-  .statNumber {
-    font-size: 60px;
-  }
-
-  .statLabel {
-    font-size: 18px;
-  }
-
-  .sloganText {
-    font-size: 20px;
-  }
-
-  .descInfo {
-    padding: 60px 30px;
-    font-size: 20px;
-  }
+.mapFrame {
+  width: 1400px;
+  height: 500px;
 }

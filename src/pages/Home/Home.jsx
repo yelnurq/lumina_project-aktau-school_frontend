@@ -9,10 +9,7 @@ import { FaBrain, FaSchool } from 'react-icons/fa';
 import Gallery from '../../components/Gallery/Gallery';
 
 export default function Home() {
-  const [main, setMain] = useState(null);
   const [latest, setLatest] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [byCategory, setByCategory] = useState({});
   const [loading, setLoading] = useState(true);
     const slugify = (text) => {
     const map = {
@@ -74,10 +71,7 @@ useEffect(() => {
 
   useEffect(() => {
     axiosInstance.get('/api/news/home').then(res => {
-      setMain(res.data.main);
       setLatest(res.data.latest);
-      setCategories(res.data.categories);
-      setByCategory(res.data.byCategory);
     }).finally(() => setLoading(false));
   }, []);
 
@@ -98,8 +92,8 @@ if (loading) {
           title="Lumina — IT-портал: блоги, онлайн-олимпиады и заказ сайтов"
           description="Lumina — платформа для разработчиков: читайте блоги, проходите онлайн-олимпиады и заказывайте профессиональные сайты."
           keywords="Lumina, IT, блоги, статьи, олимпиады, веб-разработка"
-          url="https://lumina.kz/"
-          image={main ? `https://lumina.kz/storage/${main.image}` : "https://lumina.kz/preview-image.png"}
+          url="http://127.0.0.1:8000/"
+          // image={main ? `http://127.0.0.1:8000/storage/${main.image}` : "http://127.0.0.1:8000/preview-image.png"}
           type="website"
           jsonLdType="WebSite"
         />
@@ -113,6 +107,7 @@ if (loading) {
             <br></br>Наша миссия — развивать творческое мышление, инновационность и любовь к знаниям у каждого ученика.
 <br></br>Здесь теория встречается с практикой, а обучение становится увлекательным путешествием в мир технологий.
             </p>
+            <p className={styles.address}>Мангистауская область, Жанаозен, улица Нургисы Тилендиева</p>
             <button>Подробнее</button>
           </div>
       </div>
@@ -183,7 +178,7 @@ if (loading) {
             {latest.map(news => (
               <div key={news.id} className={styles.card}>
                 <Link className={styles.newsLink} to={`/articles/${news.slug}`}>
-                <img loading="lazy" className={styles.latestImage} src={`https://lumina.kz/storage/${news.image}`} alt={news.title} />
+                <img loading="lazy" className={styles.latestImage} src={`http://127.0.0.1:8000/storage/${news.image}`} alt={news.title} />
                 <p className={styles.latestTitle}>{news.title}</p>
                 <p className={styles.latestDesc}>{news.excerpt}</p>
                     <p className={styles.meta}>
@@ -230,7 +225,7 @@ if (loading) {
 
       <Gallery/>
     </section>
-   
+
 
 
       </main>

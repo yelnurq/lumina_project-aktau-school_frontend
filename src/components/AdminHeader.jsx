@@ -20,7 +20,7 @@ export default function AdminHeader() {
         <div className={styles.header}>
             <div className={styles.container}>
                 <div className={styles.logo}>
-                    <Link to="/admin/dashboard">ZEYEL.core</Link>
+                    <Link to="/admin/dashboard">Администрация</Link>
                 </div>
                 <div className={styles.nav}>
                     <Link to="/admin/dashboard" className={styles.navItem}>Панель</Link>

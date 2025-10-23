@@ -25,7 +25,6 @@ export default function NewsCreate() {
 
   useEffect(() => {
     axiosInstance.get('/api/admin/categories').then(res => setCategories(res.data)).catch(console.error)
-    axiosInstance.get('/api/admin/tags').then(res => setTags(res.data)).catch(console.error)
   }, [])
 
   const editor = useEditor({
@@ -67,7 +66,6 @@ const handleSubmit = async (e) => {
   form.append('excerpt', excerpt)
   form.append('reading_time', readingTime)
   form.append('category_id', categoryId)
-  selectedTags.forEach(tag => form.append('tags[]', tag))
   if (image) form.append('image', image)
 
   try {
@@ -89,11 +87,7 @@ const handleSubmit = async (e) => {
   }
 }
 
-  const toggleTag = (id) => {
-    setSelectedTags(prev =>
-      prev.includes(id) ? prev.filter(tag => tag !== id) : [...prev, id]
-    )
-  }
+
 
   return (
       <>
@@ -163,23 +157,7 @@ const handleSubmit = async (e) => {
         {errors?.category_id && <p className={styles.error}>{errors.category_id[0]}</p>}
       </div>
 
-      {/* Теги */}
-      <div>
-        <label className={styles.label}>Теги</label>
-        <div className={styles.tags}>
-          {tags.map(tag => (
-            <label key={tag.id} className={styles.tagItem}>
-              <input
-                type="checkbox"
-                checked={selectedTags.includes(tag.id)}
-                onChange={() => toggleTag(tag.id)}
-              />
-              {tag.name}
-            </label>
-          ))}
-        </div>
-        {errors?.tags && <p className={styles.error}>{errors.tags[0]}</p>}
-      </div>
+   
 
       {/* Изображение */}
       <div>

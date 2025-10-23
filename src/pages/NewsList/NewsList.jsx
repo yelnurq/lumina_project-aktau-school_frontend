@@ -3,19 +3,17 @@ import { Link, useSearchParams } from 'react-router-dom';
 import axiosInstance from '../../axiosConfig';
 import styles from './NewsList.module.css';
 import Header from '../../components/Header';
-import { FaTags, FaTimesCircle, FaTrophy } from 'react-icons/fa';
+import {  FaTimesCircle, FaTrophy } from 'react-icons/fa';
 import SeoHelmet from '../../components/SeoHelmet';
 
 export default function NewsList() {
   const [news, setNews] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [tags, setTags] = useState([]);
   const [loading, setLoading] = useState(true);
   const [pagination, setPagination] = useState({ current_page: 1, last_page: 1 });
   const [searchParams, setSearchParams] = useSearchParams();
 
   const getInitialFilters = () => ({
-    tag: searchParams.get('tag') || '',
     category: searchParams.get('category') || '',
     date: searchParams.get('date') || '',
     sort: searchParams.get('sort') || 'newest',
@@ -30,12 +28,10 @@ export default function NewsList() {
   useEffect(() => {
     const fetchCategoriesAndTags = async () => {
       try {
-        const [catRes, tagRes] = await Promise.all([
+        const [catRes] = await Promise.all([
           axiosInstance.get('/api/categories'),
-          axiosInstance.get('/api/tags'),
         ]);
         setCategories(catRes.data);
-        setTags(tagRes.data);
       } catch (error) {
         console.error('Ошибка при загрузке категорий и тегов:', error);
       }
@@ -64,7 +60,6 @@ export default function NewsList() {
 
   const updateURL = (updatedFilters) => {
     const params = new URLSearchParams();
-    if (updatedFilters.tag) params.set('tag', updatedFilters.tag);
     if (updatedFilters.category) params.set('category', updatedFilters.category);
     if (updatedFilters.date) params.set('date', updatedFilters.date);
     if (updatedFilters.sort) params.set('sort', updatedFilters.sort);
@@ -85,7 +80,7 @@ export default function NewsList() {
   };
 
   // Формируем канонический URL с учётом фильтров
-  const url = `https://lumina.kz/articles${searchParams.toString() ? `?${searchParams.toString()}` : ''}`;
+  const url = `http://127.0.0.1:8000/articles${searchParams.toString() ? `?${searchParams.toString()}` : ''}`;
 
   return (
     <>
@@ -104,7 +99,7 @@ export default function NewsList() {
           <ol>
             <li><Link to="/">Главная</Link></li>
             <li>/</li>
-            <li>Статьи</li>
+            <li>Новости</li>
           </ol>
         </nav>
 
@@ -124,19 +119,6 @@ export default function NewsList() {
             </select>
           </div>
 
-          <div className={styles.filterGroup}>
-            <label htmlFor="tag">Тег:</label>
-            <select
-              id="tag"
-              value={filters.tag}
-              onChange={e => handleFilterChange('tag', e.target.value)}
-            >
-              <option value="">Все</option>
-              {tags.map(tag => (
-                <option key={tag.id} value={tag.slug}>{tag.name}</option>
-              ))}
-            </select>
-          </div>
 
           <div className={styles.filterGroup}>
             <label htmlFor="sort">Сортировать:</label>
@@ -171,7 +153,7 @@ export default function NewsList() {
                   className={styles.card}
                 >
                   <img
-                    src={`https://lumina.kz/storage/${item.image}`}
+                    src={`http://127.0.0.1:8000/storage/${item.image}`}
                     alt={item.title}
                     className={styles.image}
                   />

@@ -8,13 +8,13 @@ export default function AdminLogin() {
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const [token, setToken] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false); // блокировка кнопки
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const navigate = useNavigate(); 
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    if (isSubmitting) return; // если уже нажали — ничего не делаем
+    if (isSubmitting) return;
     setIsSubmitting(true);
     setMessage('');
 
@@ -42,14 +42,14 @@ export default function AdminLogin() {
         setMessage('❌ Ошибка подключения к серверу.');
       }
     } finally {
-      setIsSubmitting(false); // снова разрешаем кнопку
+      setIsSubmitting(false); 
     }
   };
 
   return (
     <div className={styles.container}>
       <form className={styles.form} onSubmit={handleLogin}>
-        <p className={styles.loginTitle}>Вход администратора</p>
+        <p className={styles.loginTitle}>ШКОЛА ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ И ИНОСТРАННЫХ ЯЗЫКОВ</p>
         <label className={styles.label}>Имя:</label>
         <input
           type="text"

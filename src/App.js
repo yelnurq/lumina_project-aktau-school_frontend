@@ -16,6 +16,8 @@ import Faq from './pages/Faq/Faq';
 import NotFound from './pages/NotFound/NotFound';
 import AdminMessages from './pages/AdminMessages/AdminMessages';
 import Committee from './pages/SchoolPages/Committee/Committee';
+import Safety from './pages/SchoolPages/Safety/Safety';
+import Director from './pages/Director/Director';
 
 const ProtectedRoute = ({ children, tokenKey }) => {
   const token = localStorage.getItem(tokenKey);
@@ -43,6 +45,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/committee" element={<Committee />} />
+          <Route path="/school/safety" element={<Safety />} />
+          <Route path="/school/director" element={<Director />} />
           <Route path="/order" element={<Order />} />
           <Route path="/quiz/start" element={<Quiz />} />
           <Route path="/quiz" element={<Olympiad />} />

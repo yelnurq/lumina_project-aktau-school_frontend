@@ -15,7 +15,7 @@ import styles from './Header.module.css';
 import axiosInstance from '../axiosConfig';
 
 export default function Header({ children }) {
-  const [activeMenu, setActiveMenu] = useState(null); // "articles" | "services" | null
+  const [activeMenu, setActiveMenu] = useState(null); 
   const [categories, setCategories] = useState([]);
   const location = useLocation();
   const [email, setEmail] = useState('');
@@ -179,13 +179,35 @@ const handleNextPage = () => {
             {/* Десктопное меню */}
             {!isMobile && (
               <>
-              
-                {/* Статьи */}
+
+                <div
+                  className={styles.dropdownWrapper}
+                  onMouseEnter={() => setActiveMenu("about")}
+                >
+
+                  <Link to="/" className={styles.link}>О нас ▾</Link>
+                  {activeMenu === "about" && (
+                    <div
+                      className={styles.dropdownMenu}
+                      onMouseLeave={() => setActiveMenu(null)}
+                    >
+                      <Link to="/order" className={styles.dropdownItem}>Обучение</Link>
+                      <Link to="/order" className={styles.dropdownItem}>Обучение</Link>
+                      <Link to="/school/director" className={styles.dropdownItem}>Электронная приёмная</Link>
+                      <Link to="/school/safety" className={styles.dropdownItem}>Борьба с терроризмом и безопасность школ</Link>
+
+                    </div>
+                  )}
+                </div>
+                <Link to="/order" className={styles.link}>Обучение</Link>
+                <Link to="/committee" className={styles.link}>Приемная комиссия</Link>
+
                 <div
                   className={styles.dropdownWrapper}
                   onMouseEnter={() => setActiveMenu("articles")}
                 >
-                  <Link to="/articles" className={styles.link}>О нас ▾</Link>
+
+                  <Link to="/articles" className={styles.link}>Новости ▾</Link>
                   {activeMenu === "articles" && (
                     <div
                       className={styles.dropdownMenu}
@@ -203,12 +225,6 @@ const handleNextPage = () => {
                     </div>
                   )}
                 </div>
-
-                <Link to="/order" className={styles.link}>Обучение</Link>
-                <Link to="/committee" className={styles.link}>Приемная комиссия</Link>
-
-
-                <Link to="/articles" className={styles.link}>Новости</Link>
                 <Link to="/about" className={styles.link}>Контакты</Link>
 
 
@@ -361,9 +377,9 @@ const handleNextPage = () => {
             <div className={styles.collaboration}>
               <h4 style={{ marginTop: '24px' }}>Контакты</h4>
               <ul className={styles.contactList}>
-                <li><a href="mailto:mangistau_school@mail.kz">aktau_school@mail.kz</a></li>
+                <li><a href="mailto:mangistau_school@mail.kz">zhanaozen_it_school@mail.kz</a></li>
                 <li><a href="tel:+77292223344">+7 (7292) 22-33-44</a></li>
-                <li><a href="https://goo.gl/maps/example" target="_blank" rel="noreferrer">г. Мангистау, ул. Рахат, 10</a></li>
+                <li><a href="https://goo.gl/maps/example" target="_blank" rel="noreferrer">Мангистауская область, Жанаозен, улица Нургисы Тилендиева</a></li>
               </ul>
             </div>
           </div>

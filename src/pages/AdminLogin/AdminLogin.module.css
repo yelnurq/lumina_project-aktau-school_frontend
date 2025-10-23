@@ -1,271 +1,102 @@
-.committeeContainer {
-  padding: 120px 20px 60px;
-  background: linear-gradient(to bottom, #fafafa, #f0f0f0);
+.container {
   min-height: 100vh;
-}
-
-/* Заголовок */
-.committeeHeader {
-  text-align: center;
-  margin-bottom: 60px;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.committeeHeader h1 {
-  color: #611b1b;
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.committeeHeader p {
-  color: #444;
-  max-width: 650px;
-  margin: 0 auto;
-  font-size: 1.1rem;
-  line-height: 1.7;
-}
-
-.downloadBtn {
-  display: inline-block;
-  margin-top: 20px;
-  background: #611b1b;
-  color: #fff;
-  padding: 10px 22px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.downloadBtn:hover {
-  background: #8a2525;
-  transform: scale(1.03);
-}
-
-/* Информационные карточки */
-.committeeGrid {
+  overflow: hidden;
+  background: rgb(55, 6, 6);
+  color: #f0f0f0;
+  box-shadow: 0 0 0 1px #333, 0 8px 24px rgba(0, 0, 0, 0.4);
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
   justify-content: center;
-  gap: 30px;
-  margin-bottom: 70px;
 }
 
-.committeeCard {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
-  padding: 25px;
-  width: 340px;
-  transition: 0.3s ease;
-}
-
-.committeeCard:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.15);
-}
-
-.committeeCard h2 {
-  color: #611b1b;
-  border-bottom: 2px solid #611b1b;
-  padding-bottom: 6px;
-  margin-bottom: 15px;
-  font-size: 1.3rem;
-}
-
-.committeeCard li,
-.committeeCard p {
-  color: #333;
-  line-height: 1.6;
-  font-size: 1rem;
-}
-
-/* Преимущества */
-.advantagesSection {
-  text-align: center;
-  margin: 80px auto 50px;
-  max-width: 950px;
-}
-
-.advantagesSection h2 {
-  color: #611b1b;
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-.advantagesGrid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-}
-
-.advantageCard {
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  width: 280px;
-  padding: 25px;
-  text-align: left;
-  transition: 0.3s;
-}
-
-.advantageCard:hover {
-  transform: translateY(-5px);
-}
-
-.advantageCard h3 {
-  color: #611b1b;
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-}
-
-.advantageCard p {
-  color: #444;
-  line-height: 1.6;
-}
-
-/* Форма */
-.formSection {
-  background: #fff;
-  padding: 40px 30px;
-  max-width: 720px;
-  margin: 0 auto 60px;
-  border-radius: 18px;
-  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1);
-  animation: fadeInUp 1s ease-in-out;
-}
-
-.formSection h2 {
-  text-align: center;
-  color: #611b1b;
-  margin-bottom: 25px;
+.loginTitle {
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: 'Manrope', sans-serif;
+    color: #2d2d2d;
+    line-height: 0.9;
+    text-align: center;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  padding: 30px;
+  font-size: 16px;
+  color: rgb(42, 42, 42);
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 100%;box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
 }
 
-.form input,
-.form textarea {
-  padding: 14px 16px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.3s;
+.label {
+  font-weight: 500;
+  margin-top:20px;
+  margin-bottom: 6px;
+  color: #212121;
 }
 
-.form input:focus,
-.form textarea:focus {
-  border-color: #611b1b;
-}
 
-.form textarea {
-  min-height: 110px;
-  resize: none;
-}
 
-.form button {
-  background: #611b1b;
-  color: #fff;
+.input,
+.textarea {
+  padding: 12px;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 16px;
+  flex: 1;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  color: rgb(40, 40, 40);
+  background: #ffffff;
   border: none;
-  border-radius: 10px;
-  padding: 14px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
+  transition: border 0.3s, background-color 0.3s;
 }
 
-.form button:hover {
-  background: #8a2525;
-  transform: translateY(-2px);
+.input:focus,
+.textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+  background: #f0f0f0;
 }
 
-/* Сообщение об успехе */
-.successMessage {
+.button {
+    background: rgb(98, 14, 14);
+    color: white;
+    margin-top: 20px;
+    border: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    font-size: 19px;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.button:disabled {
+  cursor:not-allowed;
+}
+
+.button:hover {
+    background: rgb(50, 5, 5);
+  color: #fff;}
+
+
+.message {
+  margin-bottom: 0;
+  margin-top: 20px;
   text-align: center;
-  font-size: 1.2rem;
-  color: #228b22;
-  font-weight: 600;
-  animation: fadeInUp 0.8s ease-in-out;
+  font-size: 14px;
+  color: #1f1f1f;
 }
 
-/* FAQ */
-.faqSection {
-  margin: 70px auto 40px;
-  max-width: 800px;
-}
-
-.faqSection h2 {
-  text-align: center;
-  color: #611b1b;
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-.faqItem {
-  border-bottom: 1px solid #ccc;
-  padding: 12px 0;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.faqQuestion {
-  font-weight: 600;
-  color: #333;
-}
-
-.faqQuestion:hover {
-  color: #611b1b;
-}
-
-.faqAnswer {
-  margin-top: 8px;
-  color: #555;
-  line-height: 1.5;
-  animation: fadeIn 0.4s ease;
-}
-
-/* Анимации */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-  .committeeCard,
-  .advantageCard {
-    width: 100%;
-  }
-
-  .committeeHeader h1 {
-    font-size: 2rem;
-  }
-
-  .advantagesSection h2,
-  .faqSection h2 {
-    font-size: 1.6rem;
-  }
+.token {
+  margin-top: 10px;
+  font-size: 12px;
+  word-break: break-word;
+  background-color: #f3f4f6;
+  color: #1f2937;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
 }

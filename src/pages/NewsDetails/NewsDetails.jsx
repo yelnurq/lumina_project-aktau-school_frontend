@@ -64,8 +64,8 @@ export default function NewsDetails() {
     news.excerpt || news.content.replace(/<[^>]+>/g, '').slice(0, 160);
 
   const imageUrl = news.image
-    ? `https://lumina.kz/storage/${news.image}`
-    : 'https://lumina.kz/preview-image.png';
+    ? `http://127.0.0.1:8000/storage/${news.image}`
+    : 'http://127.0.0.1:8000/preview-image.png';
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -82,14 +82,14 @@ const jsonLd = {
     "name": "Lumina",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://lumina.kz/favicon-96x96.png"
+      "url": "http://127.0.0.1:8000/favicon-96x96.png"
     }
   },
   "datePublished": new Date(news.created_at).toISOString(),
   "dateModified": new Date(news.updated_at || news.created_at).toISOString(),
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": `https://lumina.kz/articles/${news.slug}`
+    "@id": `http://127.0.0.1:8000/articles/${news.slug}`
   },
   "articleSection": news.category || "Новости",
   "keywords": news.tags?.join(", ") || ""
@@ -107,7 +107,7 @@ const jsonLd = {
         <meta property="og:title" content={news.title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={imageUrl} />
-        <meta property="og:url" content={`https://lumina.kz/articles/${news.slug}`} />
+        <meta property="og:url" content={`http://127.0.0.1:8000/articles/${news.slug}`} />
         <meta property="og:site_name" content="Lumina" />
 
         {/* Twitter */}
@@ -130,7 +130,7 @@ const jsonLd = {
             <ol>
               <li><Link to="/">Главная</Link></li>
               <li>/</li>
-              <li><Link to="/articles/">Статьи</Link></li>
+              <li><Link to="/articles/">Новости</Link></li>
               <li>/</li>
               <li><Link to={`/articles?category=${news.category_slug}`}>{news.category}</Link></li>
               <li>/</li>
@@ -202,7 +202,7 @@ const jsonLd = {
             <div className={styles.relatedGrid}>
               {relatedNews.map((item) => (
                 <Link to={`/articles/${item.slug}`} key={item.id} className={styles.relatedCard}>
-                  <img src={`https://lumina.kz/storage/${item.image}`} alt={item.title} />
+                  <img src={`http://127.0.0.1:8000/storage/${item.image}`} alt={item.title} />
                   <div className={styles.relatedText}>
                     <h3>
                       {item.title.length > 60 ? item.title.slice(0, 60) + '...' : item.title}

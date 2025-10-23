@@ -53,6 +53,13 @@
   font-size: 20px;
   font-weight: 700;
 }
+.mainBlocks .address {
+  color: #651010;
+  font-size: 17px;
+  font-weight: 500;
+  border-top: 1px solid gray;
+  padding-top: 10px;
+}
 
 .textMain {
   font-size: 19px;
@@ -147,6 +154,7 @@
     transform: rotate(360deg);
   }
 }
+
 
 
 
