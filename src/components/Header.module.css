@@ -664,7 +664,7 @@
 
 
 .footer {
-  background-color: #0d1117;
+  background-color: #200202;
   color: #c9d1d9;
   padding: 40px 20px 20px;
   font-size: 0.95rem;
@@ -685,7 +685,7 @@
 .footerGrid h4 {
   margin-bottom: 10px;
   font-size: 1rem;
-  color: #9abce2;
+  color: #ffffff;
 }
 
 .footerGrid ul {

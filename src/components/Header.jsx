@@ -315,67 +315,66 @@ const handleNextPage = () => {
       )}
 
       {children}
-
-
-
-      {/* Футер */}
-      <footer className={styles.footer}>
-        <div className={styles.footerWrapper}>
-          <div className={styles.footerGrid}>
-            <div>
-              <h4>О проекте</h4>
-              <ul>
-                <li><Link to="/about">О платформе</Link></li>
-                <li><Link to="/faq">FAQ</Link></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4>Разделы</h4>
-              <ul>
-                <li><Link to="/articles">Блоги</Link></li>
-                <li><Link to="/order">Заказать сайт</Link></li>
-                <li><Link to="/quiz">Тестирование</Link></li>
-                {/* <li><Link to="/hub">Инструменты</Link></li> */}
-              </ul>
-            </div>
-
-            <div>
-              <h4>Категории</h4>
-              <ul>
-                {categories.map((cat) => (
-                  <li key={cat.id}>
-                    <Link to={`/articles?category=${cat.slug}`}>{cat.name}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className={styles.supportSection}>
-              <h4>Помочь развитию</h4>
-              <p style={{ marginBottom: '8px' }}>Поделитесь проектом с друзьями:</p>
-              <div className={styles.socials}>
-                <a href={`https://t.me/share/url?url=${encodeURIComponent(window.location.origin)}&text=Посмотри эту IT-платформу!`} target="_blank" rel="noreferrer"><FaTelegramPlane /></a>
-                <a href={`https://wa.me/?text=${encodeURIComponent('Посмотри эту IT-платформу! ' + window.location.origin)}`} target="_blank" rel="noreferrer"><FaWhatsapp /></a>
-                <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.origin)}`} target="_blank" rel="noreferrer"><FaFacebook /></a>
-                <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.origin)}&text=Посмотри эту IT-платформу!`} target="_blank" rel="noreferrer"><FaTwitter /></a>
-              </div>
-
-              <div className={styles.collaboration}>
-                <h4 style={{ marginTop: '24px' }}>Сотрудничество</h4>
-                <p>Если вы хотите предложить партнёрство, интеграции или другие формы сотрудничества — напишите нам:</p>
-                <ul className={styles.contactList}>
-                  <li><a href="mailto:info@lumina.kz">info@lumina.kz</a></li>
-                  <li><a href="https://t.me/yelnur_zeinolla" target="_blank" rel="noreferrer">Telegram: @yelnur_zeinolla</a></li>
-                </ul>
-              </div>
-            </div>
+    {/* Футер */}
+    <footer className={styles.footer}>
+      <div className={styles.footerWrapper}>
+        <div className={styles.footerGrid}>
+          <div>
+            <h4>О школе</h4>
+            <ul>
+              <li><Link to="/about">История школы</Link></li>
+              <li><Link to="/administration">Администрация</Link></li>
+              <li><Link to="/teachers">Педагогический состав</Link></li>
+              <li><Link to="/achievements">Достижения</Link></li>
+            </ul>
           </div>
-          <div className={styles.footerBottom}>
-            <p>&copy; {new Date().getFullYear()} Lumina: Youth Innovation & Knowledge Exchange Platform. Все права защищены.</p>
+
+          <div>
+            <h4>Ученикам</h4>
+            <ul>
+              <li><Link to="/schedule">Расписание</Link></li>
+              <li><Link to="/library">Электронная библиотека</Link></li>
+              <li><Link to="/quiz">Тесты и олимпиады</Link></li>
+              <li><Link to="/clubs">Кружки и секции</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Родителям</h4>
+            <ul>
+              <li><Link to="/advice">Советы родителям</Link></li>
+              <li><Link to="/documents">Документы школы</Link></li>
+              <li><Link to="/contacts">Контакты</Link></li>
+            </ul>
+          </div>
+
+          <div className={styles.supportSection}>
+            <h4>Мы в соцсетях</h4>
+            <p style={{ marginBottom: '8px' }}>Подписывайтесь, чтобы быть в курсе новостей:</p>
+            <div className={styles.socials}>
+              <a href="https://t.me/#" target="_blank" rel="noreferrer"><FaTelegramPlane /></a>
+              <a href="https://wa.me/#" target="_blank" rel="noreferrer"><FaWhatsapp /></a>
+              <a href="https://facebook.com/#" target="_blank" rel="noreferrer"><FaFacebook /></a>
+              <a href="https://twitter.com/#" target="_blank" rel="noreferrer"><FaTwitter /></a>
+            </div>
+
+            <div className={styles.collaboration}>
+              <h4 style={{ marginTop: '24px' }}>Контакты</h4>
+              <ul className={styles.contactList}>
+                <li><a href="mailto:mangistau_school@mail.kz">aktau_school@mail.kz</a></li>
+                <li><a href="tel:+77292223344">+7 (7292) 22-33-44</a></li>
+                <li><a href="https://goo.gl/maps/example" target="_blank" rel="noreferrer">г. Мангистау, ул. Рахат, 10</a></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </footer>
+
+        <div className={styles.footerBottom}>
+          <p>Lumina Dev.</p>
+        </div>
+      </div>
+    </footer>
+
     </>
   );
 }

@@ -84,30 +84,12 @@ useEffect(() => {
 if (loading) {
   return (
     <>
-          <Header>
-    <div className={styles.container}>
-      <div className={styles.skeletonArticle}>
-        <div className={styles.skeletonMainBlock}>
-            <div className={`${styles.skeleton} ${styles.skeletonMain}`}></div>
-            <div className={styles.skeletonLatestBlock}>
-                <div className={`${styles.skeleton} ${styles.skeletonSide}`}></div>
-                <div className={`${styles.skeleton} ${styles.skeletonSide}`}></div>
-            </div>
+      <div className={styles.loaderBlock}>
+        <div className={styles.loader}>
+
         </div>
-        
-        <div className={`${styles.skeleton} ${styles.skeletonTitle}`}></div>
-                <div className={`${styles.skeleton} ${styles.skeletonSide}`}></div>
-        <div className={`${styles.skeleton} ${styles.skeletonTitle}`}></div>
-                <div className={`${styles.skeleton} ${styles.skeletonSide}`}></div>
-        <div className={`${styles.skeleton} ${styles.skeletonTitle}`}></div>
-                <div className={`${styles.skeleton} ${styles.skeletonSide}`}></div>
-        <div className={`${styles.skeleton} ${styles.skeletonTitle}`}></div>
-                <div className={`${styles.skeleton} ${styles.skeletonSide}`}></div>
-                
-        
       </div>
-    </div>
-    </Header></>
+  </>
   );
 }
   return (
