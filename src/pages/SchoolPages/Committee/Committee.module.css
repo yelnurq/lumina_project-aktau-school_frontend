@@ -224,3 +224,54 @@
 .downloadBtn:hover {
   background: #125dc4;
 }
+
+.formSection,
+.cardsSection,
+.faqSection {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.submitBtn {
+  background-color: #2b6cb0;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.faqItem {
+  background: #f7f7f7;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.faqItem.open {
+  background: #e3e7ff;
+}
