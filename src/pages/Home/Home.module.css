@@ -9,6 +9,7 @@
 .historyBlocks, .mainBlock, .categorySection, .about .container, .gallerySection {
   max-width: 1400px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .mainBlock {
@@ -182,7 +183,7 @@
     gap: 50px;
     align-items: top;
     justify-content: space-between;
-    padding: 80px 0 30px;
+    padding: 80px 20px 30px;
 }
 
 .about .container {
@@ -687,7 +688,6 @@
   }
 
   .container {
-    padding: 1rem 3%;
   }
 
   .factSection {
@@ -762,9 +762,7 @@
     width: 100%;
   }
 
-  .container {
-    padding: 2rem 4%;
-  }
+
 }
 
 /* Маленькие десктопы */
@@ -875,8 +873,8 @@
 
   .about .container {
     flex-direction: column;
-    padding: 0 20px;
     margin-top: 0;
+    padding: 20px;
     gap: 20px;
     align-items: center;
   }
@@ -1020,8 +1018,8 @@
 
   .about .container {
     flex-direction: column;
-    padding: 0 20px;
     margin-top: 0;
+    padding: 20px;
     gap: 20px;
     align-items: center;
   }

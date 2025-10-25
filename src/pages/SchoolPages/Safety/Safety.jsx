@@ -30,7 +30,7 @@ export default function Safety() {
         <section className={styles.pdfSection}>
           <div className={styles.pdfWrapper}>
             <iframe
-              src="./../pdf.pdf"
+              src="/pdf.pdf#navpanes=0&scrollbar=0"
               className={styles.pdfFrame}
               title="Правила безопасности"
             ></iframe>

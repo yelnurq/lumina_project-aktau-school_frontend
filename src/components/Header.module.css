@@ -608,6 +608,9 @@
   .searchBtn {
     display: none;
   }
+  .container {
+    margin: 0 10px;
+  }
 }
 
 /* Адаптивность */
