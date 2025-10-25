@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import axiosInstance from '../../axiosConfig';
 import styles from './Home.module.css';
 import Header from '../../components/Header';
-import facts from './../../json/facts.json'
 import SeoHelmet from '../../components/SeoHelmet';
-import { FaBrain, FaSchool } from 'react-icons/fa';
 import Gallery from '../../components/Gallery/Gallery';
 
 export default function Home() {
@@ -21,7 +19,6 @@ export default function Home() {
         ш: "sh", щ: "shch", ъ: "", ы: "y", ь: "",
         э: "e", ю: "yu", я: "ya",
 
-        // Казахские буквы
         ә: "a", ғ: "g", қ: "k", ң: "n", ө: "o", ұ: "u", ү: "u", һ: "h", і: "i",
 
         А: "A", Б: "B", В: "V", Г: "G", Д: "D",
@@ -49,24 +46,7 @@ export default function Home() {
     const diffDays = (now - published) / (1000 * 60 * 60 * 24);
     return diffDays < 3; // меньше 3 суток
     }
-    const [todayFact, setTodayFact] = useState(null);
 
-useEffect(() => {
-  const today = new Date();
-  const month = String(today.getMonth() + 1).padStart(2, '0');
-  const day = String(today.getDate()).padStart(2, '0');
-  const todayStr = `${month}-${day}`;
-
-  let factOfTheDay = facts.find(fact => fact.date === todayStr);
-
-  if (!factOfTheDay) {
-    // Если факта на сегодня нет, выбираем случайный
-    const randomIndex = Math.floor(Math.random() * facts.length);
-    factOfTheDay = facts[randomIndex];
-  }
-
-  setTodayFact(factOfTheDay.fact);
-}, []);
 
 
   useEffect(() => {
@@ -92,8 +72,8 @@ if (loading) {
           title="Lumina — IT-портал: блоги, онлайн-олимпиады и заказ сайтов"
           description="Lumina — платформа для разработчиков: читайте блоги, проходите онлайн-олимпиады и заказывайте профессиональные сайты."
           keywords="Lumina, IT, блоги, статьи, олимпиады, веб-разработка"
-          url="http://127.0.0.1:8000/"
-          // image={main ? `http://127.0.0.1:8000/storage/${main.image}` : "http://127.0.0.1:8000/preview-image.png"}
+          url="https://aktau-it-school.lumina.kz/"
+          // image={main ? `https://aktau-it-school.lumina.kz/storage/${main.image}` : "https://aktau-it-school.lumina.kz/preview-image.png"}
           type="website"
           jsonLdType="WebSite"
         />
@@ -165,7 +145,7 @@ if (loading) {
  
       </div>
     </section>
-    <section className={styles.categorySection} style={{marginTop:150}}>
+    <section className={styles.categorySection}>
             <p className={styles.titleBlock} style={{textAlign:'left'}}>
             Блог из школы
             </p>
@@ -178,7 +158,7 @@ if (loading) {
             {latest.map(news => (
               <div key={news.id} className={styles.card}>
                 <Link className={styles.newsLink} to={`/articles/${news.slug}`}>
-                <img loading="lazy" className={styles.latestImage} src={`http://127.0.0.1:8000/storage/${news.image}`} alt={news.title} />
+                <img loading="lazy" className={styles.latestImage} src={`https://aktau-it-school.lumina.kz/storage/${news.image}`} alt={news.title} />
                 <p className={styles.latestTitle}>{news.title}</p>
                 <p className={styles.latestDesc}>{news.excerpt}</p>
                     <p className={styles.meta}>
@@ -216,7 +196,7 @@ if (loading) {
     </section>
 
 
-    <section className={styles.categorySection} style={{ paddingBottom:50}}>
+    <section className={styles.gallerySection} style={{ paddingBottom:50}}>
       <div className={styles.categoryHeader}>
           <p className={styles.titleBlock}>
             Жизнь нашей школы

@@ -10,12 +10,14 @@
   height: 300px;
 }
 
+
 .overlay {
   background: rgba(0, 0, 0, 0.663);
   width: 100%;
   height: 100%;
   display: flex;
 }
+
 
 .main {
   width: 100%;
@@ -64,174 +66,137 @@
   justify-content: space-between;
   gap: 40px;
   max-width: 1200px;
-  margin: 60px auto;
+  margin: 30px auto;
   padding: 0 20px;
   flex-wrap: wrap;
 }
-.pageHeader {
-  position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 40% 60%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  height: 300px;
+
+.committeeSection p {
+      color: #555;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 15px;
 }
 
-.overlay {
-  background: rgba(0, 0, 0, 0.6);
-  width: 100%;
-  height: 100%;
-  display: flex;
-}
-
-.main {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.inner {
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 0 20px 20px;
-  width: 100%;
-  text-align: left;
-}
-
-.breadcrumbs {
-  font-size: 15px;
-  color: #ddd;
-  margin-bottom: 20px;
-}
-
-.breadcrumbs ol {
-  display: flex;
-  list-style: none;
-  gap: 6px;
-  padding: 0;
-  margin: 0;
-}
-
-.breadcrumbs a {
-  color: #4fa3f7;
-  text-decoration: none;
-}
-
-.pageTitle {
-  font-size: 36px;
-  font-weight: 700;
-}
-
-.committeeSection {
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 20px 60px;
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-}
-
-/* --- Почему выбирают нас --- */
 .whyUs {
   text-align: center;
+  background: #f9fafb;
 }
 
-.whyUs h2 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.whyUs p {
-  max-width: 800px;
-  margin: 0 auto 40px;
-  font-size: 18px;
-  color: #444;
-}
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 .card {
-  background: #f9f9f9;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+  padding: 32px 28px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
   text-align: left;
-  transition: 0.3s;
+  transition: all 0.35s ease;
+  border: 1px solid #e5e7eb;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  border-color: #c7d2fe;
 }
 
 .card h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #1a73e8;
+  font-size: 21px;
+  margin-bottom: 12px;
+  color: #1d4ed8; /* насыщенный синий */
+  font-weight: 600;
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 20px;
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.iconWrapper:hover {
+  transform: scale(1.1);
+}
+
+.icon {
+  font-size: 44px;
+  color: white;
 }
 
 /* --- Приёмная комиссия --- */
 .admission {
-  background: #f1f7ff;
-  padding: 40px 30px;
-  border-radius: 20px;
-}
-
-.admission h2 {
-  font-size: 30px;
-  font-weight: 700;
-  margin-bottom: 15px;
+  background: #eef2ff;
+  border: 1px solid #e0e7ff;
 }
 
 .admission p {
   font-size: 17px;
-  color: #333;
+  color: #374151;
   margin-bottom: 25px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .steps h3 {
   margin-bottom: 10px;
   font-weight: 600;
+  color: #1e3a8a;
 }
 
 .steps ol {
   padding-left: 20px;
-  color: #444;
+  color: #4b5563;
   line-height: 1.8;
 }
 
 .downloadBtn {
   display: inline-block;
   margin-top: 25px;
-  background: #1a73e8;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: white;
-  padding: 12px 22px;
-  border-radius: 8px;
+  padding: 12px 24px;
   text-decoration: none;
   font-weight: 600;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
 }
 
 .downloadBtn:hover {
-  background: #125dc4;
+  background: linear-gradient(135deg, #1e40af, #1d4ed8);
+  transform: translateY(-2px);
 }
 
+/* --- Общие секции --- */
 .formSection,
 .cardsSection,
 .faqSection {
-  padding: 80px 20px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 30px auto;
 }
+
+.cardsSection p {
+  color: #555;
+    font-size: 17px;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.cardsSection h2, .faqSection h2, .committeeSection h2 {
+
+  font-size: 28px;
+    color: #222;
+    margin-bottom: 15px;
+}
+
 
 .cardsGrid {
   display: grid;
@@ -239,39 +204,87 @@
   gap: 30px;
 }
 
+/* --- Карточки --- */
 .card {
-  background: #fff;
-  border-radius: 10px;
+  background: #ffffff;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   text-align: center;
-  padding: 20px;
+  padding: 28px;
+  border: 1px solid #e5e7eb;
 }
 
+/* --- Форма --- */
 .form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
   max-width: 500px;
   margin: 0 auto;
 }
 
-.submitBtn {
-  background-color: #2b6cb0;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  font-size: 16px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.faqItem {
-  background: #f7f7f7;
-  margin-bottom: 10px;
-  padding: 15px;
-  border-radius: 8px;
-  cursor: pointer;
+.form input:focus,
+.form textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  outline: none;
 }
+
+.submitBtn {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  padding: 14px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitBtn:hover {
+  background: linear-gradient(135deg, #1e40af, #1d4ed8);
+  transform: translateY(-2px);
+}
+
+/* --- FAQ --- */
+.faqItem {
+  background: #ffffff;
+  margin-bottom: 12px;
+  padding: 18px 22px;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faqItem:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+}
+
+.faqItem h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin: 0;
+}
+
+.faqItem p {
+  margin-top: 10px;
+  color: #374151;
+  line-height: 1.6;
+}
+
 .faqItem.open {
-  background: #e3e7ff;
+  background: #eef2ff;
+  border-color: #2563eb;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.12);
 }

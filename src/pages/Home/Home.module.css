@@ -1,11 +1,12 @@
-/* Контейнер главной страницы */
+
+
 .container {
   gap: 2rem;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
-.historyBlocks, .mainBlock, .categorySection, .about .container {
+.historyBlocks, .mainBlock, .categorySection, .about .container, .gallerySection {
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -558,7 +559,7 @@
   color: #0077cc;
 }
 .categorySection {
-  margin-top: 2rem;
+  margin-top:150px;
 }
 
 .categoryTitle {
@@ -677,6 +678,7 @@
   .latestObjectImage,
   .image {
     height: auto;
+    width: 100%;
     max-height: 250px;
   }
 
@@ -757,6 +759,7 @@
   .latestObjectImage,
   .image {
     max-height: 300px;
+    width: 100%;
   }
 
   .container {
@@ -775,6 +778,7 @@
   .latestObjectImage,
   .image {
     max-height: 350px;
+    width: 100%;
   }
 }
 
@@ -787,5 +791,406 @@
   }
   .skeletonLatestBlock {
     width: 100%;
+  }
+}
+/* ===================== */
+/* 📱 Мобильная адаптация */
+/* ===================== */
+@media (max-width: 768px) {
+
+  /* Главный фон-блок */
+  .mainBlocks {
+    height: auto;
+    background-position: center;
+    background-size: cover;
+    padding: 100px 0;
+  }
+
+  .mainBlocks .left {
+    position: static;
+    width: 90%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    padding: 25px 20px;
+  }
+
+  .mainBlocks .left button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .welcome {
+    font-size: 18px;
+  }
+
+  .textMain {
+    font-size: 16px;
+  }
+
+  .mainBlocks .address {
+    font-size: 15px;
+  }
+
+  /* Блок "Школа будущего" */
+  .historyBlocks {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .historyBlocks .right,
+  .historyBlocks .left {
+    width: 100%;
+  }
+
+  .historyBlocks .right p {
+    width: 100%;
+
+  }
+
+  .historyBlocks img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .historyText {
+    position: static;
+    background: none;
+    padding: 0;
+  }
+
+  .historyBlocks .left {
+    font-size: 17px;
+  }
+  .categorySection {
+    margin-top: 0.6rem;
+  }
+  /* О школе */
+  .about {
+    height: auto;
+    padding: 40px 0 20px;
+  }
+
+  .about .container {
+    flex-direction: column;
+    padding: 0 20px;
+    margin-top: 0;
+    gap: 20px;
+    align-items: center;
+  }
+  .about .right {
+    padding-top: 0;
+  }
+  .about .right, .about .left {
+    width: 100%;
+  }
+  .innovationImage {
+    width: 100%;
+    position: static;
+    margin-top: 20px;
+  }
+  .about h2 {
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .about p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+
+
+  /* Цитата */
+  .factBlock {
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .factBlock .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .quoteTop {
+    font-size: 80px;
+    top: -20%;
+    left: 45%;
+  }
+
+  .fact {
+    font-size: 18px;
+    padding: 0 15px;
+  }
+
+  .author {
+    font-size: 17px;
+    justify-content: center;
+  }
+
+  /* Новости */
+  .latestGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .latestTitle {
+    font-size: 18px;
+  }
+
+  .latestDesc {
+    font-size: 15px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  /* Галерея */
+  .categorySection {
+    padding: 0 20px;
+  }
+
+  /* Преимущества */
+  .advantages {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
+
+/* ===================== */
+/* 💻 Планшеты (768–1024) */
+/* ===================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .mainBlocks {
+    height: 80vh;
+    background-position: center;
+  }
+
+  .mainBlocks .left {
+    width: 65%;
+    top: 25%;
+    left: 5%;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .welcome {
+    font-size: 19px;
+  }
+
+  .textMain {
+    font-size: 17px;
+  }
+
+  .mainBlocks .address {
+    font-size: 15px;
+  }
+
+  /* Школа будущего */
+  .historyBlocks {
+    flex-direction: column;
+    gap: 40px;
+    padding: 60px 30px;
+  }
+
+  .historyBlocks .left,
+  .historyBlocks .right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .historyBlocks .right p {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .iconHistory {
+    display: none;
+  }
+
+  /* О школе */
+  .about {
+    height: auto;
+    padding: 40px 0 20px;
+  }
+
+  .about .container {
+    flex-direction: column;
+    padding: 0 20px;
+    margin-top: 0;
+    gap: 20px;
+    align-items: center;
+  }
+  .about .right {
+    padding-top: 0;
+  }
+  .about .right, .about .left {
+    width: 100%;
+  }
+  .innovationImage {
+    width: 100%;
+    position: static;
+    margin-top: 20px;
+  }
+  .about h2 {
+    font-size: 24px;
+  }
+
+  .about p {
+    font-size: 17px;
+  }
+
+
+
+  /* Преимущества */
+  .advantages {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Новости */
+  .latestGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .latestTitle {
+    font-size: 18px;
+  }
+
+  .latestDesc {
+    font-size: 15px;
+  }
+
+  /* Цитата */
+  .factBlock {
+    height: auto;
+    padding: 60px 0;
+  }
+
+  .factBlock .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .quoteTop {
+    font-size: 100px;
+    top: -25%;
+  }
+
+  .fact {
+    font-size: 19px;
+  }
+
+  .author {
+    font-size: 17px;
+  }
+}
+
+/* ===================== */
+/* 🖥 Маленькие ноутбуки (1025–1400) */
+/* ===================== */
+@media (min-width: 1025px) and (max-width: 1400px) {
+  .mainBlocks {
+    height: 90vh;
+    background-position: 30% 20%;
+  }
+
+  .mainBlocks .left {
+    width: 45%;
+    top: 25%;
+    left: 5%;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .textMain {
+    font-size: 18px;
+  }
+
+  .mainBlocks .address {
+    font-size: 16px;
+  }
+
+  /* О школе */
+  .about {
+    height: auto;
+    padding: 60px 0;
+  }
+
+  .about .container {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    margin: 0 ;
+    padding: 0 40px;
+  }
+
+  .about .left {
+    width: 50%;
+  }
+
+  .about .left p{
+    display: none;
+  }
+
+  .about .right {
+    width: 50%;
+    padding: 0;
+  }
+
+  .categorySection {
+    margin-top: 0;
+  }
+
+  .innovationImage {
+    width: 100%;
+    position: static;
+    height: auto;
+  }
+
+  .about h2 {
+    font-size: 26px;
+  }
+
+  .about p {
+    font-size: 18px;
+  }
+
+  .latestBlock { 
+    width: 100%;
+  }
+
+  /* Новости */
+  .latestGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  /* Преимущества */
+  .advantages {
+    width: 80%;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+  }
+
+  /* Цитата */
+  .factBlock {
+    height: auto;
+    padding: 70px 0;
+  }
+
+  .fact {
+    font-size: 21px;
+  }
+
+  .author {
+    font-size: 19px;
   }
 }

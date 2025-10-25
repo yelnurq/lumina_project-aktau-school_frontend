@@ -13,26 +13,24 @@ const images = [
 ];
 
 export default function Gallery() {
-  useEffect(() => {
-    let Fancybox;
-    import("@fancyapps/ui").then((mod) => {
-      Fancybox = mod.Fancybox;
-      Fancybox.bind('[data-fancybox="school-gallery"]', {
-        Thumbs: {
-          autoStart: false,
-        },
-        Carousel: {
-          infinite: true,
-        },
-      });
+useEffect(() => {
+  import("@fancyapps/ui").then(({ Fancybox }) => {
+    Fancybox.bind('[data-fancybox="school-gallery"]', {
+      Thumbs: false, // отключаем миниатюры
+      Toolbar: false, // убираем верхнюю панель
+      Carousel: {
+        infinite: false, // не нужно бесконечное перелистывание
+      },
     });
+  });
 
-    return () => {
-      if (Fancybox && Fancybox.destroy) {
-        Fancybox.destroy();
-      }
-    };
-  }, []);
+  return () => {
+    try {
+      window.Fancybox?.destroy();
+    } catch {}
+  };
+}, []);
+
 
   return (
     <div className={styles.categoryGrid}>

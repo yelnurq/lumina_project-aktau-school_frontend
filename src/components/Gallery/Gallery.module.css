@@ -29,3 +29,34 @@
 .imageWrapper:hover .schoolImage {
   transform: scale(1.05);
 }
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .categoryGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .schoolImage {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .categoryGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .schoolImage {
+    height: 220px;
+  }
+
+  .galleryTitle {
+    font-size: 26px;
+  }
+
+  .gallerySubtitle {
+    font-size: 16px;
+  }
+}
