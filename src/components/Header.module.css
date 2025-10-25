@@ -477,7 +477,6 @@
 /* Только для мобильного */
 @media (max-width: 768px) {
 
-  /* Скрываем обычное меню */
   .nav {
     display: flex;
     align-items: center;
@@ -499,14 +498,17 @@
     border: none;
     cursor: pointer;
     padding: 10px;
-    z-index: 1102; /* выше оверлея */
-    position: relative;
+    z-index: 1102;
+    position: absolute;
+
+    right: 15px;
+        top: 35px;
   }
 
   .burgerLine {
     width: 28px;
     height: 3px;
-    background-color: #333;
+    background-color: #fefefe;
     border-radius: 2px;
     transition: all 0.3s ease;
   }
@@ -530,20 +532,19 @@
     visibility: visible;
   }
 
-  /* Мобильное меню */
   .mobileNav {
     position: fixed;
     top: 0;
-    left: -220px; /* за экраном */
+    left: -220px; 
     width: 180px;
     height: 100vh;
-    background: linear-gradient(to right, #0f172a, #111827);   
+    background: linear-gradient(to right, #222222, #1f1f1f);   
     box-shadow: -2px 0 12px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
     padding: 2rem 1rem;
     gap: 1rem;
-    z-index: 1101; /* выше оверлея, ниже кнопки */
+    z-index: 1101; 
     transition: left 0.3s ease-in-out;
   }
 
@@ -553,6 +554,8 @@
 
   .mobileLink {
     font-weight: 400;
+    display: flex;
+    align-items: center;
     text-decoration: none;
     color: #d7d7d7;
     font-size: 1rem;
@@ -578,30 +581,19 @@
   .link::after {
     content: '';
   }
-}
-@media (max-width: 768px) {
-  .logoWrapper {
+    .logoWrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 70%;
   }
 
   .slogan {
     display: none; /* скрываем слоган на мобилке */
   }
-
  
-  .burgerLine {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
 }
 
-/* Медиа-запрос для маленьких экранов */
 @media (max-width: 768px) {
   .dropdownMenu {
     display: none; /* скрываем стандартный dropdown */
@@ -644,6 +636,7 @@
   }
   .container {
     align-items: center;
+    margin: 0;
   }
 
   .nav {

@@ -138,7 +138,7 @@ export default function NewsList() {
 
  
           <div className={styles.grid}>
-            {loading ? (
+            {!loading ? (
                    [...Array(6)].map((_, i) => (
                   <div key={i} className={`${styles.card} ${styles.skeleton}`}></div>
                 ))

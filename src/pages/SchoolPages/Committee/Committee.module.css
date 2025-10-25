@@ -19,6 +19,8 @@
 }
 
 
+
+
 .main {
   width: 100%;
   display: flex;
@@ -175,7 +177,10 @@
   transform: translateY(-2px);
 }
 
-/* --- Общие секции --- */
+.faqSection {
+  padding-bottom: 40px;
+}
+
 .formSection,
 .cardsSection,
 .faqSection {
@@ -287,4 +292,12 @@
   background: #eef2ff;
   border-color: #2563eb;
   box-shadow: 0 8px 20px rgba(59, 130, 246, 0.12);
+}
+
+
+
+@media (max-width:1200px) {
+  .committeeSection, .faqSection , .cardsSection {
+  padding: 0 20px;
+}
 }

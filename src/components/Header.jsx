@@ -8,7 +8,8 @@ import {
   FaHome,
 
 
-  FaInstagram, FaYoutube, FaEye
+  FaInstagram, FaYoutube, FaEye,
+  FaSchool
 } from 'react-icons/fa';
 
 import styles from './Header.module.css';
@@ -222,8 +223,6 @@ const handleNextPage = () => {
               </>
             )}
 
-            {/* Мобильное меню */}
-  {/* Overlay для затемнения */}
 {isMobile && (
   <div
     className={`${styles.mobileOverlay} ${isMobileMenuOpen ? styles.show : ''}`}
@@ -231,39 +230,35 @@ const handleNextPage = () => {
   />
 )}
 
-{/* Мобильное меню */}
 {isMobile && (
   <div className={`${styles.mobileNav} ${isMobileMenuOpen ? styles.open : ''}`}>
-
-    <Link to="/" className={styles.mobileLink}>
-      <FaHome className={styles.iconMobile} /> Главная
-    </Link>
-
-    <Link to="/articles" className={styles.mobileLink}>
-      <FaBlog className={styles.iconMobile} /> Блоги
-    </Link>
-    
-    <Link to="/order" className={styles.mobileLink}>
-      <FaLaptopCode className={styles.iconMobile} /> Заказать сайт
-    </Link>
-
     <div className={styles.mobileDropdown}>
       <span className={styles.mobileLink}>
-        <FaDiceThree  className={styles.iconMobile} /> Сервисы
+        <Link to="/" className={styles.mobileLink}>
+          <FaHome className={styles.iconMobile} /> О нас
+        </Link>
       </span>
-      <Link to="/quiz" className={styles.mobileSubLink}>
-        <FaTrophy className={styles.iconMobile} /> Тестирование
+      <Link to="/school/director" className={styles.mobileSubLink}>
+        <FaTrophy className={styles.iconMobile} /> Обратная связь с директором
       </Link>
-      {/* <Link to="/hub" className={styles.mobileSubLink}>
-        <FaTools className={styles.iconMobile} /> Инструменты
-      </Link> */}
-      <a href="https://lumina.kz/rss" className={styles.mobileSubLink}>
-        <FaRss className={styles.iconMobile} /> RSS
-      </a>
+      <Link to="/school/safety" className={styles.mobileSubLink}>
+        <FaTrophy className={styles.iconMobile} /> Борьба с терроризмом и безопасность школ
+      </Link>
     </div>
+    <Link to="/articles" className={styles.mobileLink}>
+      <FaBlog className={styles.iconMobile} /> Новости
+    </Link>
+    
+    <Link to="/education" className={styles.mobileLink}>
+      <FaSchool className={styles.iconMobile} /> Обучение
+    </Link>
+    <Link to="/committee" className={styles.mobileLink}>
+      <FaSchool className={styles.iconMobile} /> Приемная комиссия
+    </Link>
+
 
     <Link to="/about" className={styles.mobileLink}>
-      <FaInfoCircle className={styles.iconMobile} /> О проекте
+      <FaInfoCircle className={styles.iconMobile} /> Контакты
     </Link>
   </div>
 )}

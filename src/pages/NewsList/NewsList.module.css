@@ -13,19 +13,13 @@
   color: #111827;
 }
 
-/* --- Грид с masonry-style layout --- */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(384px, 0fr));
+  grid-template-columns: repeat(3, minmax(288px, 1fr));
   gap: 1.5rem;
 }
 
-.skeletongrid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(384px, 0fr));
-  gap: 1.5rem;
-  align-items: start;
-}
+
 .iconMobile {
   margin-right: 8px;
   margin-top: -3px  ;
@@ -248,6 +242,7 @@ border-color: #6b1b1b;
 .mainContent {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   gap: 24px; /* расстояние между колонками */
 }
 
@@ -300,16 +295,11 @@ border-color: #6b1b1b;
 
 .promoButton:hover {
   background-color: #4338ca;
-}/* Адаптив */
-@media (max-width: 1100px) {
-  .sidebar {
-    width: 100%;
-  }
-  .skeletonGridTag {
-    flex-shrink: 1;
-    min-width: none;
+}
 
-  }
+@media (max-width: 1200px) {
+
+
   .mainContent {
     flex-direction: column;
   }
