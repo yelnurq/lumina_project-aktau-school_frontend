@@ -733,6 +733,7 @@
 
 .contactList li a {
   color: #9abce2;
+  word-break: break-word;
   text-decoration: none;
 }
 
@@ -821,10 +822,16 @@
   color: #0077cc;
 }
 
-/* 🔲 Overlay */
 .searchOverlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.6); /* чуть затемняем */
   z-index: 2;
+}
+
+
+@media (max-width:320px) {
+  .logo {
+    font-size: 1.2rem;
+  }
 }

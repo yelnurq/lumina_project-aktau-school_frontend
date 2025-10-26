@@ -84,3 +84,10 @@
     width: auto;
   }
 }
+
+
+@media (max-width:768px) {
+  .pageTitle {
+    font-size:25px;
+  }
+}

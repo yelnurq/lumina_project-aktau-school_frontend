@@ -52,7 +52,6 @@
   transition: 0.3s;
 }
 
-
 .aboutSection {
   background: none;
   max-width: 1200px;
@@ -73,10 +72,11 @@
   padding: 40px 50px;
   flex: 1 1 550px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
 }
 
 .sectionTitle {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
   text-align: left;
   margin-bottom: 10px;
@@ -121,15 +121,15 @@
 }
 
 .submitBtn {
-    background: rgb(5, 20, 136);
-    color: white;
-    margin-top: 20px;
-    border: none;
-    font-weight: 500;
-    padding: 10px 20px;
-    font-size: 16px;
-    transition: 300ms;
-    cursor: pointer;
+  background: rgb(5, 20, 136);
+  color: white;
+  margin-top: 20px;
+  border: none;
+  font-weight: 500;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: 300ms;
+  cursor: pointer;
 }
 
 .submitBtn:hover {
@@ -143,6 +143,7 @@
   flex: 0 1 320px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   align-self: flex-start;
+  box-sizing: border-box;
 }
 
 .directorPhoto {
@@ -173,21 +174,147 @@
   text-decoration: underline;
 }
 
+/* ============================= */
+/* 📱 Адаптивный дизайн */
+/* ============================= */
+
+/* --- До 1024px (ноутбуки и небольшие десктопы) --- */
+@media (max-width: 1024px) {
+
+  .aboutSection {
+    padding: 0 15px;
+  }
+
+  .contentWrapper {
+    gap: 30px;
+  }
+
+
+}
+
+/* --- До 900px (планшеты горизонтально) --- */
 @media (max-width: 900px) {
   .contentWrapper {
     flex-direction: column;
     align-items: center;
+    gap: 30px;
   }
 
   .formContainer {
+    width: 100%;
     padding: 30px;
   }
 
   .directorCard {
+    flex: 1 1 100%;
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
   }
-}.overlayLoader {
+
+  .sectionTitle {
+    text-align: center;
+  }
+
+
+}
+
+/* --- До 768px (планшеты вертикально) --- */
+@media (max-width: 768px) {
+  .breadcrumbs {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .formContainer {
+    padding: 25px 20px;
+  }
+
+  .directorPhoto {
+    height: 300px;
+  }
+
+  .sectionTitle {
+    font-size: 20px;
+  }
+
+  .submitBtn {
+    width: 100%;
+  }
+}
+
+/* --- До 480px (смартфоны) --- */
+@media (max-width: 480px) {
+
+
+  .aboutSection {
+    padding: 0 10px;
+  }
+
+  .formContainer {
+    padding: 20px 15px;
+  }
+
+  .formGroup label {
+    font-size: 14px;
+  }
+
+  .formGroup input,
+  .formGroup textarea {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .sectionTitle {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .directorCard {
+    padding: 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .directorPhoto {
+    height: 240px;
+  }
+
+  .directorName {
+    font-size: 18px;
+  }
+
+  .directorPosition {
+    font-size: 14px;
+  }
+
+  .submitBtn {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+
+/* --- До 360px (очень маленькие экраны) --- */
+@media (max-width: 360px) {
+
+
+  .directorPhoto {
+    height: 200px;
+  }
+
+  .submitBtn {
+    font-size: 14px;
+  }
+}
+
+/* ============================= */
+/* 🔄 Анимации и оверлей */
+/* ============================= */
+.overlayLoader {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
@@ -230,5 +357,12 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+
+@media (max-width:768px) {
+  .pageTitle {
+    font-size:25px;
   }
 }
