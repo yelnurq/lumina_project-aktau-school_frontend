@@ -21,6 +21,7 @@
 .schoolImage {
   display: block;
   width: 100%;
+  object-position: 60% 20%;
   height: 300px; /* или auto, если хотите сохранять пропорции */
   object-fit: cover;
   transition: transform 0.36s ease;

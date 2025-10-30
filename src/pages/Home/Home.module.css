@@ -248,6 +248,9 @@
 
 
 .historyBlocks img {
+  width: 600px;
+  height: 600px;
+  object-fit: cover;
 }
 
 .historyBlocks .left {

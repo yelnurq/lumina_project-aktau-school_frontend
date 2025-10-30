@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axiosInstance from '../../axiosConfig';
@@ -98,7 +99,7 @@ if (loading) {
     <div className={styles.historyText}>
       <p style={{fontWeight:900}}>Школа будущего — сегодня</p>
     </div>
-    <img src="./images/istockphoto-1425336585-612x612.jpg" alt="Современная школа" />
+    <img src="./images/home/h2.jpeg" alt="Современная школа" />
   </div>
 
   <div className={styles.left}>

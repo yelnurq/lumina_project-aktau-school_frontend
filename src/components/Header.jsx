@@ -185,8 +185,9 @@ const handleNextPage = () => {
                       className={styles.dropdownMenu}
                       onMouseLeave={() => setActiveMenu(null)}
                     >
-                      <Link to="/school/director" className={styles.dropdownItem}>Обратная связь с директором</Link>
-                      <Link to="/school/safety" className={styles.dropdownItem}>Борьба с терроризмом и безопасность школ</Link>
+                      <Link to="/achievements" className={styles.dropdownItem}>Достижения</Link>
+                      <Link to="/director" className={styles.dropdownItem}>Обратная связь с директором</Link>
+                      <Link to="/safety" className={styles.dropdownItem}>Борьба с терроризмом и безопасность школ</Link>
 
                     </div>
                   )}
