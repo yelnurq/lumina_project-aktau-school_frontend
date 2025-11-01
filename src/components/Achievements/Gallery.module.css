@@ -1,0 +1,63 @@
+/* Gallery.module.css */
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+
+.imageWrapper {
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  background: #fff;
+}
+
+.imageWrapper:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+.schoolImage {
+  display: block;
+  width: 100%;
+  object-position: 60% 20%;
+  height: 300px; /* или auto, если хотите сохранять пропорции */
+  object-fit: cover;
+  transition: transform 0.36s ease;
+}
+
+.imageWrapper:hover .schoolImage {
+  transform: scale(1.05);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .categoryGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .schoolImage {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .categoryGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .schoolImage {
+    height: 220px;
+  }
+
+  .galleryTitle {
+    font-size: 26px;
+  }
+
+  .gallerySubtitle {
+    font-size: 16px;
+  }
+}
