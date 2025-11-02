@@ -21,10 +21,10 @@ export default function AchievementsGallery() {
 useEffect(() => {
   import("@fancyapps/ui").then(({ Fancybox }) => {
     Fancybox.bind('[data-fancybox="school-gallery"]', {
-      Thumbs: false, // отключаем миниатюры
-      Toolbar: false, // убираем верхнюю панель
+      Thumbs: false, 
+      Toolbar: false,
       Carousel: {
-        infinite: false, // не нужно бесконечное перелистывание
+        infinite: false, 
       },
     });
   });
