@@ -26,7 +26,7 @@
 
 .mainBlocks {
 
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%), url(../../../public/images/main.jpg);
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%), url(../../../public/images/home/main.jpeg);
     background-repeat: no-repeat;
     height: 95vh;
     background-position: 20% 17%;
@@ -809,8 +809,9 @@
 
   .mainBlocks .left {
     position: static;
-    width: 90%;
+    width: auto;
     margin: 0 auto;
+    margin: 0 20px;
     background: rgba(255, 255, 255, 0.95);
     text-align: center;
     padding: 25px 20px;
@@ -859,6 +860,7 @@
   .historyText {
     position: static;
     background: none;
+    width: 100%;
     padding: 0;
   }
 

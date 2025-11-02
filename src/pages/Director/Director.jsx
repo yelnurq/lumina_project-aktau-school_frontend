@@ -68,6 +68,60 @@ export default function Director() {
 
         <section className={styles.aboutSection}>
           <div className={styles.contentWrapper}>
+<div className={styles.directorAbout}>
+  <img
+    src="/images/director1.jpg"
+    alt="Директор школы"
+    className={styles.directorPhotoLarge}
+  />
+  <div className={styles.directorInfo}>
+    <h3 className={styles.directorName}>Туленова Айтолқын Джумабаевна</h3>
+    <p className={styles.directorPosition}>
+      Директор школы ИТ и иностранных языков
+    </p>
+
+    <p className={styles.directorBioText}>
+      <strong>Туған күні:</strong> 07.12.1974  
+      <br />
+      <strong>Туған жері:</strong> Маңғыстау облысы, Жаңаөзен қаласы
+      <br />
+      <strong>Педагогикалық дәрежесі:</strong> Педагог–зерттеуші  
+      <br />
+      <strong>Еңбек өтілі:</strong> 31 жыл
+    </p>
+
+    <p className={styles.directorBioText}>
+      Т. Әлиев атындағы №1 орта мектептің түлегі.  
+      1991–1994 жылдары Ақтау қаласындағы педагогикалық гуманитарлық колледжінде,
+      1994–1996 жылдары Ш. Есенов атындағы Каспий технологиялар және инжиниринг университетінде 
+      педагогика – психология мамандығы бойынша білім алды.  
+      2010–2012 жылдары Батыс Қазақстан инновациялық–технологиялық университетінде 
+      «Бастауыш оқытудың педагогикасы мен әдістемесі» мамандығы бойынша білім бакалавры дәрежесін алды.
+    </p>
+
+    <p className={styles.directorBioText}>
+      Еңбек жолын Жаңаөзен қаласындағы №4 «Айгүл» балабақшасында тәрбиеші болып бастады.  
+      Кейін №17 және №19 жалпы білім беретін мектептерде бастауыш сынып мұғалімі болып қызмет етті.  
+      Сондай-ақ №13 «Дарын» мектеп-лицейінде және №5 мектеп-гимназияда директордың оқу ісі жөніндегі 
+      орынбасары қызметін атқарды.
+    </p>
+
+    <p className={styles.directorContact}>
+      <strong>Байланыс:</strong><br />
+      Телефон: <a href="tel:+77022519574">+7 702 251 9574</a><br />
+      Email: <a href="mailto:Aitolkyn.tulenova74@mail.ru">Aitolkyn.tulenova74@mail.ru</a><br />
+      Instagram:{" "}
+      <a
+        href="https://www.instagram.com/tulenovaaitolkyn?igsh=eG55eTJxOTY0ZXM2"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        @tulenovaaitolkyn
+      </a>
+    </p>
+  </div>
+</div>
+
             <div className={styles.formContainer}>
               <h2 className={styles.sectionTitle}>Отправьте сообщение директору</h2>
               <p className={styles.description}>
@@ -129,19 +183,7 @@ export default function Director() {
               </form>
             </div>
 
-            <aside className={styles.directorCard}>
-              <img
-                src="/images/director.jpg"
-                alt="Директор школы"
-                className={styles.directorPhoto}
-              />
-              <h3 className={styles.directorName}>Асхат Куанышбеков</h3>
-              <p className={styles.directorPosition}>Директор школы ИТ и иностранных языков</p>
-              <p className={styles.directorContact}>
-                Телефон: <a href="tel:+77015554433">+7 (701) 555-44-33</a><br />
-                Email: <a href="mailto:director@school.kz">director@school.kz</a>
-              </p>
-            </aside>
+        
           </div>
         </section>
       </div>

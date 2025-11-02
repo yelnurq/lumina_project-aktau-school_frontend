@@ -239,10 +239,14 @@ const handleNextPage = () => {
           <FaHome className={styles.iconMobile} /> О нас
         </Link>
       </span>
-      <Link to="/school/director" className={styles.mobileSubLink}>
+      
+      <Link to="/achievements" className={styles.mobileSubLink}>
+        <FaTrophy className={styles.iconMobile} /> Достижения
+      </Link>
+      <Link to="/director" className={styles.mobileSubLink}>
         <FaTrophy className={styles.iconMobile} /> Обратная связь с директором
       </Link>
-      <Link to="/school/safety" className={styles.mobileSubLink}>
+      <Link to="/safety" className={styles.mobileSubLink}>
         <FaTrophy className={styles.iconMobile} /> Борьба с терроризмом и безопасность школ
       </Link>
     </div>
