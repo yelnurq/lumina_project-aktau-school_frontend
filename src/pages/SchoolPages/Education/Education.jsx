@@ -38,19 +38,19 @@ export default function Education() {
               где знания — это инструмент для будущих свершений.
             </p>
           </div>
-          <img src="/images/main.jpg" alt="Современный класс" className={styles.sectionImage} />
+          <img src="/images/6.jpg" alt="Современный класс" className={styles.sectionImage} />
         </section>
 
         <section className={styles.cardsSection}>
           <h2>Основные направления обучения</h2>
           <div className={styles.cardsGrid}>
             <div className={styles.card}>
-              <img src="/images/main.jpg" alt="IT" />
+              <img src="/images/5.jpg" alt="IT" />
               <h3>Информационные технологии</h3>
               <p>Кодинг, робототехника, веб-разработка и цифровая грамотность с ранних классов.</p>
             </div>
             <div className={styles.card}>
-              <img src="/images/main.jpg" alt="Languages" />
+              <img src="/images/3.png" style={{objectPosition:'center'}} alt="Languages" />
               <h3>Иностранные языки</h3>
               <p>Английский, турецкий, казахский и другие языки с применением разговорных методик.</p>
             </div>
@@ -59,7 +59,7 @@ export default function Education() {
         </section>
 
         <section className={`${styles.eduSection} ${styles.reverse}`}>
-          <img src="/images/main.jpg" alt="Внеурочная жизнь" className={styles.sectionImage} />
+          <img src="/images/2.jpg" alt="Внеурочная жизнь" className={styles.sectionImage} />
           <div className={styles.sectionContent}>
             <h2>Внеурочная жизнь школы</h2>
             <p>

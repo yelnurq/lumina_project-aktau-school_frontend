@@ -99,7 +99,7 @@ if (loading) {
     <div className={styles.historyText}>
       <p style={{fontWeight:900}}>Школа будущего — сегодня</p>
     </div>
-    <img src="./images/home/h2.jpeg" alt="Современная школа" />
+    <img src="./images/home/2.jpg" alt="Современная школа" />
   </div>
 
   <div className={styles.left}>
@@ -137,7 +137,7 @@ if (loading) {
       которые помогут им стать конкурентоспособными в будущем.
     </p>
     <img
-      src="/images/comp.jpg"
+      src="/images/4.jpg"
       alt="Инновации в обучении"
       className={styles.innovationImage}
     />
