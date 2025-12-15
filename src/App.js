@@ -12,6 +12,7 @@ import NotFound from './pages/NotFound/NotFound';
 import AdminMessages from './pages/AdminMessages/AdminMessages';
 import Committee from './pages/SchoolPages/Committee/Committee';
 import Safety from './pages/SchoolPages/Safety/Safety';
+import Circles from './pages/SchoolPages/Circles/Circles';
 import Director from './pages/Director/Director';
 import Education from './pages/SchoolPages/Education/Education';
 import Achievements from './pages/SchoolPages/Achievements/Achievements';
@@ -41,6 +42,7 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/circles" element={<Circles />} />
           <Route path="/committee" element={<Committee />} />
           <Route path="/education" element={<Education />} />
           <Route path="/achievements" element={<Achievements />} />
