@@ -73,8 +73,8 @@ if (loading) {
           title="Lumina — IT-портал: блоги, онлайн-олимпиады и заказ сайтов"
           description="Lumina — платформа для разработчиков: читайте блоги, проходите онлайн-олимпиады и заказывайте профессиональные сайты."
           keywords="Lumina, IT, блоги, статьи, олимпиады, веб-разработка"
-          url="https://aktau-it-school.lumina.kz/"
-          // image={main ? `https://aktau-it-school.lumina.kz/storage/${main.image}` : "https://aktau-it-school.lumina.kz/preview-image.png"}
+          url="http://127.0.0.1:8000/"
+          // image={main ? `http://127.0.0.1:8000/storage/${main.image}` : "http://127.0.0.1:8000/preview-image.png"}
           type="website"
           jsonLdType="WebSite"
         />
@@ -159,7 +159,7 @@ if (loading) {
             {latest.map(news => (
               <div key={news.id} className={styles.card}>
                 <Link className={styles.newsLink} to={`/articles/${news.slug}`}>
-                <img loading="lazy" className={styles.latestImage} src={`https://aktau-it-school.lumina.kz/storage/${news.image}`} alt={news.title} />
+                <img loading="lazy" className={styles.latestImage} src={`http://127.0.0.1:8000/storage/${news.image}`} alt={news.title} />
                 <p className={styles.latestTitle}>{news.title}</p>
                 <p className={styles.latestDesc}>{news.excerpt}</p>
                     <p className={styles.meta}>

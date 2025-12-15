@@ -79,7 +79,7 @@ export default function NewsList() {
     updateURL(updated);
   };
 
-  const url = `https://aktau-it-school.lumina.kz/articles${searchParams.toString() ? `?${searchParams.toString()}` : ''}`;
+  const url = `http://127.0.0.1:8000/articles${searchParams.toString() ? `?${searchParams.toString()}` : ''}`;
 
   return (
     <>
@@ -152,7 +152,7 @@ export default function NewsList() {
                   className={styles.card}
                 >
                   <img
-                    src={`https://aktau-it-school.lumina.kz/storage/${item.image}`}
+                    src={`http://127.0.0.1:8000/storage/${item.image}`}
                     alt={item.title}
                     className={styles.image}
                   />
