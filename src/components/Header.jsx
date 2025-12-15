@@ -185,7 +185,9 @@ const handleNextPage = () => {
                       className={styles.dropdownMenu}
                       onMouseLeave={() => setActiveMenu(null)}
                     >
+                      <Link to="/structure" className={styles.dropdownItem}>Педагогический коллектив</Link>
                       <Link to="/achievements" className={styles.dropdownItem}>Достижения</Link>
+                      <Link to="/circles" className={styles.dropdownItem}>Дополнительное образование и кружки</Link>
                       <Link to="/director" className={styles.dropdownItem}>Обратная связь с директором</Link>
                       <Link to="/safety" className={styles.dropdownItem}>Борьба с терроризмом и безопасность школ</Link>
 

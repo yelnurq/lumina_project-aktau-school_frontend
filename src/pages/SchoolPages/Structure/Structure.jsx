@@ -15,35 +15,47 @@ export default function Structure() {
     setOpenFAQ(openFAQ === index ? null : index);
   };
 
-  // Список учителей и их должностей (на русском языке)
+  // Полный список учителей и их должностей
   const teachersData = [
-    { name: "Туленова Айтолкын Джумабаевна", position: "Директор", icon: <FaUserTie className={styles.icon} /> },
-    { name: "Турсунгалиева Дана Турдыбекқызы", position: "Заместитель директора по воспитательной работе (ТЖО)", icon: <FaChalkboardTeacher className={styles.icon} /> },
-    { name: "Алиева Ақмарал Базарбайқызы", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
-    { name: "Байгулова Жамила Конарбаевна", position: "Учитель физической культуры", icon: <FaDumbbell className={styles.icon} /> },
-    { name: "Ескалиева Айгуль Есенжановна", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
-    { name: "Ерсултанова Жансулу Довлетовна", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
-    { name: "Исаева Мейрамгул Турганбаевна", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
-    { name: "Иса Мадина Серикқызы", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
-    { name: "Конирова Сауле Тынышлыковна", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
-    { name: "Конисбаева Валя Ишановна", position: "Учитель художественного труда", icon: <FaStar className={styles.icon} /> },
-    { name: "Конысбаева Марзия Сапарбаевна", position: "Учитель информатики", icon: <FaLaptop className={styles.icon} /> },
-    { name: "Лұқпан Наурызгүл Қуатқызы", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
-    { name: "Мейрова Майра Хамидовна", position: "Учитель физической культуры", icon: <FaDumbbell className={styles.icon} /> },
-    { name: "Мусрепова Нурбике Санатуллаевна", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
-    { name: "Нарембаева Жарқын Беркбаевна", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
-    { name: "Нұрғалиева Гүлназ Бақтыбайқызы", position: "Учитель английского языка", icon: <FaGlobe className={styles.icon} /> },
-    { name: "Нуржанова Карлыгаш Бахтияровна", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
-    { name: "Сойунбаева Акзер Базарбаевна", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
-    { name: "Туркменбаева Арайлым Жеңісбайқызы", position: "Учитель иностранного языка", icon: <FaGlobe className={styles.icon} /> },
-    { name: "Утегенова Гульнара Айтжановна", position: "Учитель русского языка", icon: <FaBookReader className={styles.icon} /> },
-    { name: "Утесинова Айгул Оринбаевна", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
-    { name: "Ускинбаева Назгуль Бакытжанкызы", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
-    { name: "Худайбергенова Шара Мамонтовна", position: "Учитель музыки", icon: <FaMusic className={styles.icon} /> },
-    { name: "Ізімберген Данияр Мамбетұлы", position: "Учитель физической культуры", icon: <FaDumbbell className={styles.icon} /> },
-    { name: "Іляс Гүлдана Саматқызы", position: "Учитель русского языка", icon: <FaBookReader className={styles.icon} /> },
+    { name: "Туленова Айтолкын Джумабаевна", position: "Директор", group: "Администрация" },
+    { name: "Турсунгалиева Дана Турдыбекқызы", position: "Заместитель директора по воспитательной работе (ТЖО)", group: "Администрация" },
+    
+    // Начальные классы
+    { name: "Алиева Ақмарал Базарбайқызы", position: "Учитель начальных классов", group: "Учителя начальных классов" },
+    { name: "Ескалиева Айгуль Есенжановна", position: "Учитель начальных классов", group: "Учителя начальных классов" },
+    { name: "Ерсултанова Жансулу Довлетовна", position: "Учитель начальных классов", group: "Учителя начальных классов" },
+    { name: "Исаева Мейрамгул Турганбаевна", position: "Учитель начальных классов", group: "Учителя начальных классов" },
+    { name: "Иса Мадина Серикқызы", position: "Учитель начальных классов", group: "Учителя начальных классов" },
+    { name: "Конирова Сауле Тынышлыковна", position: "Учитель начальных классов", group: "Учителя начальных классов" },
+    { name: "Лұқпан Наурызгүл Қуатқызы", position: "Учитель начальных классов", group: "Учителя начальных классов" },
+    { name: "Мусрепова Нурбике Санатуллаевна", position: "Учитель начальных классов", group: "Учителя начальных классов" },
+    { name: "Нарембаева Жарқын Беркбаевна", position: "Учитель начальных классов", group: "Учителя начальных классов" },
+    { name: "Нуржанова Карлыгаш Бахтияровна", position: "Учитель начальных классов", group: "Учителя начальных классов" },
+    { name: "Сойунбаева Акзер Базарбаевна", position: "Учитель начальных классов", group: "Учителя начальных классов" },
+    { name: "Утесинова Айгул Оринбаевна", position: "Учитель начальных классов", group: "Учителя начальных классов" },
+    { name: "Ускинбаева Назгуль Бакытжанкызы", position: "Учитель начальных классов", group: "Учителя начальных классов" },
+
+    // Предметники
+    { name: "Байгулова Жамила Конарбаевна", position: "Учитель физической культуры", group: "Учителя-предметники" },
+    { name: "Мейрова Майра Хамидовна", position: "Учитель физической культуры", group: "Учителя-предметники" },
+    { name: "Ізімберген Данияр Мамбетұлы", position: "Учитель физической культуры", group: "Учителя-предметники" },
+
+    { name: "Нұрғалиева Гүлназ Бақтыбайқызы", position: "Учитель английского языка", group: "Учителя-предметники" },
+    { name: "Туркменбаева Арайлым Жеңісбайқызы", position: "Учитель иностранного языка", group: "Учителя-предметники" },
+    
+    { name: "Утегенова Гульнара Айтжановна", position: "Учитель русского языка", group: "Учителя-предметники" },
+    { name: "Іляс Гүлдана Саматқызы", position: "Учитель русского языка", group: "Учителя-предметники" },
+
+    { name: "Конысбаева Марзия Сапарбаевна", position: "Учитель информатики", group: "Учителя-предметники" },
+    { name: "Конисбаева Валя Ишановна", position: "Учитель художественного труда", group: "Учителя-предметники" },
+    { name: "Худайбергенова Шара Мамонтовна", position: "Учитель музыки", group: "Учителя-предметники" },
   ];
 
+  // Группируем данные по группам
+  const groupedTeachers = teachersData.reduce((acc, teacher) => {
+    (acc[teacher.group] = acc[teacher.group] || []).push(teacher);
+    return acc;
+  }, {});
 
   // Функции для определения соответствующей иконки на основе должности
   const getIconForPosition = (position) => {
@@ -52,17 +64,16 @@ export default function Structure() {
     if (position.includes("физической культуры")) return <FaDumbbell className={styles.icon} />;
     if (position.includes("английского языка") || position.includes("иностранного языка")) return <FaGlobe className={styles.icon} />;
     if (position.includes("информатики")) return <FaLaptop className={styles.icon} />;
-    if (position.includes("музыки")) return <FaMusic className={styles.icon} />;
-    return <FaChalkboardTeacher className={styles.icon} />; // Иконка по умолчанию
+    if (position.includes("музыки") || position.includes("художественного труда")) return <FaStar className={styles.icon} />;
+    return <FaChalkboardTeacher className={styles.icon} />;
   };
-
 
   return (
     <Header>
       <div className={styles.container}>
         <section
           className={styles.pageHeader}
-          style={{ backgroundImage: `url('/images/elementary-school-classroom-design.jpg')` }} // Рекомендуется заменить фоновое изображение на более подходящее теме
+          style={{ backgroundImage: `url('/images/elementary-school-classroom-design.jpg')` }} 
         >
           <div className={styles.overlay}>
             <div className={styles.main}>
@@ -71,11 +82,9 @@ export default function Structure() {
                   <ol>
                     <li><Link to="/">Главная</Link></li>
                     <li>/</li>
-                    {/* Обновлено: "Кружки" заменено на "Состав учителей" */}
                     <li>Состав учителей</li>
                   </ol>
                 </nav>
-                {/* Обновлено: "Кружки" заменено на "Состав учителей" */}
                 <h1 className={styles.pageTitle}>Состав учителей</h1>
               </div>
             </div>
@@ -98,36 +107,31 @@ export default function Structure() {
             в соответствии с современными стандартами.
           </p>
           </div>
-
         </section>
 
-    {/* Секция с карточками всех учителей */}
-    <section className={styles.cardsSection}>
-      <h2>Список педагогов школы</h2>
-      <div className={styles.cardsGrid}>
-        {/* Отображаем список учителей */}
-        {teachersData.map((teacher, index) => (
-          <div key={index} className={styles.card}>
-            <div className={styles.iconWrapper}>
-              {/* Используем функцию для определения иконки */}
-              {getIconForPosition(teacher.position)}
+        {/* Секция с карточками учителей, сгруппированными по ролям */}
+        <section className={styles.cardsSection}>
+          <h2>Список педагогов школы по категориям</h2>
+          
+          {Object.keys(groupedTeachers).map((groupName, groupIndex) => (
+            <div key={groupIndex} className={styles.teacherGroup}>
+              <h3 className={styles.groupTitle}>{groupName} ({groupedTeachers[groupName].length})</h3>
+              <div className={styles.cardsGrid}>
+                {groupedTeachers[groupName].map((teacher, index) => (
+                  <div key={index} className={styles.card}>
+                    <div className={styles.iconWrapper}>
+                      {getIconForPosition(teacher.position)}
+                    </div>
+                    <h4>{teacher.name}</h4>
+                    <p>{teacher.position}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-            <h3>{teacher.name}</h3>
-            <p>{teacher.position}</p>
-          </div>
-        ))}
-      </div>
+          ))}
 
-    </section>
-
-        {/* Секция FAQ удалена или заменена на краткую информацию */}
-        <section className={styles.faqSection} style={{marginTop:50}}>
-          <h2>Обратная связь</h2>
-          <div className={styles.faqList}>
-             <p>Если у вас есть вопросы к конкретному педагогу, вы можете обратиться через классного руководителя или администрацию школы.</p>
-             <p>Мы ценим сотрудничество с родителями и всегда готовы к диалогу!</p>
-          </div>
         </section>
+
       </div>
     </Header>
   );
