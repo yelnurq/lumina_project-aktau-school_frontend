@@ -13,6 +13,7 @@ import AdminMessages from './pages/AdminMessages/AdminMessages';
 import Committee from './pages/SchoolPages/Committee/Committee';
 import Safety from './pages/SchoolPages/Safety/Safety';
 import Circles from './pages/SchoolPages/Circles/Circles';
+import Structure from './pages/SchoolPages/Structure/Structure';
 import Director from './pages/Director/Director';
 import Education from './pages/SchoolPages/Education/Education';
 import Achievements from './pages/SchoolPages/Achievements/Achievements';
@@ -43,6 +44,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/circles" element={<Circles />} />
+          <Route path="/structure" element={<Structure />} />
           <Route path="/committee" element={<Committee />} />
           <Route path="/education" element={<Education />} />
           <Route path="/achievements" element={<Achievements />} />
