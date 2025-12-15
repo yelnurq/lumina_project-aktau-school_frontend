@@ -1,39 +1,60 @@
 import { useState } from "react";
 import Header from "../../../components/Header";
-import styles from "./Circles.module.css";
+// Убедитесь, что файл стилей называется Structure.module.css
+import styles from "./Structure.module.css"; 
 import { Link } from "react-router-dom";
-import { FaLaptopCode, FaRobot, FaDumbbell, FaChess, FaBook, FaLanguage, FaHome, FaStar } from "react-icons/fa"; // Добавлены новые иконки для разнообразия
+// Используем иконки, подходящие для отображения персонала и их ролей
+import { FaUserTie, FaChalkboardTeacher, FaBookReader, FaGlobe, FaDumbbell, FaLaptop, FaMusic, FaStar } from "react-icons/fa"; 
 
-// Переименован компонент в Circles (Кружки)
-export default function Circles() {
+// Компонент теперь отображает структуру/состав
+export default function Structure() {
 
   const [openFAQ, setOpenFAQ] = useState(null);
-
-
 
   const toggleFAQ = (index) => {
     setOpenFAQ(openFAQ === index ? null : index);
   };
 
-  // Список кружков (на русском языке)
-  const circlesList = [
-    { name: "IT (Программирование)", icon: <FaLaptopCode className={styles.icon} />, description: "Освоение основ кодирования, создание простых игр и приложений." },
-    { name: "Робототехника", icon: <FaRobot className={styles.icon} />, description: "Конструирование, программирование и управление роботами." },
-    { name: "Гимнастика", icon: <FaDumbbell className={styles.icon} />, description: "Развитие гибкости, координации и силы, формирование правильной осанки." },
-    { name: "Каратэ", icon: <FaStar className={styles.icon} />, description: "Обучение боевым искусствам, развитие дисциплины и самоконтроля." },
-    { name: "Шахматы", icon: <FaChess className={styles.icon} />, description: "Тренировка логического мышления, стратегического планирования и памяти." },
-    { name: "Английский язык", icon: <FaLanguage className={styles.icon} />, description: "Углубленное изучение лексики и грамматики, практика разговорной речи." },
-    { name: "Русский язык", icon: <FaBook className={styles.icon} />, description: "Повышение грамотности, развитие навыков письма и анализа текста." },
-    { name: "Выполнение домашнего задания", icon: <FaHome className={styles.icon} />, description: "Организованная помощь и контроль при подготовке домашних заданий." },
+  // Список учителей и их должностей (на русском языке)
+  const teachersData = [
+    { name: "Туленова Айтолкын Джумабаевна", position: "Директор", icon: <FaUserTie className={styles.icon} /> },
+    { name: "Турсунгалиева Дана Турдыбекқызы", position: "Заместитель директора по воспитательной работе (ТЖО)", icon: <FaChalkboardTeacher className={styles.icon} /> },
+    { name: "Алиева Ақмарал Базарбайқызы", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
+    { name: "Байгулова Жамила Конарбаевна", position: "Учитель физической культуры", icon: <FaDumbbell className={styles.icon} /> },
+    { name: "Ескалиева Айгуль Есенжановна", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
+    { name: "Ерсултанова Жансулу Довлетовна", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
+    { name: "Исаева Мейрамгул Турганбаевна", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
+    { name: "Иса Мадина Серикқызы", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
+    { name: "Конирова Сауле Тынышлыковна", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
+    { name: "Конисбаева Валя Ишановна", position: "Учитель художественного труда", icon: <FaStar className={styles.icon} /> },
+    { name: "Конысбаева Марзия Сапарбаевна", position: "Учитель информатики", icon: <FaLaptop className={styles.icon} /> },
+    { name: "Лұқпан Наурызгүл Қуатқызы", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
+    { name: "Мейрова Майра Хамидовна", position: "Учитель физической культуры", icon: <FaDumbbell className={styles.icon} /> },
+    { name: "Мусрепова Нурбике Санатуллаевна", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
+    { name: "Нарембаева Жарқын Беркбаевна", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
+    { name: "Нұрғалиева Гүлназ Бақтыбайқызы", position: "Учитель английского языка", icon: <FaGlobe className={styles.icon} /> },
+    { name: "Нуржанова Карлыгаш Бахтияровна", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
+    { name: "Сойунбаева Акзер Базарбаевна", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
+    { name: "Туркменбаева Арайлым Жеңісбайқызы", position: "Учитель иностранного языка", icon: <FaGlobe className={styles.icon} /> },
+    { name: "Утегенова Гульнара Айтжановна", position: "Учитель русского языка", icon: <FaBookReader className={styles.icon} /> },
+    { name: "Утесинова Айгул Оринбаевна", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
+    { name: "Ускинбаева Назгуль Бакытжанкызы", position: "Учитель начальных классов", icon: <FaBookReader className={styles.icon} /> },
+    { name: "Худайбергенова Шара Мамонтовна", position: "Учитель музыки", icon: <FaMusic className={styles.icon} /> },
+    { name: "Ізімберген Данияр Мамбетұлы", position: "Учитель физической культуры", icon: <FaDumbbell className={styles.icon} /> },
+    { name: "Іляс Гүлдана Саматқызы", position: "Учитель русского языка", icon: <FaBookReader className={styles.icon} /> },
   ];
 
-  // Информация о кружках для отображения в секции CardsSection
-  // activityCards теперь соответствует полному списку circlesList
-  const activityCards = circlesList.map(circle => ({
-    icon: circle.icon,
-    title: circle.name,
-    description: circle.description,
-  }));
+
+  // Функции для определения соответствующей иконки на основе должности
+  const getIconForPosition = (position) => {
+    if (position.includes("Директор") || position.includes("Заместитель")) return <FaUserTie className={styles.icon} />;
+    if (position.includes("начальных классов")) return <FaBookReader className={styles.icon} />;
+    if (position.includes("физической культуры")) return <FaDumbbell className={styles.icon} />;
+    if (position.includes("английского языка") || position.includes("иностранного языка")) return <FaGlobe className={styles.icon} />;
+    if (position.includes("информатики")) return <FaLaptop className={styles.icon} />;
+    if (position.includes("музыки")) return <FaMusic className={styles.icon} />;
+    return <FaChalkboardTeacher className={styles.icon} />; // Иконка по умолчанию
+  };
 
 
   return (
@@ -50,111 +71,62 @@ export default function Circles() {
                   <ol>
                     <li><Link to="/">Главная</Link></li>
                     <li>/</li>
-                    {/* Обновлено: "Приёмная комиссия" заменено на "Кружки" */}
-                    <li>Кружки</li>
+                    {/* Обновлено: "Кружки" заменено на "Состав учителей" */}
+                    <li>Состав учителей</li>
                   </ol>
                 </nav>
-                {/* Обновлено: "Приёмная комиссия" заменено на "Кружки" */}
-                <h1 className={styles.pageTitle}>Кружки</h1>
+                {/* Обновлено: "Кружки" заменено на "Состав учителей" */}
+                <h1 className={styles.pageTitle}>Состав учителей</h1>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Секция о кружках */}
+        {/* Секция о составе */}
         <section className={styles.committeeSection}>
           <div className={styles.sectionContent}>
-            <h2>Дополнительное образование и кружки</h2>
+            <h2>Администрация и педагогический коллектив</h2>
             <p>
-            Наша школа предлагает широкий спектр дополнительных занятий и кружков, 
-            направленных на всестороннее развитие учеников. Мы помогаем детям 
-            раскрыть творческий, спортивный и интеллектуальный потенциал за рамками 
-            основной учебной программы.
+            Наш педагогический коллектив — это команда высококвалифицированных и преданных своему делу 
+            профессионалов. Мы создаем благоприятную атмосферу для обучения и развития, 
+            используя современные методики и индивидуальный подход к каждому ученику.
           </p>
 
           <p>
-            Внеклассные занятия развивают важные социальные навыки, такие как работа 
-            в команде, дисциплина и самоорганизация. Регулярные занятия в кружках 
-            помогают формировать полезные привычки и интересы, которые могут стать 
-            основой для будущей профессии.
+            Учителя регулярно проходят курсы повышения квалификации и активно участвуют в 
+            научных и методических разработках, чтобы обеспечить высокое качество образования 
+            в соответствии с современными стандартами.
           </p>
-
-          <p>
-            Ученики могут выбрать занятия по интересам:
-          </p>
-
-          {/* Список кружков */}
-          <ul className={styles.circlesList}>
-            {circlesList.map((item, index) => (
-                <li key={index}>{item.name}</li>
-            ))}
-          </ul>
-          {/* Конец списка кружков */}
-
-
-          <p>
-            Запишите вашего ребёнка на пробное занятие, чтобы он мог выбрать 
-            направление по душе!
-          </p>
-
           </div>
 
         </section>
 
-    {/* Секция с карточками всех кружков */}
+    {/* Секция с карточками всех учителей */}
     <section className={styles.cardsSection}>
-      <h2>Подробный список кружков</h2>
+      <h2>Список педагогов школы</h2>
       <div className={styles.cardsGrid}>
-        {/* Используем полный список activityCards, который теперь содержит все 8 кружков */}
-        {activityCards.map((card, index) => (
+        {/* Отображаем список учителей */}
+        {teachersData.map((teacher, index) => (
           <div key={index} className={styles.card}>
             <div className={styles.iconWrapper}>
-              {card.icon}
+              {/* Используем функцию для определения иконки */}
+              {getIconForPosition(teacher.position)}
             </div>
-            <h3>{card.title}</h3>
-            <p>{card.description}</p>
+            <h3>{teacher.name}</h3>
+            <p>{teacher.position}</p>
           </div>
         ))}
       </div>
 
     </section>
 
-        {/* Секция вопросов-ответов по теме "Кружки" */}
+        {/* Секция FAQ удалена или заменена на краткую информацию */}
         <section className={styles.faqSection} style={{marginTop:50}}>
-          <h2>Часто задаваемые вопросы о кружках</h2>
+          <h2>Обратная связь</h2>
           <div className={styles.faqList}>
-  {[
-    {
-      question: "Как записаться в кружок?",
-      answer: "Запись производится через классного руководителя или напрямую у руководителя кружка. Заявление от родителей обязательно.",
-    },
-    {
-      question: "Со скольки лет можно посещать кружки?",
-      answer: "Большинство кружков доступны для учеников с 1-го класса. Некоторые спортивные и технические секции могут иметь ограничения по возрасту.",
-    },
-    {
-      question: "Какова продолжительность занятий?",
-      answer:
-        "Продолжительность одного занятия обычно составляет 45 или 60 минут, в зависимости от направления и возраста учеников.",
-    },
-    {
-      question: "Можно ли посещать несколько кружков одновременно?",
-      answer:
-        "Да, ученик может посещать любое количество кружков, если расписание не пересекается и нагрузка не вредит основной учёбе.",
-    },
-    
-  ].map((item, index) => (
-    <div
-      key={index}
-      className={`${styles.faqItem} ${openFAQ === index ? styles.open : ""}`}
-      onClick={() => toggleFAQ(index)}
-    >
-      <h3>{item.question}</h3>
-      {openFAQ === index && <p>{item.answer}</p>}
-    </div>
-  ))}
+             <p>Если у вас есть вопросы к конкретному педагогу, вы можете обратиться через классного руководителя или администрацию школы.</p>
+             <p>Мы ценим сотрудничество с родителями и всегда готовы к диалогу!</p>
           </div>
-
         </section>
       </div>
     </Header>
