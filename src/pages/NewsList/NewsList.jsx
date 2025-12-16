@@ -217,7 +217,7 @@ export default function NewsList() {
                   news.map(item => (
                     <Link to={`/articles/${item.slug}`} key={item.id} className={styles.card}>
                       <img
-                        src={`http://127.0.0.1:8000/storage/${item.image}`}
+                        src={`https://mangystau.lumina.kz/storage/${item.image}`}
                         alt={item.title}
                         className={styles.image}
                       />

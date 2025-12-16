@@ -91,7 +91,7 @@ export default function Home() {
         title={t.welcome}
         description={t.mainText}
         keywords="Lumina, IT, блоги, мақалалар, олимпиадалар"
-        url="http://127.0.0.1:8000/"
+        url="https://mangystau.lumina.kz/"
         type="website"
         jsonLdType="WebSite"
       />
@@ -151,7 +151,7 @@ export default function Home() {
                 {latest.map(news => (
                   <div key={news.id} className={styles.card}>
                     <Link className={styles.newsLink} to={`/articles/${news.slug}`}>
-                      <img loading="lazy" className={styles.latestImage} src={`http://127.0.0.1:8000/storage/${news.image}`} alt={news.title} />
+                      <img loading="lazy" className={styles.latestImage} src={`https://mangystau.lumina.kz/storage/${news.image}`} alt={news.title} />
                       <p className={styles.latestTitle}>{news.title}</p>
                       <p className={styles.latestDesc}>{news.excerpt}</p>
                       <p className={styles.meta}>

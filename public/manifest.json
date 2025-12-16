@@ -1,7 +1,7 @@
 {
-  "name": "Lumina",
-  "short_name": "Lumina",
-  "description": "Платформа Lumina: блоги, онлайн-олимпиады и заказ сайтов.",
+  "name": "Школа ИТ и иностранных языков",
+  "short_name": "IT School",
+  "description": "Официальное приложение школы информационных технологий и иностранных языков. Новости, расписание и учебные материалы.",
   "start_url": "/",
   "scope": "/",
   "icons": [
@@ -18,9 +18,9 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#000000",
+  "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "display": "standalone",
   "orientation": "portrait",
-  "categories": ["education", "business"]
+  "categories": ["education"]
 }

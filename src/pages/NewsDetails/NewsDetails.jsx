@@ -90,8 +90,8 @@ export default function NewsDetails() {
 
   const description = news.excerpt || news.content?.replace(/<[^>]+>/g, '').slice(0, 160);
   const imageUrl = news.image
-    ? `http://127.0.0.1:8000/storage/${news.image}`
-    : 'http://127.0.0.1:8000/preview-image.png';
+    ? `https://mangystau.lumina.kz/storage/${news.image}`
+    : 'https://mangystau.lumina.kz/preview-image.png';
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -174,7 +174,7 @@ export default function NewsDetails() {
             <div className={styles.relatedGrid}>
               {relatedNews.map((item) => (
                 <Link to={`/articles/${item.slug}`} key={item.id} className={styles.relatedCard}>
-                  <img src={`http://127.0.0.1:8000/storage/${item.image}`} alt={item.title} />
+                  <img src={`https://mangystau.lumina.kz/storage/${item.image}`} alt={item.title} />
                   <div className={styles.relatedText}>
                     <h3>{item.title.length > 60 ? item.title.slice(0, 60) + '...' : item.title}</h3>
                     <p className={styles.relatedDate}>
