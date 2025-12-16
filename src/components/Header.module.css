@@ -1,3 +1,6 @@
+:global(body) {
+  scrollbar-gutter: stable; 
+}
 
 .header {
   background-color: rgba(0, 0, 0, 0.6);
@@ -94,7 +97,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .upheader {
@@ -474,6 +476,7 @@
 .subscribeForm button:hover {
   background-color: #2563eb;
 }
+
 /* Только для мобильного */
 @media (max-width: 768px) {
 
@@ -499,10 +502,6 @@
     cursor: pointer;
     padding: 10px;
     z-index: 1102;
-    position: absolute;
-
-    right: 15px;
-        top: 35px;
   }
 
   .burgerLine {
@@ -538,14 +537,16 @@
   .mobileNav {
     position: fixed;
     top: 0;
-    left: -220px; 
+    left: -230px; 
     width: 180px;
+    overflow: auto;
     height: 100vh;
     background: linear-gradient(to right, #222222, #1f1f1f);   
     box-shadow: -2px 0 12px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
+    padding-bottom: 4rem;
     gap: 1rem;
     z-index: 1101; 
     transition: left 0.3s ease-in-out;
@@ -558,6 +559,7 @@
   .mobileLink {
     font-weight: 400;
     display: flex;
+    gap: 10px;
     align-items: center;
     text-decoration: none;
     color: #d7d7d7;
@@ -574,6 +576,9 @@
   .mobileSubLink {
     font-weight: normal;
     margin-left: 1rem;
+    gap: 10px;
+    display: flex;
+    align-items: center;
     font-size: 0.95rem;
     text-decoration: none;
     color: #c1c1c1;
@@ -661,6 +666,26 @@
   }
 }
 
+
+.burgerLine {
+  transition: all 0.1s ease-in-out;
+}
+
+
+.burgerActive .burgerLine{
+  background-color: rgb(219, 219, 219);
+}
+.burgerActive .burgerLine:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.burgerActive .burgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerActive .burgerLine:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 
 .footer {
   background-color: #200202;

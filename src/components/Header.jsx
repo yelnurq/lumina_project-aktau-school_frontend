@@ -4,7 +4,11 @@ import {
   FaSearch, FaTelegramPlane, FaWhatsapp, FaFacebook, 
   FaTwitter, FaTimes, FaBlog, FaInfoCircle, 
   FaTrophy, FaHome, FaSchool, FaGlobe, 
-  FaUsers
+  FaUsers,
+  FaChalkboardTeacher,
+  FaDraftingCompass,
+  FaUserTie,
+  FaUserShield
 } from 'react-icons/fa';
 
 import styles from './Header.module.css';
@@ -123,7 +127,18 @@ export default function Header({ children }) {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
 
+    // Чистка эффекта при размонтировании компонента
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMobileMenuOpen]);
   useEffect(() => {
     const stored = localStorage.getItem('categories');
     if (stored) { setCategories(JSON.parse(stored)); return; }
@@ -151,7 +166,10 @@ export default function Header({ children }) {
      
 
             {isMobile && (
-              <button className={styles.burgerBtn} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+              <button 
+                className={`${styles.burgerBtn} ${isMobileMenuOpen ? styles.burgerActive : ''}`} 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
                 <span className={styles.burgerLine}></span>
                 <span className={styles.burgerLine}></span>
                 <span className={styles.burgerLine}></span>
@@ -194,7 +212,7 @@ export default function Header({ children }) {
             )}
 
             {isMobile && (
-      <>
+   <>
   <div className={`${styles.mobileOverlay} ${isMobileMenuOpen ? styles.show : ''}`} onClick={() => setIsMobileMenuOpen(false)} />
   <div className={`${styles.mobileNav} ${isMobileMenuOpen ? styles.open : ''}`}>
     <div className={styles.langWrapper} style={{ marginBottom: 20 }}>
@@ -204,20 +222,47 @@ export default function Header({ children }) {
     
     {/* О школе и подпункты */}
     <div className={styles.mobileLink}><FaHome /> {t.nav.about}</div>
-      <Link to="/structure" className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}>{t.dropdown.teachers}</Link>
-      <Link to="/achievements" className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}><FaTrophy /> {t.dropdown.achievements}</Link>
-      <Link to="/circles" className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}>{t.dropdown.circles}</Link>
-      <Link to="/director" className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}>{t.dropdown.feedback}</Link>
-      <Link to="/safety" className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}>{t.dropdown.safety}</Link>
-
-    <Link to="/education" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}><FaSchool /> {t.nav.education}</Link>
-    <Link to="/committee" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}><FaUsers /> {t.nav.committee}</Link>
     
-    {/* Новости и категории */}
-    <Link to="/articles" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}><FaBlog /> {t.nav.news}</Link>
-     
+    <Link to="/structure" className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}>
+      <FaChalkboardTeacher /> {t.dropdown.teachers}
+    </Link>
+    
+    <Link to="/achievements" className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}>
+      <FaTrophy /> {t.dropdown.achievements}
+    </Link>
+    
+    <Link to="/circles" className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}>
+      <FaDraftingCompass /> {t.dropdown.circles}
+    </Link>
+    
+    <Link to="/director" className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}>
+      <FaUserTie /> {t.dropdown.feedback}
+    </Link>
+    
+    <Link to="/safety" className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}>
+      <FaUserShield /> {t.dropdown.safety}
+    </Link>
 
-    <Link to="/about" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}><FaInfoCircle /> {t.nav.contacts}</Link>
+    <div className={styles.divider} style={{margin: '10px 0', borderBottom: '1px solid #eeeeee49'}} />
+
+    {/* Основные разделы */}
+    <Link to="/education" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}>
+      <FaSchool /> {t.nav.education}
+    </Link>
+    
+    <Link to="/committee" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}>
+      <FaUsers /> {t.nav.committee}
+    </Link>
+    
+    <Link to="/articles" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}>
+      <FaBlog /> {t.nav.news}
+    </Link>
+
+
+
+    <Link to="/about" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}>
+      <FaInfoCircle /> {t.nav.contacts}
+    </Link>
   </div>
 </>
             )}
