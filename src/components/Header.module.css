@@ -670,7 +670,56 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+.langWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 15px;
+}
 
+.langWrapper button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.5;
+  transition: 0.3s;
+  padding: 0;
+}
+
+.langWrapper button.activeLang {
+  opacity: 1;
+  font-weight: bold;
+  border-bottom: 1px solid white;
+}
+
+.searchIcon {
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 18px;
+  color: white;
+}
+
+/* Стили пагинации в поиске */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-top: 1px solid #eee;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .footerGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
