@@ -3,7 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { 
   FaSearch, FaTelegramPlane, FaWhatsapp, FaFacebook, 
   FaTwitter, FaTimes, FaBlog, FaInfoCircle, 
-  FaTrophy, FaHome, FaSchool, FaGlobe 
+  FaTrophy, FaHome, FaSchool, FaGlobe, 
+  FaUsers
 } from 'react-icons/fa';
 
 import styles from './Header.module.css';
@@ -193,20 +194,32 @@ export default function Header({ children }) {
             )}
 
             {isMobile && (
-              <>
-                <div className={`${styles.mobileOverlay} ${isMobileMenuOpen ? styles.show : ''}`} onClick={() => setIsMobileMenuOpen(false)} />
-                <div className={`${styles.mobileNav} ${isMobileMenuOpen ? styles.open : ''}`}>
-                  <div className={styles.langWrapper} style={{marginBottom:20}}>
-                    <button onClick={() => toggleLang('ru')} className={lang === 'ru' ? styles.activeLang : ''}>RU</button>
-                    <button onClick={() => toggleLang('kk')} className={lang === 'kk' ? styles.activeLang : ''}>KK</button>
-                  </div>
-                  <Link to="/" className={styles.mobileLink}><FaHome /> {t.nav.about}</Link>
-                  <Link to="/achievements" className={styles.mobileSubLink}><FaTrophy /> {t.dropdown.achievements}</Link>
-                  <Link to="/articles" className={styles.mobileLink}><FaBlog /> {t.nav.news}</Link>
-                  <Link to="/education" className={styles.mobileLink}><FaSchool /> {t.nav.education}</Link>
-                  <Link to="/about" className={styles.mobileLink}><FaInfoCircle /> {t.nav.contacts}</Link>
-                </div>
-              </>
+      <>
+  <div className={`${styles.mobileOverlay} ${isMobileMenuOpen ? styles.show : ''}`} onClick={() => setIsMobileMenuOpen(false)} />
+  <div className={`${styles.mobileNav} ${isMobileMenuOpen ? styles.open : ''}`}>
+    <div className={styles.langWrapper} style={{ marginBottom: 20 }}>
+      <button onClick={() => toggleLang('ru')} className={lang === 'ru' ? styles.activeLang : ''}>RU</button>
+      <button onClick={() => toggleLang('kk')} className={lang === 'kk' ? styles.activeLang : ''}>KK</button>
+    </div>
+    
+    {/* О школе и подпункты */}
+    <div className={styles.mobileLink}><FaHome /> {t.nav.about}</div>
+      <Link to="/structure" className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}>{t.dropdown.teachers}</Link>
+      <Link to="/achievements" className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}><FaTrophy /> {t.dropdown.achievements}</Link>
+      <Link to="/circles" className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}>{t.dropdown.circles}</Link>
+      <Link to="/director" className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}>{t.dropdown.feedback}</Link>
+      <Link to="/safety" className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}>{t.dropdown.safety}</Link>
+
+    <Link to="/education" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}><FaSchool /> {t.nav.education}</Link>
+    <Link to="/committee" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}><FaUsers /> {t.nav.committee}</Link>
+    
+    {/* Новости и категории */}
+    <Link to="/articles" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}><FaBlog /> {t.nav.news}</Link>
+     
+
+    <Link to="/about" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}><FaInfoCircle /> {t.nav.contacts}</Link>
+  </div>
+</>
             )}
               
           </nav>
