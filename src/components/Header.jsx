@@ -185,6 +185,10 @@ export default function Header({ children }) {
                   )}
                 </div>
                 <Link to="/about" className={styles.link}>{t.nav.contacts}</Link>
+               <div className={styles.langWrapper}>
+                    <button onClick={() => toggleLang('ru')} className={lang === 'ru' ? styles.activeLang : ''}>RU</button>
+                    <button onClick={() => toggleLang('kk')} className={lang === 'kk' ? styles.activeLang : ''}>KK</button>
+                  </div>
               </>
             )}
 
@@ -192,6 +196,10 @@ export default function Header({ children }) {
               <>
                 <div className={`${styles.mobileOverlay} ${isMobileMenuOpen ? styles.show : ''}`} onClick={() => setIsMobileMenuOpen(false)} />
                 <div className={`${styles.mobileNav} ${isMobileMenuOpen ? styles.open : ''}`}>
+                  <div className={styles.langWrapper} style={{marginBottom:20}}>
+                    <button onClick={() => toggleLang('ru')} className={lang === 'ru' ? styles.activeLang : ''}>RU</button>
+                    <button onClick={() => toggleLang('kk')} className={lang === 'kk' ? styles.activeLang : ''}>KK</button>
+                  </div>
                   <Link to="/" className={styles.mobileLink}><FaHome /> {t.nav.about}</Link>
                   <Link to="/achievements" className={styles.mobileSubLink}><FaTrophy /> {t.dropdown.achievements}</Link>
                   <Link to="/articles" className={styles.mobileLink}><FaBlog /> {t.nav.news}</Link>
@@ -200,10 +208,7 @@ export default function Header({ children }) {
                 </div>
               </>
             )}
-                   <div className={styles.langWrapper}>
-              <button onClick={() => toggleLang('ru')} className={lang === 'ru' ? styles.activeLang : ''}>RU</button>
-              <button onClick={() => toggleLang('kk')} className={lang === 'kk' ? styles.activeLang : ''}>KK</button>
-            </div>
+              
           </nav>
         </div>
       </header>
