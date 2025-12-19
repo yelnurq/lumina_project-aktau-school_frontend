@@ -2,7 +2,7 @@
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 40% 60%;
+  background-position: 40% 64%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -148,6 +148,8 @@
   line-height: 1.7;
 }
 
+
+
 .steps h3 {
   margin-bottom: 10px;
   font-weight: 600;
@@ -200,6 +202,13 @@
   font-size: 28px;
     color: #222;
     margin-bottom: 15px;
+}
+
+
+@media (max-width:768px) {
+  .cardsSection h2, .faqSection h2, .committeeSection h2 {
+    font-size: 18px important;
+  }
 }
 
 
