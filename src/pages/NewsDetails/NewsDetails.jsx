@@ -6,7 +6,6 @@ import Header from '../../components/Header';
 import { FaTelegramPlane, FaTwitter, FaWhatsapp } from 'react-icons/fa';
 import { Helmet } from 'react-helmet';
 
-// 1. Объект с переводами интерфейса
 const translations = {
   ru: {
     home: "Главная",
