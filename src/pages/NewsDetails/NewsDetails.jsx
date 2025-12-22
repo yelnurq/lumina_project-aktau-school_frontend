@@ -30,7 +30,6 @@ export default function NewsDetails() {
   const [news, setNews] = useState(null);
   const [relatedNews, setRelatedNews] = useState([]);
   
-  // 2. Логика языка
   const [lang, setLang] = useState(localStorage.getItem('app_lang') || 'ru');
   const t = translations[lang];
 
